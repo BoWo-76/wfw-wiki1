@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WFW Wiki · IHK Wirtschaftsfachwirt</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">WFW<span>Wiki</span></a>
+  <div class="search-wrap">
+    <input id="search-input" type="search" placeholder="Thema suchen … z.B. FMEA, SWOT, Liquidität" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="sidebar">
+    <!-- wird von engine.js befüllt -->
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <div class="kicker">IHK Wirtschaftsfachwirt · Lernunterlagen</div>
+      <h1>WFW Wiki</h1>
+      <div class="meta">
+        <span>Alle Module</span>
+        <span>Zuletzt aktualisiert: 28.06.2026</span>
+      </div>
+    </div>
+
+    <p class="wiki-intro">Persönliche Lernunterlage zur IHK-Prüfung Wirtschaftsfachwirt. Alle Skripte, Definitionen und Prüfungshinweise — durchsuchbar, auf jedem Gerät.</p>
+
+    <div class="notice info">
+      <div>ℹ️</div>
+      <div><strong>Legende</strong>● Fertig &nbsp;·&nbsp; ◐ Entwurf &nbsp;·&nbsp; ○ Geplant — Seitensuche nur in fertigen und Entwurfs-Seiten.</div>
+    </div>
+
+    <!-- wird von engine.js::buildIndexPage() befüllt -->
+    <div id="wiki-index"></div>
+
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div>WFW Wiki · IHK Wirtschaftsfachwirt</div>
+  <div>Nur für internen Gebrauch</div>
+</footer>
+
+<script src="css/pages.js"></script>
+<script src="css/engine.js"></script>
+</body>
+</html>
