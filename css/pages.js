@@ -48,15 +48,6 @@ const WIKI_CONFIG = {
       keywords: ["klr", "kosten- und leistungsrechnung", "selbstkosten", "deckungsbeitrag", "wirtschaftlichkeit", "angebotspreis", "einzelkosten", "gemeinkosten", "fixkosten", "variable kosten", "fixkostendegression", "bab", "proportional", "degressiv", "progressiv", "neutraler aufwand", "zusatzkosten", "anderskosten", "grundkosten", "zweckaufwand", "kalkulatorischer unternehmerlohn", "kalkulatorische abschreibung", "wiederbeschaffungswert", "absatzleistung", "lagerleistung", "innerbetriebliche leistung", "bestandserhöhung", "kostenartenrechnung", "kostenstellenrechnung", "kostenträgerrechnung"]
     },
 
-    // ── Betriebliches Management ─────────────────────────────
-    {
-      id: "bm_ls03",
-      module: "bm",
-      title: "LS03 · Wissensmanagement",
-      file: "pages/bm_ls03.html",
-      status: "entwurf",
-      updated: "28.06.2026",
-      keywords: ["wissensmanagement", "seci", "nonaka", "implizites wissen", "explizites wissen", "wissensspirale"]
-    },
+    
   ]
 };
