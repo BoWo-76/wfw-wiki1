@@ -135,6 +135,28 @@ body {
 }
 .sidebar .icon { width: 18px; text-align: center; flex-shrink: 0; }
 
+.nav-heading.collapsible {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding-right: 14px;
+}
+.nav-heading.collapsible:hover { color: var(--primary-dark); }
+.collapse-arrow { font-size: 11px; opacity: .6; transition: transform .15s; }
+.module-pages { overflow: hidden; }
+.nav-disabled {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 16px;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: default;
+  line-height: 1.35;
+}
+
 /* MAIN */
 .main {
   margin-left: var(--sidebar-w);

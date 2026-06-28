@@ -8,17 +8,18 @@ const STATUS_BADGE = {
   geplant:  { label: "Geplant",  cls: "neutral" },
 };
 
-// Pfad-Tiefe ermitteln (index.html = root, pages/*.html = 1 tief)
 function getRoot() {
-  const depth = window.location.pathname.split('/').filter(Boolean).length;
-  // Netlify / lokaler Aufruf: wenn Pfad mit /pages/ endet → eine Ebene hoch
   return window.location.pathname.includes('/pages/') ? '..' : '.';
 }
 
-// ── SIDEBAR ─────────────────────────────────────────────────
+// ── SIDEBAR mit auf/einklappbaren Modulen ───────────────────
 function buildSidebar() {
   const r = getRoot();
   const current = window.location.pathname.split('/').pop();
+
+  // Welches Modul ist aktuell aktiv?
+  const activePage = WIKI_CONFIG.pages.find(p => p.file.split('/').pop() === current);
+  const activeModule = activePage ? activePage.module : null;
 
   let html = `
     <div class="nav-section">
@@ -32,22 +33,47 @@ function buildSidebar() {
     const pages = WIKI_CONFIG.pages.filter(p => p.module === mod.id);
     if (!pages.length) return;
 
-    html += `<div class="nav-section">
-      <div class="nav-heading">${mod.icon} ${mod.label}</div>`;
+    const isOpen = mod.id === activeModule;
+    const modId = `mod-${mod.id}`;
+
+    html += `
+      <div class="nav-section">
+        <div class="nav-heading collapsible ${isOpen ? 'open' : ''}" onclick="toggleModule('${modId}', this)">
+          <span>${mod.icon} ${mod.label}</span>
+          <span class="collapse-arrow">${isOpen ? '▾' : '▸'}</span>
+        </div>
+        <div class="module-pages" id="${modId}" style="display:${isOpen ? 'block' : 'none'}">`;
 
     pages.forEach(p => {
       const fileName = p.file.split('/').pop();
-      const isActive = current === fileName ? 'class="active"' : '';
+      const isActive = current === fileName;
       const dot = p.status === 'fertig' ? '●' : p.status === 'entwurf' ? '◐' : '○';
-      html += `<a href="${r}/${p.file}" ${isActive}>
-        <span class="icon" style="font-size:11px;opacity:.6">${dot}</span> ${p.title}
-      </a>`;
+      const clickable = p.status !== 'geplant';
+
+      if (clickable) {
+        html += `<a href="${r}/${p.file}" ${isActive ? 'class="active"' : ''}>
+          <span class="icon" style="font-size:10px;opacity:.6">${dot}</span> ${p.title}
+        </a>`;
+      } else {
+        html += `<span class="nav-disabled">
+          <span class="icon" style="font-size:10px;opacity:.4">${dot}</span> ${p.title}
+        </span>`;
+      }
     });
 
-    html += `</div>`;
+    html += `</div></div>`;
   });
 
   document.querySelectorAll('.sidebar').forEach(el => el.innerHTML = html);
+}
+
+// Toggle-Funktion für Module
+function toggleModule(id, heading) {
+  const el = document.getElementById(id);
+  const isOpen = el.style.display !== 'none';
+  el.style.display = isOpen ? 'none' : 'block';
+  heading.classList.toggle('open', !isOpen);
+  heading.querySelector('.collapse-arrow').textContent = isOpen ? '▸' : '▾';
 }
 
 // ── SEARCH ──────────────────────────────────────────────────
@@ -98,9 +124,10 @@ function buildIndexPage() {
     const pages = WIKI_CONFIG.pages.filter(p => p.module === mod.id);
     if (!pages.length) return;
 
-    const done = pages.filter(p => p.status === 'fertig').length;
+    const done  = pages.filter(p => p.status === 'fertig').length;
     const draft = pages.filter(p => p.status === 'entwurf').length;
     const total = pages.length;
+    const pct   = Math.round((done / total) * 100);
 
     html += `
       <div class="module-block">
@@ -112,9 +139,9 @@ function buildIndexPage() {
           </div>
           <div class="module-progress">
             <div class="progress-bar">
-              <div class="progress-fill" style="width:${Math.round((done/total)*100)}%;background:${mod.color}"></div>
+              <div class="progress-fill" style="width:${pct}%;background:${mod.color}"></div>
             </div>
-            <span>${Math.round((done/total)*100)}%</span>
+            <span>${pct}%</span>
           </div>
         </div>
         <div class="page-list">`;
