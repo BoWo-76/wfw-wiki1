@@ -12,6 +12,61 @@ function getRoot() {
   return window.location.pathname.includes('/pages/') ? '..' : '.';
 }
 
+// ── ZULETZT BESUCHT ─────────────────────────────────────────
+const VISITED_KEY = 'wfw_last_visited';
+const VISITED_MAX = 5;
+
+function trackVisit() {
+  const current = window.location.pathname.split('/').pop();
+  const page = WIKI_CONFIG.pages.find(p => p.file.split('/').pop() === current);
+  if (!page || page.status === 'geplant') return;
+
+  try {
+    const visited = JSON.parse(localStorage.getItem(VISITED_KEY) || '[]');
+    const filtered = visited.filter(id => id !== page.id);
+    filtered.unshift(page.id);
+    localStorage.setItem(VISITED_KEY, JSON.stringify(filtered.slice(0, VISITED_MAX)));
+  } catch (e) {}
+}
+
+function buildLastVisited(sidebarEl) {
+  try {
+    const visited = JSON.parse(localStorage.getItem(VISITED_KEY) || '[]');
+    if (!visited.length) return;
+
+    const r = getRoot();
+    const pages = visited
+      .map(id => WIKI_CONFIG.pages.find(p => p.id === id))
+      .filter(Boolean);
+    if (!pages.length) return;
+
+    const html = `
+      <div class="nav-section nav-last-visited">
+        <div class="nav-heading">Zuletzt besucht</div>
+        ${pages.map(p => `<a href="${r}/${p.file}">
+          <span class="icon" style="font-size:10px;opacity:.5">◷</span> ${p.title}
+        </a>`).join('')}
+      </div>`;
+    sidebarEl.insertAdjacentHTML('beforeend', html);
+  } catch (e) {}
+}
+
+// ── DRUCKBUTTON ──────────────────────────────────────────────
+function buildPrintButton() {
+  const header = document.querySelector('.page-header');
+  if (!header) return;
+  const btn = document.createElement('button');
+  btn.innerHTML = '🖨 Drucken';
+  btn.style.cssText = `
+    margin-top: 10px; padding: 5px 12px; font-size: 13px;
+    border: 1px solid var(--line); border-radius: 6px;
+    background: var(--card); color: var(--muted);
+    cursor: pointer; font-family: Arial, sans-serif;
+  `;
+  btn.onclick = () => window.print();
+  header.appendChild(btn);
+}
+
 // ── SIDEBAR ─────────────────────────────────────────────────
 function buildSidebar() {
   const r = getRoot();
@@ -59,7 +114,10 @@ function buildSidebar() {
     html += `</div></div>`;
   });
 
-  document.querySelectorAll('.sidebar').forEach(el => el.innerHTML = html);
+  document.querySelectorAll('.sidebar').forEach(el => {
+    el.innerHTML = html;
+    buildLastVisited(el);
+  });
 }
 
 function toggleModule(id, heading) {
@@ -270,9 +328,11 @@ function buildTopbar() {
 
 // ── INIT ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  trackVisit();
   buildTopbar();
   buildSidebar();
   buildIndexPage();
+  buildPrintButton();
   initSearch();
   highlightSearchTerm();
 });
