@@ -57,5 +57,14 @@ const WIKI_CONFIG = {
       keywords: ["kostenartenrechnung", "kostengliederung", "einzelkosten", "gemeinkosten", "fixkosten", "variable kosten", "fixkostendegression", "proportionale kosten", "degressive kosten", "progressive kosten", "sprungfixe kosten", "intervall-fixe kosten", "mittelwertverfahren", "gewogener mittelwert", "gleitender mittelwert", "arithmetischer mittelwert", "lagerkarteikarte", "istkosten", "normalkosten", "plankosten", "istkostenrechnung", "normalkostenrechnung", "plankostenrechnung", "soll-ist-vergleich", "abweichungsanalyse", "kapazitätsgrenze", "stückkosten", "bab", "betriebsabrechnungsbogen"]
     },
 
+    {
+      id: "rewe_ls05",
+      module: "rewe",
+      title: "LS05 · Kostenstellenrechnung & BAB",
+      file: "pages/rewe_ls05.html",
+      status: "fertig",
+      updated: "28.06.2026",
+      keywords: ["kostenstellenrechnung", "kostenstelle", "bab", "betriebsabrechnungsbogen", "hauptkostenstelle", "hilfskostenstelle", "primärkostenverteilung", "sekundärkostenverteilung", "ilv", "innerbetriebliche leistungsverrechnung", "anbauverfahren", "stufenleiterverfahren", "gleichungsverfahren", "zuschlagssatz", "mgk", "fgk", "vwgk", "vtgk", "materialgemeinkosten", "fertigungsgemeinkosten", "verwaltungsgemeinkosten", "vertriebsgemeinkosten", "fertigungsmaterial", "fertigungslöhne", "herstellkosten", "selbstkosten", "kalkulation", "zuschlagskalkulation", "verursachungsprinzip", "verteilungsschlüssel", "einproduktbetrieb", "mehrproduktbetrieb"]
+    },
   ]
 };
