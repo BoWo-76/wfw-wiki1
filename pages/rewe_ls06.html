@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LS06 · Kostenträgerrechnung & Kalkulation – WFW Wiki</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-brand" href="../index.html">WFW Wiki</a>
+    <div class="topbar-search">
+      <input type="search" id="search-input" placeholder="Suchen …" autocomplete="off">
+      <div id="search-results" class="search-dropdown"></div>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨 Drucken</button>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar"></nav>
+
+  <main class="main">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Start</a> › <span>Rechnungswesen</span> › <span>LS06</span>
+    </div>
+
+    <div class="page-header">
+      <div class="page-header-module">Rechnungswesen · LS06</div>
+      <h1 class="page-header-title">Kostenträgerrechnung &amp; Kalkulation</h1>
+      <p class="page-header-sub">Zuschlagskalkulation · Kalkulationsformen · Preisuntergrenzen · Handelskalkulation</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 1 – GRUNDLAGEN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap1">1 · Grundlagen &amp; Arten der Kostenträgerrechnung</h2>
+
+    <div class="def-box">
+      <strong>Definition – Kostenträgerrechnung</strong><br>
+      Dritte Stufe der KLR. Beantwortet: <em>Wofür sind die Kosten angefallen?</em> Alle Kosten einer Periode werden den <strong>Kostenträgern</strong> (= Erzeugnisse/Produkte) zugerechnet.
+    </div>
+
+    <div class="def-box">
+      <strong>Definition – Kostenträger</strong><br>
+      Ein einzelnes Erzeugnis, eine Artikelgruppe oder ein Auftrag, dem Kosten direkt zugerechnet werden. Beispiel: Schreibtisch (Produkt), Büromöbel (Artikelgruppe).
+    </div>
+
+    <h3 id="kap1-1">1.1 Aufgaben</h3>
+    <div class="two-col">
+      <div class="content-card">
+        <ul>
+          <li>Zurechnung der Kosten auf Kostenträger</li>
+          <li>Berechnung der <strong>Selbstkosten</strong> pro Stück</li>
+          <li>Wirtschaftlichkeitskontrolle einzelner Erzeugnisse</li>
+          <li>Preispolitische Entscheidungen (Angebotspreis, Preisuntergrenze)</li>
+        </ul>
+      </div>
+      <div class="content-card">
+        <ul>
+          <li>Entscheidung: Zusatzaufträge annehmen?</li>
+          <li>Eigenfertigung oder Fremdbezug (Make-or-Buy)</li>
+          <li>Bestandsbewertung (fertige/unfertige Erzeugnisse)</li>
+          <li>Nachkalkulation: Kostenüber- oder -unterdeckung</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 id="kap1-2">1.2 Zwei Arten der Kostenträgerrechnung</h3>
+    <div class="two-col">
+      <div class="content-card">
+        <strong>Kostenträgerstückrechnung (Kalkulation)</strong><br><br>
+        <em>Frage:</em> Wie hoch sind die Kosten pro Stück?<br><br>
+        Ermittelt Herstellkosten und Selbstkosten eines Produktes. Hilfsmittel: Kalkulationsschema.<br><br>
+        <strong>Ergebnis:</strong> Selbstkosten pro Einheit → Grundlage für Angebotspreis.
+      </div>
+      <div class="content-card">
+        <strong>Kostenträgerzeitrechnung (Erfolgsrechnung)</strong><br><br>
+        <em>Frage:</em> Wie hoch sind die Gesamtkosten für einen Kostenträger pro Periode?<br><br>
+        Stellt Kosten und Erlöse pro Produkt und Periode gegenüber. Hilfsmittel: Kostenträgerblatt.<br><br>
+        <strong>Ergebnis:</strong> Betriebsergebnis + Produktergebnis.
+      </div>
+    </div>
+
+    <h3 id="kap1-3">1.3 Kalkulationsverfahren – Überblick</h3>
+    <table>
+      <thead>
+        <tr><th>Verfahren</th><th>Einsatz bei</th><th>Logik</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Differenzierende Zuschlagskalkulation</strong></td>
+          <td>Heterogene Fertigung (Serien-, Einzelfertigung)</td>
+          <td>Gemeinkosten über BAB-Zuschlagssätze auf Einzelkosten aufschlagen</td>
+        </tr>
+        <tr>
+          <td><strong>Divisionskalkulation</strong></td>
+          <td>Homogene Massenfertigung (Einproduktbetrieb)</td>
+          <td>Gesamtkosten ÷ produzierte Menge</td>
+        </tr>
+        <tr>
+          <td><strong>Äquivalenzziffernkalkulation</strong></td>
+          <td>Sortenfertigung (ähnliche Produkte)</td>
+          <td>Kosten über Äquivalenzziffern auf Sorten umrechnen</td>
+        </tr>
+        <tr>
+          <td><strong>Maschinenstundensatz</strong></td>
+          <td>Hoch automatisierte Fertigung</td>
+          <td>FGK aufgeteilt in maschinenabhängige und lohnabhängige Kosten</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="notice info">
+      <strong>Praxisbeispiel – Wann welches Verfahren?</strong><br>
+      <strong>Automobilwerk</strong> (Massenfertigung, 1 Modell) → Divisionskalkulation.<br>
+      <strong>Maschinenbauer</strong> (jeder Auftrag individuell) → Zuschlagskalkulation.<br>
+      <strong>Brauerei</strong> (Pils, Export, Weizen – ähnlicher Prozess) → Äquivalenzziffernkalkulation.<br>
+      <strong>Robotergestützte Fertigung</strong> (wenig Lohn, viel Maschine) → Maschinenstundensatz, weil Fertigungslöhne als Basis zu klein werden.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 2 – ZUSCHLAGSKALKULATION
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap2">2 · Differenzierende Zuschlagskalkulation</h2>
+
+    <div class="pruef-box">
+      Das Standardverfahren der IHK-Prüfung. Die Gemeinkosten aus dem BAB werden stufenweise als Zuschläge auf die Einzelkosten aufgeschlagen. Ergebnis: Selbstkosten pro Stück – Basis für Preisfindung und Angebotsrechnung.
+    </div>
+
+    <h3 id="kap2-1">2.1 Vollständiges Kalkulationsschema</h3>
+
+    <table>
+      <thead>
+        <tr><th>Position</th><th>Basis</th><th>Hinweis</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fertigungsmaterial (FM)</td><td>–</td><td>Einzelkosten</td></tr>
+        <tr><td>+ Materialgemeinkosten (MGK)</td><td>% auf FM</td><td>Zuschlagsbasis: FM</td></tr>
+        <tr><td><strong>= Materialkosten (MK)</strong></td><td></td><td></td></tr>
+        <tr><td>Fertigungslöhne (FL)</td><td>–</td><td>Einzelkosten</td></tr>
+        <tr><td>+ Fertigungsgemeinkosten (FGK)</td><td>% auf FL</td><td>Zuschlagsbasis: FL</td></tr>
+        <tr><td>+ SEK Fertigung</td><td>–</td><td>Direkt, nicht über BAB</td></tr>
+        <tr><td><strong>= Fertigungskosten (FK)</strong></td><td></td><td></td></tr>
+        <tr style="background:var(--color-bg-alt, #f5f5f5)"><td><strong>= Herstellkosten (HK) = MK + FK</strong></td><td></td><td></td></tr>
+        <tr><td>+ Verwaltungsgemeinkosten (VwGK)</td><td>% auf HK des Umsatzes</td><td></td></tr>
+        <tr><td>+ Vertriebsgemeinkosten (VtGK)</td><td>% auf HK des Umsatzes</td><td></td></tr>
+        <tr><td>+ SEK Vertrieb</td><td>–</td><td>Direkt, nicht über BAB</td></tr>
+        <tr style="background:var(--color-bg-alt, #f5f5f5)"><td><strong>= Selbstkosten (SK)</strong></td><td></td><td></td></tr>
+        <tr><td>+ Gewinn %</td><td>% auf SK</td><td></td></tr>
+        <tr><td><strong>= Barverkaufspreis (BVP)</strong></td><td>= Restprozent des ZVP</td><td></td></tr>
+        <tr><td>+ Kundenskonto</td><td>BVP × Skonto% ÷ Restprozent%</td><td></td></tr>
+        <tr><td>+ Vertreterprovision</td><td>BVP × Provision% ÷ Restprozent%</td><td></td></tr>
+        <tr><td><strong>= Zielverkaufspreis (ZVP)</strong></td><td>= 100 %</td><td></td></tr>
+        <tr><td>+ Kundenrabatt</td><td>% auf NVP (Aufschlag auf ZVP)</td><td></td></tr>
+        <tr style="background:var(--color-bg-alt, #f5f5f5)"><td><strong>= Nettoverkaufspreis (NVP)</strong></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Restprozent-Methode bei Skonto und Provision</strong><br>
+      Skonto% und Provision% werden <strong>addiert</strong>. BVP = Restprozentsatz des ZVP (= 100% − Skonto% − Provision%).<br>
+      Einzelbeträge: <code>BVP × jeweiliger% ÷ Restprozent%</code><br>
+      Beispiel: Skonto 2% + Provision 5% = 7% → Restprozent = 93% → BVP = 93% von ZVP<br>
+      → Skonto = BVP × 2/93 · Provision = BVP × 5/93<br>
+      <strong>Nicht schrittweise dividieren</strong> (BVP ÷ 0,98 ÷ 0,95) – das ergibt andere Beträge!
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – SEK und Gemeinkosten</strong><br>
+      SEK sind Einzelkosten – sie werden <strong>direkt</strong> in das Kalkulationsschema eingetragen, <em>nicht</em> über den BAB verteilt. SEK erscheinen <strong>nicht im BAB</strong>! Häufiger Fehler: SEK als Gemeinkosten behandeln.
+    </div>
+
+    <h3 id="kap2-2">2.2 Sondereinzelkosten (SEK)</h3>
+    <div class="two-col">
+      <div class="content-card">
+        <strong>SEK der Fertigung → in FK</strong><br><br>
+        Direkt einem Fertigungsauftrag zurechenbar, aber keine Material- oder Lohnkosten.<br><br>
+        Beispiele: Werkzeugkosten für Sonderbearbeitung, Lizenzgebühren für Fertigungspatente, Modellkosten.
+      </div>
+      <div class="content-card">
+        <strong>SEK des Vertriebs → in SK</strong><br><br>
+        Direkt einem Kundenauftrag zurechenbar.<br><br>
+        Beispiele: Spezialverpackung für einen Kunden, Frachtkostenübernahme bei Sonderlieferung, Exportdokumentation für konkreten Auftrag.
+      </div>
+    </div>
+
+    <h3 id="kap2-3">2.3 HK der Produktion vs. HK des Umsatzes</h3>
+    <p>VwGK und VtGK werden auf die <strong>Herstellkosten des Umsatzes</strong> berechnet – nicht auf die HK der Produktion. Der Unterschied entsteht durch Bestandsveränderungen.</p>
+
+    <div class="notice info">
+      <strong>Praxisbeispiel – Warum HK-Umsatz, nicht HK-Produktion?</strong>
+      <table style="margin-top:0.5rem">
+        <thead><tr><th>Position</th><th>Betrag (€)</th></tr></thead>
+        <tbody>
+          <tr><td>Herstellkosten der Produktion (alle produzierten Stücke)</td><td>500.000</td></tr>
+          <tr><td>− Bestandsmehrung (z. B. 40.000 € mehr auf Lager)</td><td>40.000</td></tr>
+          <tr><td><strong>= Herstellkosten des Umsatzes (nur verkaufte Stücke)</strong></td><td><strong>460.000</strong></td></tr>
+        </tbody>
+      </table>
+      VwGK (5 %) und VtGK (3 %) werden auf 460.000 € berechnet – nicht auf 500.000 €. Verwaltung und Vertrieb fallen nur für die <em>verkaufte</em> Menge an.
+    </div>
+
+    <div class="notice info">
+      <strong>Querverbindung – Die drei KLR-Stufen im Zusammenspiel</strong><br>
+      ① <strong>Kostenartenrechnung</strong> → liefert Einzelkosten (FM, FL, SEK) direkt ins Kalkulationsschema.<br>
+      ② <strong>BAB (Kostenstellenrechnung)</strong> → liefert die Zuschlagssätze für MGK, FGK, VwGK, VtGK.<br>
+      ③ <strong>Kalkulation</strong> → kombiniert Einzelkosten + Zuschlagssätze → Selbstkosten → Angebotspreis.<br>
+      Ohne korrekten BAB kein korrekter Zuschlagssatz – ohne korrekten Zuschlagssatz kein korrekter Angebotspreis.
+    </div>
+
+    <h3 id="kap2-4">2.4 Rechenbeispiel – Differenzkalkulation (KÜHL GmbH)</h3>
+    <p>NVP vorgegeben (10.500 €) – gesucht ist der darin enthaltene Gewinn.</p>
+
+    <table>
+      <thead>
+        <tr><th>Position</th><th>%</th><th>Betrag (€)</th><th>Summe (€)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fertigungsmaterial</td><td></td><td>1.600,00</td><td></td></tr>
+        <tr><td>+ MGK</td><td>10 %</td><td>160,00</td><td></td></tr>
+        <tr><td><strong>= Materialkosten (I)</strong></td><td></td><td></td><td><strong>1.760,00</strong></td></tr>
+        <tr><td>Fertigungslöhne</td><td></td><td>2.000,00</td><td></td></tr>
+        <tr><td>+ FGK</td><td>110 %</td><td>2.200,00</td><td></td></tr>
+        <tr><td>+ SEK Fertigung</td><td></td><td>850,00</td><td></td></tr>
+        <tr><td><strong>= Fertigungskosten (II)</strong></td><td></td><td></td><td><strong>5.050,00</strong></td></tr>
+        <tr style="background:var(--color-bg-alt,#f5f5f5)"><td><strong>= Herstellkosten (I + II)</strong></td><td></td><td></td><td><strong>6.810,00</strong></td></tr>
+        <tr><td>+ VwGK</td><td>20 %</td><td>1.362,00</td><td></td></tr>
+        <tr><td>+ VtGK</td><td>8 %</td><td>544,80</td><td></td></tr>
+        <tr><td>+ SEK Vertrieb</td><td></td><td>450,00</td><td></td></tr>
+        <tr style="background:var(--color-bg-alt,#f5f5f5)"><td><strong>= Selbstkosten</strong></td><td></td><td></td><td><strong>9.166,80</strong></td></tr>
+        <tr><td>+ Gewinn (gesucht)</td><td>2,3 %</td><td>207,60</td><td></td></tr>
+        <tr><td><strong>= Barverkaufspreis (BVP)</strong></td><td>93 %</td><td></td><td><strong>9.374,40</strong></td></tr>
+        <tr><td>+ Kundenskonto</td><td>2 %</td><td>201,60</td><td></td></tr>
+        <tr><td>+ Vertreterprovision</td><td>5 %</td><td>504,00</td><td></td></tr>
+        <tr><td><strong>= Zielverkaufspreis (ZVP)</strong></td><td>100 %</td><td></td><td><strong>10.080,00</strong></td></tr>
+        <tr><td>+ Kundenrabatt</td><td>4 %</td><td>420,00</td><td></td></tr>
+        <tr style="background:var(--color-bg-alt,#f5f5f5)"><td><strong>= Nettoverkaufspreis (NVP, vorgegeben)</strong></td><td></td><td></td><td><strong>10.500,00</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.85rem;color:#555">Restprozent: 100% − 2% − 5% = 93% · Skonto = 9.374,40 × 2/93 = 201,60 € · Provision = 9.374,40 × 5/93 = 504,00 € · ZVP = 9.374,40 ÷ 0,93 = 10.080,00 €</p>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 3 – KALKULATIONSFORMEN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap3">3 · Kalkulationsformen: Vorwärts · Rückwärts · Differenz</h2>
+
+    <div class="pruef-box">
+      <strong>Merksatz – Drei Kalkulationsformen</strong><br>
+      <strong>Vorwärts:</strong> Kosten bekannt → Preis gesucht.<br>
+      <strong>Rückwärts:</strong> Preis vorgegeben → Kostenspielraum (meist Material) gesucht.<br>
+      <strong>Differenz:</strong> Kosten und Preis bekannt → Gewinn/Verlust gesucht.
+    </div>
+
+    <h3 id="kap3-1">3.1 Vorwärtskalkulation (progressiv)</h3>
+    <p><strong>Ausgangspunkt:</strong> Bekannte Kosten → Ermittlung des Nettoverkaufspreises. Standard-Vorkalkulation vor Auftragserteilung. Schema wird von oben nach unten durchgerechnet (FM → NVP).</p>
+
+    <h3 id="kap3-2">3.2 Rückwärtskalkulation (retrograd)</h3>
+    <p><strong>Ausgangspunkt:</strong> Marktpreis (NVP) ist vorgegeben → Berechnung, wie viel Fertigungsmaterial maximal kosten darf. Schema wird von unten nach oben gerechnet – jeder Schritt ist eine Division statt Addition.</p>
+
+    <div class="notice info">
+      <strong>Rechenbeispiel – Rückwärtskalkulation (Nordstahl GmbH)</strong><br>
+      Bekannte Daten: NVP = 1.200 €, FL = 200 €, SEK-F = 50 €. Zuschlagssätze: MGK 10%, FGK 100%, VwGK 15%, VtGK 8%, Gewinn 10%, Skonto 2%, Provision 4%, Rabatt 5%. Gesucht: max. FM.
+      <table style="margin-top:0.5rem">
+        <thead><tr><th>Schritt</th><th>Rechnung</th><th>Betrag (€)</th></tr></thead>
+        <tbody>
+          <tr><td>NVP (vorgegeben)</td><td></td><td>1.200,00</td></tr>
+          <tr><td>− Kundenrabatt 5 %</td><td>÷ 1,05263</td><td>1.140,00</td></tr>
+          <tr><td><strong>= ZVP</strong></td><td></td><td><strong>1.140,00</strong></td></tr>
+          <tr><td>− Provision 4 %</td><td>1.140 × 0,04</td><td>45,60</td></tr>
+          <tr><td>− Skonto 2 %</td><td>1.140 × 0,02</td><td>22,80</td></tr>
+          <tr><td><strong>= BVP</strong></td><td>1.140 − 45,60 − 22,80</td><td><strong>1.071,60</strong></td></tr>
+          <tr><td>− Gewinn 10 %</td><td>BVP ÷ 1,10 × 0,10</td><td>97,42</td></tr>
+          <tr><td><strong>= Selbstkosten (SK)</strong></td><td></td><td><strong>974,18</strong></td></tr>
+          <tr><td>− VwGK 15% + VtGK 8%</td><td>SK ÷ 1,23 × 0,23</td><td>182,19</td></tr>
+          <tr><td><strong>= Herstellkosten (HK)</strong></td><td></td><td><strong>791,99</strong></td></tr>
+          <tr><td>− FK (FL 200 + FGK 200 + SEK-F 50)</td><td></td><td>450,00</td></tr>
+          <tr><td><strong>= Materialkosten (MK)</strong></td><td></td><td><strong>341,99</strong></td></tr>
+          <tr><td>÷ 1,10 (wegen MGK 10 %)</td><td></td><td></td></tr>
+          <tr><td><strong>= max. Fertigungsmaterial (FM)</strong></td><td></td><td><strong>310,90</strong></td></tr>
+        </tbody>
+      </table>
+      Ergebnis: Das FM darf maximal 310,90 € kosten. Liegt der Marktpreis des Rohmaterials höher, ist der Auftrag nicht wirtschaftlich.
+    </div>
+
+    <h3 id="kap3-3">3.3 Differenzkalkulation</h3>
+    <div class="pruef-box">
+      <strong>Differenzkalkulation</strong><br>
+      Gewinn = Barverkaufspreis − Selbstkosten<br>
+      <span style="font-size:0.9rem">Dient der Kontrolle, ob ein Auftrag wirtschaftlich ist. Negativer Wert = Verlust → Preis erhöhen oder Kosten senken.</span>
+    </div>
+
+    <h3 id="kap3-4">3.4 Nachkalkulation</h3>
+    <p>Nach Auftragsabschluss werden die tatsächlichen <strong>Istkosten</strong> verwendet. Die Nachkalkulation vergleicht das geplante mit dem erzielten Ergebnis – Grundlage für zukünftige Kalkulationskorrekturen.</p>
+    <div class="notice info">
+      <strong>Praxisbeispiel – Vor- vs. Nachkalkulation (KÜHL GmbH)</strong><br>
+      Die Differenzkalkulation (Vorkalkulation) ergab: NVP = 10.500 €, Gewinn = 207,60 €. In der Nachkalkulation stellen sich höhere Istkosten heraus (FM = 1.650 € statt 1.600 €, FGK = 120 % statt 110 %). Die Selbstkosten steigen, der Gewinn sinkt. Aufgabe der Nachkalkulation: Abweichung erkennen und Ursache benennen.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 4 – PREISUNTERGRENZEN & MSS
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap4">4 · Preisuntergrenzen &amp; Maschinenstundensatz</h2>
+
+    <h3 id="kap4-1">4.1 Kurzfristige Preisuntergrenze (KPUG)</h3>
+
+    <div class="def-box">
+      <strong>Definition – Kurzfristige Preisuntergrenze</strong><br>
+      Der Preis deckt mindestens die <strong>variablen Stückkosten</strong> (Einzelkosten + variable Gemeinkosten). Die Fixkosten werden nicht gedeckt – entstehen aber ohnehin. Sinnvoll zur Überbrückung in Auftragsflauten.
+    </div>
+
+    <div class="pruef-box">
+      <strong>KPUG = variable Stückkosten = Einzelkosten + variable Gemeinkosten pro Stück</strong>
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Variable Gemeinkosten nicht vergessen</strong><br>
+      Viele Prüflinge setzen KPUG = Einzelkosten und vergessen den variablen GK-Anteil. Variable Gemeinkosten (z. B. Energiekosten, Akkordlöhne, Hilfsstoffe) <strong>stehen nicht im BAB</strong>, sondern in der Kostenartenrechnung – müssen bei der KPUG separat ermittelt werden.
+    </div>
+
+    <div class="notice info">
+      <strong>Praxisbeispiel – Wann KPUG akzeptieren?</strong><br>
+      Möbelhersteller: Selbstkosten 320 €/Stück, variable Kosten 190 €. Kunde bietet 210 €.<br>
+      <strong>Entscheidung:</strong> 210 € &gt; 190 € (KPUG) → Auftrag annehmen, da 20 € DB zur Fixkostendeckung beiträgt.<br>
+      <strong>Voraussetzung: freie Kapazitäten vorhanden!</strong> Bei voller Auslastung verdrängt ein KPUG-Auftrag einen vollkostendeckenden Auftrag.
+    </div>
+
+    <h3 id="kap4-2">4.2 Langfristige Preisuntergrenze (LPUG)</h3>
+
+    <div class="def-box">
+      <strong>Definition – Langfristige Preisuntergrenze</strong><br>
+      Der Preis deckt <strong>alle Kosten</strong> (variable + fixe = Selbstkosten). Unterhalb dieses Preises wird das Unternehmen mittelfristig illiquide, da Anlagen nicht ersetzt werden können (Kapitalverzehr).
+    </div>
+
+    <div class="pruef-box">
+      <strong>LPUG = Selbstkosten pro Stück = variable Stückkosten + fixe Stückkosten</strong>
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – „Preisuntergrenze" ohne Zusatz</strong><br>
+      Fragt die IHK nach der „Preisuntergrenze" ohne den Zusatz „kurzfristig", ist <strong>immer die langfristige Preisuntergrenze gemeint</strong> = Selbstkosten. Nur bei explizitem Hinweis auf Krisensituation / Zusatzauftrag gilt die KPUG.
+    </div>
+
+    <h3 id="kap4-3">4.3 Maschinenstundensatz (MSS)</h3>
+    <p>Bei stark automatisierter Fertigung sinken die Fertigungslöhne, während maschinenabhängige Kosten dominieren. Fertigungslöhne als FGK-Basis führen zu unrealistisch hohen Zuschlagssätzen.</p>
+    <p><strong>Lösung:</strong> Die FGK werden aufgeteilt in maschinenabhängige Kosten (MSS) und lohnabhängige Restgemeinkosten.</p>
+
+    <div class="notice warn">
+      <strong>Wichtig – MSS ersetzt FGK nicht vollständig</strong><br>
+      Der MSS erfasst nur die maschinenabhängigen FGK (AfA, Zinsen, Energie, Instandhaltung, Raumkosten der Maschine). Lohnabhängige FGK (z. B. Meisterlöhne, Qualitätssicherung, Fertigungsplanung) werden weiterhin als prozentualer Zuschlag auf Fertigungslöhne berechnet.
+    </div>
+
+    <div class="notice info">
+      <strong>Rechenbeispiel – Maschinenstundensatz</strong>
+      <table style="margin-top:0.5rem">
+        <thead><tr><th>Kostenart</th><th>Jahresbetrag (€)</th><th>Ermittlung</th></tr></thead>
+        <tbody>
+          <tr><td>Kalk. Abschreibung</td><td>18.000,00</td><td>WBW 90.000 € / 5 Jahre</td></tr>
+          <tr><td>Kalk. Zinsen</td><td>2.800,00</td><td>AK 80.000 € × 7 % / 2</td></tr>
+          <tr><td>Instandhaltung</td><td>2.500,00</td><td>Servicevertrag</td></tr>
+          <tr><td>Betriebsstoffe</td><td>750,00</td><td>Erfahrungswert</td></tr>
+          <tr><td>Energiekosten</td><td>2.340,00</td><td>10 kWh × 0,15 € × 1.560 Std.</td></tr>
+          <tr><td>Raumkosten</td><td>3.240,00</td><td>30 m² × 9 €/m² × 12 Monate</td></tr>
+          <tr><td><strong>Summe FGK (Maschine)</strong></td><td><strong>29.630,00</strong></td><td></td></tr>
+        </tbody>
+      </table>
+      Netto-Maschinenlaufzeit: 46 Wochen × 5 Tage × 7 Std. = 1.610 Std. brutto − Ausfallzeit = <strong>1.560 Std. netto</strong><br>
+      <strong>Maschinenstundensatz = 29.630 € ÷ 1.560 Std. = 18,99 €/Std.</strong><br><br>
+      Anwendung: Maschinenstunden × MSS = FGK-Betrag für das Produkt.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 5 – HANDELSKALKULATION
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap5">5 · Handelskalkulation</h2>
+
+    <div class="notice info">
+      <strong>Grundprinzip – Handelskalkulation immer netto</strong><br>
+      Die gesamte Handelskalkulation wird <strong>netto gerechnet – ohne Umsatzsteuer</strong>. Die USt ist ein durchlaufender Posten. Werden in der Prüfung Bruttopreise gegeben, muss die USt zuerst herausgerechnet werden.
+    </div>
+
+    <div class="def-box">
+      <strong>Abgrenzung zur Industriekalkulation</strong><br>
+      Der Handel kalkuliert nicht ab Fertigungsmaterial, sondern ab dem <strong>Einstandspreis</strong> (= Bezugspreis nach allen Liefererabzügen). Der einzige Gemeinkosten-Zuschlag ist der <strong>Handlungskostensatz</strong> (alle Handelsgemeinkosten zusammengefasst).
+    </div>
+
+    <h3 id="kap5-1">5.1 Einkaufspfad – Vom Listenpreis zum Einstandspreis</h3>
+
+    <table>
+      <thead><tr><th>Position</th><th>Betrag (€)</th></tr></thead>
+      <tbody>
+        <tr><td>Listenpreis (Lieferer)</td><td>3.200,00</td></tr>
+        <tr><td>− Liefererrabatt 20 %</td><td>640,00</td></tr>
+        <tr><td><strong>= Zieleinkaufspreis</strong></td><td><strong>2.560,00</strong></td></tr>
+        <tr><td>− Liefererskonto 3 %</td><td>76,80</td></tr>
+        <tr><td><strong>= Bareinkaufspreis</strong></td><td><strong>2.483,20</strong></td></tr>
+        <tr><td>+ Bezugskosten</td><td>0,00</td></tr>
+        <tr><td><strong>= Einstandspreis</strong></td><td><strong>2.483,20</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Einkaufsseite sauber vom Verkauf trennen</strong><br>
+      <strong>Liefererrabatt und Liefererskonto</strong> = Abzüge vom Listenpreis des Lieferers (Einkaufsseite → Einstandspreis).<br>
+      <strong>Kundenskonto und Kundenrabatt</strong> = Abzüge vom eigenen Verkaufspreis (Verkaufsseite → Angebotspreis).<br>
+      Verwechslung → falscher Einstandspreis.
+    </div>
+
+    <h3 id="kap5-2">5.2 Handlungskostensatz</h3>
+
+    <div class="pruef-box">
+      <strong>HKS% = Handlungskosten ÷ Warenaufwendungen × 100</strong><br>
+      Beispiel: 86.300 € ÷ 175.600 € × 100 = <strong>49,15 %</strong>
+    </div>
+
+    <h3 id="kap5-3">5.3 Verkaufspfad – Vollständige Handelskalkulation (Sicherheitsschrank)</h3>
+
+    <table>
+      <thead><tr><th>Position</th><th>%</th><th>Betrag (€)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Einstandspreis</strong></td><td></td><td><strong>2.483,20</strong></td></tr>
+        <tr><td>+ Handlungskosten</td><td>49,15 %</td><td>1.220,49</td></tr>
+        <tr><td><strong>= Selbstkosten</strong></td><td></td><td><strong>3.703,69</strong></td></tr>
+        <tr><td>+ Gewinn</td><td>12 %</td><td>444,44</td></tr>
+        <tr><td><strong>= Barverkaufspreis (BVP)</strong></td><td></td><td><strong>4.148,13</strong></td></tr>
+        <tr><td>+ Kundenskonto</td><td>2 %</td><td>84,86</td></tr>
+        <tr><td><strong>= Zielverkaufspreis (ZVP)</strong></td><td></td><td><strong>4.232,99</strong></td></tr>
+        <tr><td>+ Kundenrabatt</td><td>10 %</td><td>470,33</td></tr>
+        <tr><td><strong>= Angebotspreis (NVP)</strong></td><td></td><td><strong>4.703,32</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Gewinn auf Selbstkosten, nicht auf Verkaufspreis</strong><br>
+      Der Gewinnzuschlag wird auf die <strong>Selbstkosten</strong> berechnet – nicht auf den BVP oder NVP. Ein Gewinn von 10 % bedeutet: 10 % der Selbstkosten werden aufgeschlagen. Dieser Betrag ist kleiner als 10 % vom Verkaufspreis.
+    </div>
+
+    <h3 id="kap5-4">5.4 Kalkulationszuschlag vs. Handelsspanne</h3>
+    <div class="two-col">
+      <div class="content-card">
+        <strong>Kalkulationszuschlag (%)</strong><br>
+        <code>KZS = (NVP − EP) / EP × 100</code><br><br>
+        Aufschlag <strong>auf den Einstandspreis</strong><br>
+        Beispiel EP 100 €, NVP 150 €: 50/100 × 100 = <strong>50 %</strong><br>
+        „Ich schlage 50 % auf meinen Einkaufspreis auf."
+      </div>
+      <div class="content-card">
+        <strong>Handelsspanne (%)</strong><br>
+        <code>HS = (NVP − EP) / NVP × 100</code><br><br>
+        Anteil des Rohgewinns <strong>am Nettoverkaufspreis</strong><br>
+        Beispiel EP 100 €, NVP 150 €: 50/150 × 100 = <strong>33,33 %</strong><br>
+        „33,33 % meines Umsatzes ist Rohgewinn."
+      </div>
+    </div>
+    <div class="notice info">
+      Ein Zuschlag von 50 % entspricht immer einer Spanne von 33,33 %. Die Spanne kann <strong>niemals 100 % erreichen</strong> (NVP &gt; Rohgewinn immer).
+    </div>
+
+    <h3 id="kap5-5">5.5 Kalkulationsfaktor</h3>
+    <div class="pruef-box">
+      <strong>KF = KZS% / 100 + 1</strong><br>
+      Beispiel: 89,40 / 100 + 1 = <strong>1,894</strong> → Angebotspreis = Einstandspreis × 1,894<br>
+      <span style="font-size:0.9rem">Bedingung: gleiche Konditionen für alle Handelswaren</span>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 6 – PRÜFUNGSFRAGEN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap6">6 · Prüfungsfragen</h2>
+
+    <div class="notice warn">
+      Keine Musterlösungen – aktiv erarbeiten!
+    </div>
+
+    <h3>Block 1 – Grundlagen &amp; Kalkulationsverfahren</h3>
+    <ol>
+      <li>Erkläre den Unterschied zwischen Kostenträgerstückrechnung und Kostenträgerzeitrechnung. Welche Frage beantwortet jeweils welche? <em>(Unterschied + Funktion)</em></li>
+      <li>Nenne die vier Kalkulationsverfahren und ordne je einen Unternehmenstyp zu, für den das Verfahren geeignet ist. <em>(Zuordnung)</em></li>
+      <li>Was sind Sondereinzelkosten der Fertigung? Nenne zwei Beispiele und erkläre, warum sie nicht im BAB erscheinen. <em>(Prüfungsfalle)</em></li>
+    </ol>
+
+    <h3>Block 2 – Kalkulationsschema &amp; -formen</h3>
+    <ol start="4">
+      <li>Ein Produkt hat: FM = 240 €, FL = 180 €, SEK-F = 60 €, SEK-V = 40 €. Zuschlagssätze: MGK 12 %, FGK 90 %, VwGK 15 %, VtGK 8 %, Gewinn 10 %, Skonto 2 %, Provision 4 %, Rabatt 5 %. Berechne Selbstkosten und Nettoverkaufspreis vollständig. <em>(Vollkalkulation)</em></li>
+      <li>Was ist der Unterschied zwischen Vorwärts- und Rückwärtskalkulation? Nenne je ein Praxisbeispiel. <em>(Vergleich)</em></li>
+      <li>Bei der Differenzkalkulation ergibt sich ein negativer Wert für den Gewinn. Was bedeutet das und welche Handlungsoptionen gibt es? <em>(Interpretation)</em></li>
+    </ol>
+
+    <h3>Block 3 – Preisuntergrenzen &amp; MSS</h3>
+    <ol start="7">
+      <li>Ein Produkt hat Selbstkosten von 280 € und variable Kosten von 160 €. Ein Kunde bietet 190 € an. Soll der Auftrag angenommen werden? Begründe anhand beider Preisuntergrenzen. <em>(Entscheidungsaufgabe KPUG/LPUG)</em></li>
+      <li>Erkläre, warum bei stark automatisierter Fertigung der klassische FGK-Zuschlagssatz auf Fertigungslöhne problematisch wird. Was ist die Lösung? <em>(Verständnisfrage MSS)</em></li>
+      <li>Eine Maschine hat: AfA 15.000 €, Zinsen 2.400 €, Instandhaltung 1.800 €, Energie 1.950 €. Netto-Laufzeit 1.300 Std./Jahr. Berechne den Maschinenstundensatz. <em>(Berechnung MSS)</em></li>
+    </ol>
+
+    <h3>Block 4 – Handelskalkulation</h3>
+    <ol start="10">
+      <li>Ein Händler kauft: Listenpreis 500 €, Liefererrabatt 15 %, Liefererskonto 2 %, Bezugskosten 18 €. Berechne den Einstandspreis. <em>(Berechnung Einstandspreis)</em></li>
+      <li>Was ist der Unterschied zwischen Kalkulationszuschlag und Handelsspanne? Berechne beide für: EP = 120 €, NVP = 180 €. <em>(Prüfungsfalle – Bezugsgröße)</em></li>
+      <li>Was ist der Vorteil des Kalkulationsfaktors im Handel? Unter welcher Bedingung darf er für alle Produkte gleich angewendet werden? <em>(Anwendungsgrenze)</em></li>
+    </ol>
+
+    <h3>Transferaufgaben</h3>
+    <div class="notice warn">
+      <strong>T1 – Vorwärts- und Rückwärtskalkulation (Nordstahl GmbH)</strong><br>
+      Bekannte Daten: FM = 380 €, FL = 290 €, SEK-F = 120 €, SEK-V = 80 €. BAB-Zuschlagssätze: MGK 8 %, FGK 130 %, VwGK 18 %, VtGK 7 %. Gewinnzuschlag 12 %, Skonto 2 %, Provision 4 %, Rabatt 6 %.<br>
+      (a) Berechne den NVP (Vorwärtskalkulation). (b) Ein Wettbewerber bietet das Getriebe für 1.800 € an – welches FM darf höchstens anfallen (Rückwärtskalkulation)? (c) Ist der Wettbewerbspreis kostendeckend?
+    </div>
+    <div class="notice warn">
+      <strong>T2 – Handelskalkulation &amp; Preisuntergrenze (Elektrofachhändler)</strong><br>
+      Laptops: Listenpreis 900 €, Liefererrabatt 20 %, Skonto 3 %, Bezugskosten 15 €. Handlungskosten 35 % auf EP, Gewinn 10 %, Kundenskonto 2 %, Kundenrabatt 8 %. Variable Kosten pro Laptop: 650 €.<br>
+      (a) Berechne den vollständigen Angebotspreis. (b) Ermittle KZS und Handelsspanne. (c) Großkunde verhandelt 750 € – anhand KPUG und LPUG akzeptabel?
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         VERWANDTE THEMEN
+    ══════════════════════════════════════════════ -->
+    <div class="related-topics">
+      <h3>Verwandte Themen</h3>
+      <ul>
+        <li><a href="rewe_ls05.html">LS05 · Kostenstellenrechnung &amp; BAB</a> – liefert die Zuschlagssätze für die Kalkulation</li>
+        <li><a href="rewe_ls04.html">LS04 · Kostenartenrechnung</a> – liefert Einzelkosten und variable GK für KPUG</li>
+        <li><a href="rewe_ls03.html">LS03 · Grundlagen KLR</a> – Einzel-/Gemeinkosten, Deckungsbeitrag</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<footer class="page-footer">
+  <span>WFW Wiki · Rechnungswesen LS06</span>
+  <span>Stand: 28.06.2026</span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../css/pages.js"></script>
+<script src="../css/engine.js"></script>
+</body>
+</html>
