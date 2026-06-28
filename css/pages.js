@@ -1,8 +1,23 @@
-const WFW_WIKI = {
+// ============================================================
+// WIKI KONFIGURATION — zentrale Steuerdatei
+// Neue Seite hinzufügen = neuen Eintrag hier ergänzen.
+// Alles andere (Startseite, Sidebar, Suche) aktualisiert sich automatisch.
+// ============================================================
+
+const WIKI_CONFIG = {
+
+  title: "WFW Wiki",
+  subtitle: "IHK Wirtschaftsfachwirt · Lernunterlagen",
+  brand: "WFW",
+  footer: "IHK Wirtschaftsfachwirt · Nur für internen Gebrauch",
+
   modules: [
-    { id: "rewe", label: "Rechnungswesen", icon: "🧮", color: "#B42318" }
+    { id: "rewe", label: "Rechnungswesen", icon: "🧮", color: "#B42318" },
   ],
+
   pages: [
+
+    // ── Rechnungswesen ───────────────────────────────────────
     {
       id: "rewe_ls01",
       module: "rewe",
@@ -10,17 +25,18 @@ const WFW_WIKI = {
       file: "pages/rewe_ls01.html",
       status: "fertig",
       updated: "28.06.2026",
-      keywords: ["kaufmann", "rewe", "gob", "wirtschaftlichkeit", "buchführungspflicht", "fibu", "klr", "kosten", "leistungen"]
+      keywords: ["kaufmann", "istkaufmann", "formkaufmann", "kannkaufmann", "scheinkaufmann", "prokura", "durchgriffshaftung", "rechnungswesen", "rewe", "finanzbuchhaltung", "klr", "kosten", "leistung", "aufwand", "ertrag", "gob", "buchführungspflicht", "aufbewahrungsfristen", "wirtschaftlichkeit", "rentabilität", "produktivität", "imparitätsprinzip", "realisationsprinzip", "konstitutiv", "deklaratorisch", "eur", "hgb", "241a", "break-even"]
     },
     {
       id: "rewe_ls02",
       module: "rewe",
-      title: "LS02 · Grundlagen Fibu",
+      title: "LS02 · Grundlagen Finanzbuchhaltung",
       file: "pages/rewe_ls02.html",
       status: "fertig",
       updated: "28.06.2026",
-      keywords: ["buchführung", "bewertung", "abschreibung", "gwg", "fifo", "lifo", "inventur", "bilanz", "afa"]
+      keywords: ["finanzbuchhaltung", "fibu", "grundbuch", "hauptbuch", "nebenbuch", "jahresabschluss", "bilanz", "guv", "anhang", "bilanzansatz", "bilanzbewertung", "going concern", "niederstwertprinzip", "höchstwertprinzip", "anschaffungskosten", "abschreibung", "afa", "linear", "degressiv", "leistungsabschreibung", "gwg", "geringwertige wirtschaftsgüter", "sammelposten", "fifo", "lifo", "hifo", "bewertungsvereinfachung", "skonto", "rückstellung", "verbindlichkeit", "periodenfremder aufwand", "übergangsjahr", "debitoren", "kreditoren", "festwert", "gruppenbewertung", "durchschnittsbewertung"]
     },
+
     {
       id: "rewe_ls03",
       module: "rewe",
@@ -28,8 +44,9 @@ const WFW_WIKI = {
       file: "pages/rewe_ls03.html",
       status: "fertig",
       updated: "28.06.2026",
-      keywords: ["selbstkosten", "deckungsbeitrag", "einzelkosten", "gemeinkosten", "leistungen", "klr", "vollkosten", "teilkosten"]
+      keywords: ["klr", "kosten- und leistungsrechnung", "selbstkosten", "deckungsbeitrag", "wirtschaftlichkeit", "angebotspreis", "einzelkosten", "gemeinkosten", "fixkosten", "variable kosten", "fixkostendegression", "bab", "proportional", "degressiv", "progressiv", "neutraler aufwand", "zusatzkosten", "anderskosten", "grundkosten", "zweckaufwand", "kalkulatorischer unternehmerlohn", "kalkulatorische abschreibung", "wiederbeschaffungswert", "absatzleistung", "lagerleistung", "innerbetriebliche leistung", "bestandserhöhung", "kostenartenrechnung", "kostenstellenrechnung", "kostenträgerrechnung"]
     },
+
     {
       id: "rewe_ls04",
       module: "rewe",
@@ -37,8 +54,9 @@ const WFW_WIKI = {
       file: "pages/rewe_ls04.html",
       status: "fertig",
       updated: "28.06.2026",
-      keywords: ["kostengliederung", "mittelwerte", "istkosten", "normalkosten", "plankosten", "kostenartenrechnung", "variable kosten", "fixkosten"]
+      keywords: ["kostenartenrechnung", "kostengliederung", "einzelkosten", "gemeinkosten", "fixkosten", "variable kosten", "fixkostendegression", "proportionale kosten", "degressive kosten", "progressive kosten", "sprungfixe kosten", "intervall-fixe kosten", "mittelwertverfahren", "gewogener mittelwert", "gleitender mittelwert", "arithmetischer mittelwert", "lagerkarteikarte", "istkosten", "normalkosten", "plankosten", "istkostenrechnung", "normalkostenrechnung", "plankostenrechnung", "soll-ist-vergleich", "abweichungsanalyse", "kapazitätsgrenze", "stückkosten", "bab", "betriebsabrechnungsbogen"]
     },
+
     {
       id: "rewe_ls05",
       module: "rewe",
@@ -46,16 +64,7 @@ const WFW_WIKI = {
       file: "pages/rewe_ls05.html",
       status: "fertig",
       updated: "28.06.2026",
-      keywords: ["bab", "kostenstelle", "betriebsabrechnungsbogen", "ilv", "innerbetriebliche leistungsverrechnung", "zuschlagssatz", "fgk", "mgk", "vwgk", "vtgk"]
+      keywords: ["kostenstellenrechnung", "kostenstelle", "bab", "betriebsabrechnungsbogen", "hauptkostenstelle", "hilfskostenstelle", "primärkostenverteilung", "sekundärkostenverteilung", "ilv", "innerbetriebliche leistungsverrechnung", "anbauverfahren", "stufenleiterverfahren", "gleichungsverfahren", "zuschlagssatz", "mgk", "fgk", "vwgk", "vtgk", "materialgemeinkosten", "fertigungsgemeinkosten", "verwaltungsgemeinkosten", "vertriebsgemeinkosten", "fertigungsmaterial", "fertigungslöhne", "herstellkosten", "selbstkosten", "kalkulation", "zuschlagskalkulation", "verursachungsprinzip", "verteilungsschlüssel", "einproduktbetrieb", "mehrproduktbetrieb"]
     },
-    {
-      id: "rewe_ls06",
-      module: "rewe",
-      title: "LS06 · Kostenträgerrechnung & Kalkulation",
-      file: "pages/rewe_ls06.html",
-      status: "fertig",
-      updated: "28.06.2026",
-      keywords: ["kostenträger", "kalkulation", "zuschlagskalkulation", "selbstkosten", "herstellkosten", "barverkaufspreis", "nettoverkaufspreis", "zielverkaufspreis", "sek", "sondereinzelkosten", "vorwärtskalkulation", "rückwärtskalkulation", "differenzkalkulation", "nachkalkulation", "preisuntergrenze", "kpug", "lpug", "maschinenstundensatz", "mss", "handelskalkulation", "einstandspreis", "handlungskostensatz", "handelsspanne", "kalkulationszuschlag", "kalkulationsfaktor", "restprozent", "skonto", "provision", "kundenrabatt", "divisionskalkulation", "äquivalenzziffernkalkulation"]
-    }
   ]
 };
