@@ -1,0 +1,16 @@
+WFW Wiki — Update: Kachel-Navigation
+
+NEUE DATEIEN (einfach reinkopieren):
+  css/engine.js      ← ersetzt die alte engine.js
+  css/pages.js       ← ersetzt die alte pages.js (11 Module, neue Struktur)
+  css/tiles.css      ← NEU, muss in index.html eingebunden werden
+  pages/modul_*.html ← 11 neue Modul-Übersichtsseiten
+
+MANUELLE ÄNDERUNG IN index.html:
+  Nach der Zeile:
+    <link rel="stylesheet" href="css/style.css">
+  Diese Zeile einfügen:
+    <link rel="stylesheet" href="css/tiles.css">
+
+DANACH:
+  build-index.bat ausführen → commit+push

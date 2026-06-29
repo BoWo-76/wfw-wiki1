@@ -10,9 +10,17 @@ const WIKI_CONFIG = {
   footer: "IHK Wirtschaftsfachwirt · Nur für internen Gebrauch",
 
   modules: [
-    { id: "rewe", label: "Rechnungswesen", icon: "🧮", color: "#B42318" },
-    { id: "finanz", label: "Finanzmanagement", icon: "💰", color: "#1a5276" },
-    { id: "recht", label: "Recht und Steuern", icon: "⚖️", color: "#1d6a3a" },
+    { id: "basics",    label: "Basics Wirtschaftsrechnen",     icon: "🔢", color: "#6d4c9e", dates: "06.03.–02.04.2026", dozent: "Kreß & Steinhof" },
+    { id: "methodik",  label: "Lern- und Arbeitsmethodik",     icon: "📋", color: "#2980b9", dates: "07.04.2026",         dozent: "Dorn" },
+    { id: "vwlbwl",   label: "Volks- und Betriebswirtschaft", icon: "📊", color: "#16a085", dates: "08.04.–21.04.2026", dozent: "Steinhof" },
+    { id: "rewe",      label: "Rechnungswesen",                 icon: "🧮", color: "#B42318", dates: "22.04.–08.05.2026", dozent: "Rank" },
+    { id: "recht",     label: "Recht und Steuern",             icon: "⚖️", color: "#1d6a3a", dates: "11.05.–28.05.2026", dozent: "Rank" },
+    { id: "uf",        label: "Unternehmensführung",           icon: "🎯", color: "#c0392b", dates: "29.05.–12.06.2026", dozent: "Dern" },
+    { id: "bm",        label: "Betriebliches Management",      icon: "🧠", color: "#d35400", dates: "15.06.–26.06.2026", dozent: "Mazajka & Labonté" },
+    { id: "finanz",    label: "Finanzmanagement",              icon: "💰", color: "#1a5276", dates: "29.06.–24.07.2026", dozent: "Steinhof" },
+    { id: "marketing", label: "Marketing und Vertrieb",        icon: "📣", color: "#7d3c98", dates: "27.07.–07.08.2026", dozent: "Füßler" },
+    { id: "fuehrung",  label: "Führung & Zusammenarbeit",      icon: "👥", color: "#1e6b52", dates: "10.08.–21.08.2026", dozent: "Ramm" },
+    { id: "logistik",  label: "Logistik und Distribution",     icon: "🚚", color: "#7f6000", dates: "24.08.–04.09.2026", dozent: "Rank" },
   ],
 
   pages: [
@@ -28,71 +36,71 @@ const WIKI_CONFIG = {
     {
       id: "rewe_ls01", module: "rewe", title: "LS01 · Grundlagen Rechnungswesen",
       file: "pages/rewe_ls01.html", status: "fertig", updated: "28.06.2026",
-      keywords: ["kaufmann", "istkaufmann", "formkaufmann", "kannkaufmann", "scheinkaufmann", "prokura", "durchgriffshaftung", "rechnungswesen", "rewe", "finanzbuchhaltung", "klr", "kosten", "leistung", "aufwand", "ertrag", "gob", "buchführungspflicht", "aufbewahrungsfristen", "wirtschaftlichkeit", "rentabilität", "produktivität", "imparitätsprinzip", "realisationsprinzip", "konstitutiv", "deklaratorisch", "eur", "hgb", "241a", "break-even"]
+      keywords: ["kaufmann", "rechnungswesen", "rewe", "finanzbuchhaltung", "klr", "kosten", "leistung", "aufwand", "ertrag", "gob", "buchführungspflicht", "wirtschaftlichkeit", "rentabilität", "imparitätsprinzip", "realisationsprinzip"]
     },
     {
       id: "rewe_ls02", module: "rewe", title: "LS02 · Grundlagen Finanzbuchhaltung",
       file: "pages/rewe_ls02.html", status: "fertig", updated: "28.06.2026",
-      keywords: ["finanzbuchhaltung", "fibu", "grundbuch", "hauptbuch", "nebenbuch", "jahresabschluss", "bilanz", "guv", "anhang", "bilanzansatz", "bilanzbewertung", "going concern", "niederstwertprinzip", "höchstwertprinzip", "anschaffungskosten", "abschreibung", "afa", "linear", "degressiv", "leistungsabschreibung", "gwg", "geringwertige wirtschaftsgüter", "sammelposten", "fifo", "lifo", "hifo", "skonto", "rückstellung", "verbindlichkeit", "debitoren", "kreditoren", "festwert", "durchschnittsbewertung"]
+      keywords: ["finanzbuchhaltung", "fibu", "jahresabschluss", "bilanz", "guv", "abschreibung", "afa", "gwg", "sammelposten", "fifo", "lifo", "rückstellung", "debitoren", "kreditoren"]
     },
     {
       id: "rewe_ls03", module: "rewe", title: "LS03 · Grundlagen KLR",
       file: "pages/rewe_ls03.html", status: "fertig", updated: "28.06.2026",
-      keywords: ["klr", "kosten- und leistungsrechnung", "selbstkosten", "deckungsbeitrag", "wirtschaftlichkeit", "einzelkosten", "gemeinkosten", "fixkosten", "variable kosten", "fixkostendegression", "bab", "neutraler aufwand", "kalkulatorischer unternehmerlohn", "kalkulatorische abschreibung", "wiederbeschaffungswert", "kostenartenrechnung", "kostenstellenrechnung", "kostenträgerrechnung"]
+      keywords: ["klr", "selbstkosten", "deckungsbeitrag", "einzelkosten", "gemeinkosten", "fixkosten", "variable kosten", "fixkostendegression", "bab", "kostenartenrechnung", "kostenstellenrechnung", "kostenträgerrechnung"]
     },
     {
       id: "rewe_ls04", module: "rewe", title: "LS04 · Kostenartenrechnung",
       file: "pages/rewe_ls04.html", status: "fertig", updated: "28.06.2026",
-      keywords: ["kostenartenrechnung", "kostengliederung", "einzelkosten", "gemeinkosten", "fixkosten", "variable kosten", "fixkostendegression", "proportionale kosten", "degressive kosten", "progressive kosten", "sprungfixe kosten", "mittelwertverfahren", "gewogener mittelwert", "gleitender mittelwert", "istkosten", "normalkosten", "plankosten", "soll-ist-vergleich", "abweichungsanalyse", "stückkosten", "betriebsabrechnungsbogen"]
+      keywords: ["kostenartenrechnung", "einzelkosten", "gemeinkosten", "fixkosten", "variable kosten", "mittelwertverfahren", "istkosten", "normalkosten", "plankosten", "soll-ist-vergleich", "abweichungsanalyse"]
     },
     {
       id: "rewe_ls05", module: "rewe", title: "LS05 · Kostenstellenrechnung & BAB",
       file: "pages/rewe_ls05.html", status: "fertig", updated: "28.06.2026",
-      keywords: ["kostenstellenrechnung", "kostenstelle", "bab", "betriebsabrechnungsbogen", "hauptkostenstelle", "hilfskostenstelle", "primärkostenverteilung", "sekundärkostenverteilung", "ilv", "innerbetriebliche leistungsverrechnung", "anbauverfahren", "stufenleiterverfahren", "gleichungsverfahren", "zuschlagssatz", "mgk", "fgk", "vwgk", "vtgk", "fertigungsmaterial", "fertigungslöhne", "herstellkosten", "selbstkosten", "zuschlagskalkulation", "verursachungsprinzip"]
+      keywords: ["kostenstellenrechnung", "kostenstelle", "bab", "betriebsabrechnungsbogen", "ilv", "innerbetriebliche leistungsverrechnung", "zuschlagssatz", "mgk", "fgk", "vwgk", "vtgk"]
     },
     {
       id: "rewe_ls06", module: "rewe", title: "LS06 · Kostenträgerrechnung & Kalkulation",
       file: "pages/rewe_ls06.html", status: "fertig", updated: "28.06.2026",
-      keywords: ["kostenträger", "kalkulation", "zuschlagskalkulation", "differenzierende zuschlagskalkulation", "divisionskalkulation", "selbstkosten", "herstellkosten", "barverkaufspreis", "bvp", "nettoverkaufspreis", "nvp", "zielverkaufspreis", "zvp", "sek", "sondereinzelkosten", "vorwärtskalkulation", "rückwärtskalkulation", "differenzkalkulation", "nachkalkulation", "restprozent", "skonto", "provision", "kundenrabatt", "preisuntergrenze", "kpug", "lpug", "maschinenstundensatz", "mss", "handelskalkulation", "einstandspreis", "handlungskostensatz", "handelsspanne", "kalkulationszuschlag", "kalkulationsfaktor"]
+      keywords: ["kostenträger", "kalkulation", "zuschlagskalkulation", "selbstkosten", "barverkaufspreis", "bvp", "nvp", "zvp", "sek", "vorwärtskalkulation", "rückwärtskalkulation", "preisuntergrenze", "kpug", "lpug", "maschinenstundensatz", "handelskalkulation", "handelsspanne", "kalkulationszuschlag"]
     },
     {
       id: "rewe_ls07", module: "rewe", title: "LS07 · Voll- und Teilkostenrechnung",
       file: "pages/rewe_ls07.html", status: "fertig", updated: "29.06.2026",
-      keywords: ["vollkostenrechnung", "teilkostenrechnung", "deckungsbeitragsrechnung", "deckungsbeitrag", "stückdeckungsbeitrag", "db", "proportionalisierungsfehler", "fixkostendegression", "leerkosten", "nutzkosten", "betriebsergebnis", "break-even", "break-even-point", "bep", "gewinnschwelle", "zusatzauftrag", "engpass", "engpassoptimierung", "relativer deckungsbeitrag", "dbrel", "sortimentsbereinigung", "fixkostenremanenz", "kpug", "lpug", "produktionsprogramm"]
+      keywords: ["vollkostenrechnung", "teilkostenrechnung", "deckungsbeitrag", "stückdeckungsbeitrag", "proportionalisierungsfehler", "leerkosten", "break-even", "bep", "gewinnschwelle", "zusatzauftrag", "engpass", "relativer deckungsbeitrag", "fixkostenremanenz"]
     },
     {
       id: "rewe_ls08", module: "rewe", title: "LS08 · Auswertung betriebswirtschaftlicher Zahlen",
       file: "pages/rewe_ls08.html", status: "fertig", updated: "29.06.2026",
-      keywords: ["kennzahlen", "auswertung", "bilanzanalyse", "adressaten", "jahresabschluss", "grundzahlen", "verhältniszahlen", "gliederungszahl", "beziehungszahl", "indexzahl", "bilanzaufbereitung", "eigenkapitalquote", "verschuldungsgrad", "liquidität", "rentabilität", "eigenkapitalrentabilität", "ekr", "gesamtkapitalrentabilität", "gkr", "umsatzrentabilität", "ur", "fremdkapitalzinsen", "leverage-effekt", "zeitvergleich", "betriebsvergleich", "berichtswesen", "standardbericht", "abweichungsbericht", "bedarfsbericht"]
+      keywords: ["kennzahlen", "bilanzanalyse", "verhältniszahlen", "bilanzaufbereitung", "eigenkapitalquote", "eigenkapitalrentabilität", "ekr", "gesamtkapitalrentabilität", "gkr", "umsatzrentabilität", "leverage-effekt", "berichtswesen", "standardbericht", "abweichungsbericht", "bedarfsbericht"]
     },
     {
       id: "rewe_ls09", module: "rewe", title: "LS09 · Planungsrechnung",
       file: "pages/rewe_ls09.html", status: "fertig", updated: "29.06.2026",
-      keywords: ["planungsrechnung", "planung", "planungsebenen", "strategische planung", "taktische planung", "operative planung", "budgetplanung", "controlling", "ergebnisplanung", "absatzplanung", "top-down", "bottom-up", "gegenstromverfahren", "regelkreis", "soll-ist-vergleich", "abweichungsanalyse", "preisabweichung", "verbrauchsabweichung", "beschäftigungsabweichung", "leerkosten", "budgetierung", "budget", "budgetkontrolle"]
+      keywords: ["planungsrechnung", "planungsebenen", "strategische planung", "taktische planung", "operative planung", "ergebnisplanung", "absatzplanung", "top-down", "bottom-up", "gegenstromverfahren", "regelkreis", "abweichungsanalyse", "budgetierung", "budget"]
     },
 
     // ── Finanzmanagement ─────────────────────────────────────
     {
       id: "finanz_ls01", module: "finanz", title: "LS01 · Investitionsrechnung",
       file: "pages/finanz_ls01.html", status: "fertig", updated: "29.06.2026",
-      keywords: ["investition", "finanzierung", "investitionsarten", "sachinvestition", "finanzinvestition", "ersatzinvestition", "erweiterungsinvestition", "rationalisierungsinvestition", "statische verfahren", "dynamische verfahren", "kostenvergleichsrechnung", "gewinnvergleichsrechnung", "rentabilitätsrechnung", "amortisationsrechnung", "durchschnittsmethode", "kumulationsmethode", "kapitalwertmethode", "kapitalwert", "annuitätenmethode", "annuität", "kwf", "bwf", "interner zinsfuß", "regula falsi", "abzinsung", "aufzinsung", "wirtschaftliche nutzungsdauer", "kalkulationszinssatz", "wiederbeschaffungswert", "wbw", "amortisationsdauer"]
+      keywords: ["investition", "finanzierung", "investitionsarten", "statische verfahren", "dynamische verfahren", "kostenvergleichsrechnung", "kapitalwertmethode", "kapitalwert", "annuitätenmethode", "interner zinsfuß", "abzinsung", "aufzinsung", "wirtschaftliche nutzungsdauer", "amortisationsdauer"]
     },
 
     // ── Recht und Steuern ────────────────────────────────────
     {
       id: "recht_ls01", module: "recht", title: "LS01 · Grundlagen des Rechts",
       file: "pages/recht_ls01.html", status: "fertig", updated: "29.06.2026",
-      keywords: ["rechtsordnung", "öffentliches recht", "privatrecht", "subordinationstheorie", "rechtssubjekte", "natürliche personen", "juristische personen", "rechtsobjekte", "sachen", "tiere", "rechtsfähigkeit", "geschäftsfähigkeit", "geschäftsunfähigkeit", "beschränkte geschäftsfähigkeit", "taschengeldparagraf", "§ 110 bgb", "§ 107 bgb", "§ 113 bgb", "deliktsfähigkeit", "rechtsgeschäfte", "willenserklärung", "konkludentes handeln", "stellvertretung", "vollmacht", "bote", "vertreter", "§ 164 bgb", "formfreiheit", "schriftform", "beglaubigung", "beurkundung", "nichtigkeit", "anfechtbarkeit", "schwebende unwirksamkeit", "irrtum", "erklärungsirrtum", "inhaltsirrtum", "eigenschaftsirrtum", "motivirrtum", "arglistige täuschung", "§ 119 bgb", "§ 123 bgb", "ex tunc", "einwilligung", "genehmigung"]
+      keywords: ["rechtsordnung", "öffentliches recht", "privatrecht", "rechtssubjekte", "rechtsfähigkeit", "geschäftsfähigkeit", "taschengeldparagraf", "deliktsfähigkeit", "rechtsgeschäfte", "willenserklärung", "stellvertretung", "formfreiheit", "nichtigkeit", "anfechtbarkeit", "irrtum", "arglistige täuschung"]
     },
     {
       id: "recht_ls02", module: "recht", title: "LS02 · Schuldrecht & AGB",
       file: "pages/recht_ls02.html", status: "fertig", updated: "29.06.2026",
-      keywords: ["schuldrecht", "schuldverhältnis", "§ 241 bgb", "gläubiger", "schuldner", "vertragsfreiheit", "abschlussfreiheit", "inhaltsfreiheit", "formfreiheit", "aufhebungsfreiheit", "§ 134 bgb", "§ 138 bgb", "sittenwidrigkeit", "wucher", "hauptleistungspflichten", "nebenpflichten", "rücksichtnahmepflichten", "§ 433 bgb", "leistungsstörungen", "schuldnerverzug", "§ 286 bgb", "mahnung", "kalendertermin", "unmöglichkeit", "§ 275 bgb", "annahmeverzug", "§ 293 bgb", "agb", "allgemeine geschäftsbedingungen", "§ 305 bgb", "individualabrede", "überraschende klauseln", "§ 307 bgb", "inhaltskontrolle", "treu und glauben", "§ 242 bgb", "generalklausel", "gerichtsstand", "sachliche zuständigkeit", "örtliche zuständigkeit", "amtsgericht", "landgericht", "erfüllungsort", "§ 269 bgb", "holschuld", "schickschuld", "bringschuld"]
+      keywords: ["schuldrecht", "schuldverhältnis", "gläubiger", "schuldner", "vertragsfreiheit", "hauptleistungspflichten", "nebenpflichten", "schuldnerverzug", "mahnung", "unmöglichkeit", "annahmeverzug", "agb", "allgemeine geschäftsbedingungen", "überraschende klauseln", "treu und glauben", "gerichtsstand", "erfüllungsort", "holschuld", "schickschuld", "bringschuld"]
     },
     {
       id: "recht_ls03", module: "recht", title: "LS03 · Kaufvertrag & Vertragsarten",
       file: "pages/recht_ls03.html", status: "fertig", updated: "29.06.2026",
-      keywords: ["kaufvertrag", "§ 433 bgb", "angebot", "annahme", "§ 145 bgb", "§ 147 bgb", "§ 150 bgb", "veränderte annahme", "essentialia negotii", "invitatio ad offerendum", "verbindliches angebot", "freibleibend", "supermarkt", "trennungsprinzip", "abstraktionsprinzip", "verpflichtungsgeschäft", "verfügungsgeschäft", "§ 929 bgb", "eigentum", "besitz", "§ 854 bgb", "§ 903 bgb", "mietvertrag", "§ 535 bgb", "dienstvertrag", "§ 611 bgb", "werkvertrag", "§ 631 bgb", "darlehen", "§ 488 bgb", "leasing", "dienst vs. werk", "verbrauchsgüterkauf", "§ 474 bgb", "gewährleistung", "fernabsatzvertrag", "§ 312c bgb", "widerrufsrecht", "§ 355 bgb", "14 tage", "widerruf vs. anfechtung"]
+      keywords: ["kaufvertrag", "angebot", "annahme", "invitatio ad offerendum", "veränderte annahme", "trennungsprinzip", "abstraktionsprinzip", "verpflichtungsgeschäft", "verfügungsgeschäft", "eigentum", "besitz", "mietvertrag", "dienstvertrag", "werkvertrag", "darlehen", "leasing", "dienst vs. werk", "verbrauchsgüterkauf", "fernabsatz", "widerrufsrecht"]
     },
   ]
 };
