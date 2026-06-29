@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Über dieses Wiki – WFW Wiki</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .about-logo {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #1d6a3a;
+    }
+    .about-logo img {
+      height: 56px;
+      width: auto;
+    }
+    .about-logo-text h2 {
+      margin: 0 0 0.2rem 0;
+      font-size: 1.1rem;
+      color: #1d6a3a;
+    }
+    .about-logo-text p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+    .stat-card {
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+    }
+    .stat-card .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1d6a3a;
+      line-height: 1;
+    }
+    .stat-card .stat-label {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 0.3rem;
+      font-family: Arial, sans-serif;
+    }
+    .module-overview {
+      margin: 1rem 0;
+    }
+    .module-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    .module-row:last-child { border-bottom: none; }
+    .module-icon {
+      font-size: 1.4rem;
+      width: 2rem;
+      text-align: center;
+    }
+    .module-info { flex: 1; }
+    .module-info strong { display: block; font-size: 0.95rem; }
+    .module-info span { font-size: 0.82rem; color: #666; }
+    .module-count {
+      font-size: 0.82rem;
+      color: #fff;
+      background: #1d6a3a;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .tech-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin: 0.8rem 0;
+    }
+    .tech-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: #444;
+    }
+    .tech-item::before {
+      content: "✓";
+      color: #1d6a3a;
+      font-weight: 700;
+    }
+    .fiverr-box {
+      background: linear-gradient(135deg, #f0f7f3 0%, #e8f4ef 100%);
+      border: 1px solid #b8ddc8;
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      margin: 1.2rem 0;
+    }
+    .fiverr-box h3 {
+      color: #1d6a3a;
+      margin: 0 0 0.6rem 0;
+      font-size: 1rem;
+    }
+    .fiverr-box p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html">WFW<span>Wiki</span></a>
+  <div class="search-wrap">
+    <input id="search-input" type="search" placeholder="Thema suchen …" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+  <a href="../pages/about.html" class="topbar-logo">
+    <img src="../images/bowo-logo.svg" alt="BoWo – Boris Wolff" height="36">
+  </a>
+</div>
+
+<div class="layout">
+  <nav class="sidebar"></nav>
+  <main class="main">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Startseite</a> › Über dieses Wiki
+    </div>
+    <div class="page-header">
+      <div class="kicker">WFW Wiki</div>
+      <h1>Über dieses Wiki</h1>
+      <div class="meta">
+        <span>IHK Wirtschaftsfachwirt · Persönliches Lernwiki</span>
+        <span>Stand: 29.06.2026</span>
+      </div>
+    </div>
+
+    <!-- Logo & Autor -->
+    <div class="about-logo">
+      <img src="../images/bowo-logo.svg" alt="BoWo Logo – Boris Wolff Consulting & Documentation">
+      <div class="about-logo-text">
+        <h2>Boris Wolff</h2>
+        <p>Logistik- &amp; Administrationsfachmann · IHK Wirtschaftsfachwirt (in Ausbildung)<br>
+        Trier, Deutschland · Freelance: Prozessdokumentation, SOPs, interne Wiki-Systeme</p>
+      </div>
+    </div>
+
+    <!-- Statistiken -->
+    <h2 id="inhalt">Inhalt auf einen Blick</h2>
+
+    <div class="stat-grid" id="stat-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="stat-pages">–</div>
+        <div class="stat-label">Lernseiten</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-modules">–</div>
+        <div class="stat-label">Module</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-fertig">–</div>
+        <div class="stat-label">Fertig gestellt</div>
+      </div>
+    </div>
+
+    <!-- Module -->
+    <h2 id="module">Module</h2>
+
+    <div class="module-overview" id="module-overview">
+      <!-- wird per JS aus pages.js befüllt -->
+    </div>
+
+    <!-- Zweck -->
+    <h2 id="zweck">Worum geht es?</h2>
+
+    <p>Dieses Wiki ist ein persönliches Lernwerkzeug, das parallel zur berufsbegleitenden IHK-Prüfungsvorbereitung <strong>Wirtschaftsfachwirt</strong> entstanden ist. Das Programm umfasst Inhalte, die normalerweise auf 2–3 Jahre verteilt werden, und wird hier in einem 7-Monats-Kompaktkurs absolviert.</p>
+
+    <p>Anstatt Notizen in PDFs oder Heftchen zu sammeln, wurde ein strukturiertes, durchsuchbares HTML-Wiki aufgebaut – mit einheitlichem Design, farbcodierten Boxen für Definitionen, Prüfungsfallen und Merksätzen sowie Volltextsuche über alle Skripte hinweg.</p>
+
+    <!-- Technische Details -->
+    <h2 id="technik">Technische Umsetzung</h2>
+
+    <div class="tech-list">
+      <div class="tech-item">Statisches HTML – kein CMS, keine Datenbank</div>
+      <div class="tech-item">Volltextsuche via Lunr.js</div>
+      <div class="tech-item">Automatische Sidebar &amp; Startseite per engine.js</div>
+      <div class="tech-item">Responsive &amp; druckoptimiert</div>
+      <div class="tech-item">Hosting: GitHub Pages (kostenlos)</div>
+      <div class="tech-item">Versionierung: GitHub Desktop</div>
+      <div class="tech-item">Zuletzt-besucht-Tracker (localStorage)</div>
+      <div class="tech-item">Farbsystem: Definitionen, Merksätze, Prüfungsfallen</div>
+    </div>
+
+    <!-- Fiverr-Hinweis -->
+    <div class="fiverr-box">
+      <h3>💼 Portfolio-Demo</h3>
+      <p>Dieses Wiki dient gleichzeitig als Demonstration für Freelance-Leistungen auf Fiverr. Es zeigt, wie interne Wissensdatenbanken, SOPs und Prozessdokumentationen als sauberes, pflegeleichtes HTML-Wiki aufgebaut werden können – ohne teure Software, ohne laufende Lizenzkosten, vollständig im eigenen Browser nutzbar.</p>
+    </div>
+
+    <h2 id="kontakt">Kontakt</h2>
+    <p>Boris Wolff · Trier, Deutschland<br>
+    Fiverr: <a href="https://www.fiverr.com" target="_blank">fiverr.com</a> (Prozessdokumentation · SOPs · Wiki-Systeme)</p>
+
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div>WFW Wiki · Boris Wolff · Trier</div>
+  <div>Stand: 29.06.2026</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../css/pages.js"></script>
+<script src="../css/engine.js"></script>
+<script>
+  // Statistiken und Module aus pages.js befüllen
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof WIKI_CONFIG === 'undefined') return;
+
+    const pages = WIKI_CONFIG.pages || [];
+    const modules = WIKI_CONFIG.modules || [];
+    const fertig = pages.filter(p => p.status === 'fertig').length;
+
+    document.getElementById('stat-pages').textContent = pages.length;
+    document.getElementById('stat-modules').textContent = modules.length;
+    document.getElementById('stat-fertig').textContent = fertig;
+
+    const container = document.getElementById('module-overview');
+    modules.forEach(m => {
+      const modulePages = pages.filter(p => p.module === m.id);
+      const fertigCount = modulePages.filter(p => p.status === 'fertig').length;
+      const row = document.createElement('div');
+      row.className = 'module-row';
+      row.innerHTML = `
+        <div class="module-icon">${m.icon}</div>
+        <div class="module-info">
+          <strong>${m.label}</strong>
+          <span>${modulePages.map(p => p.title.split('·')[0].trim()).join(' · ')}</span>
+        </div>
+        <div class="module-count">${fertigCount} / ${modulePages.length}</div>
+      `;
+      container.appendChild(row);
+    });
+  });
+</script>
+</body>
+</html>

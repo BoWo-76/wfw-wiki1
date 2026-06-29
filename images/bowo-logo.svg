@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" width="220" height="52">
+  <circle cx="26" cy="26" r="24" fill="#1d6a3a"/>
+  <text x="26" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#ffffff" letter-spacing="0.5">BoWo</text>
+  <line x1="56" y1="26" x2="58" y2="26" stroke="#1d6a3a" stroke-width="1"/>
+  <text x="64" y="20" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#1d6a3a" letter-spacing="2">BORIS WOLFF</text>
+  <text x="64" y="35" text-anchor="start" font-family="Arial, sans-serif" font-size="8.5" font-weight="400" fill="#888888" letter-spacing="1.5">CONSULTING &amp; DOCUMENTATION</text>
+</svg>
