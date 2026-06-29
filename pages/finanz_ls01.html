@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LS01 · Investitionsrechnung – WFW Wiki</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-brand" href="../index.html">WFW Wiki</a>
+    <div class="topbar-search">
+      <input type="search" id="search-input" placeholder="Suchen …" autocomplete="off">
+      <div id="search-results" class="search-dropdown"></div>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨 Drucken</button>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar"></nav>
+
+  <main class="main">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Start</a> › <span>Finanzmanagement</span> › <span>LS01</span>
+    </div>
+
+    <div class="page-header">
+      <div class="page-header-module">Finanzmanagement · LS01</div>
+      <h1 class="page-header-title">Investitionsrechnung</h1>
+      <p class="page-header-sub">Investitionsarten · Investitionsentscheidungen · Statische und dynamische Verfahren · Wirtschaftliche Nutzungsdauer</p>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 1 – INVESTITION UND FINANZIERUNG
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap1">1 · Investition und Finanzierung</h2>
+
+    <h3 id="kap1-1">1.1 Zusammenhang Investition und Finanzierung</h3>
+
+    <div class="def-box">
+      <strong>Definition – Investition &amp; Finanzierung</strong><br>
+      <strong>Investition</strong> = Verwendung finanzieller Mittel für Vermögensteile → Aktivseite der Bilanz (Mittelverwendung)<br>
+      <strong>Finanzierung</strong> = Beschaffung von Kapital → Passivseite der Bilanz (Mittelherkunft)
+    </div>
+
+    <div class="notice ok">
+      <strong>Merksatz</strong><br>
+      Summe Aktivseite = Summe Passivseite → <strong>Keine Investition ohne Finanzierung und umgekehrt.</strong>
+    </div>
+
+    <h3 id="kap1-2">1.2 Investitionsarten</h3>
+
+    <h4>Nach dem Objekt</h4>
+    <table>
+      <thead>
+        <tr><th>Art</th><th>Beschreibung</th><th>Beispiele</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Immaterielle Investitionen</strong></td><td>Ausgaben zur Stärkung der Wettbewerbsfähigkeit</td><td>Lizenzen, Schutzrechte, Geschäftswerte, Personalentwicklung</td></tr>
+        <tr><td><strong>Real-/Sachinvestitionen</strong></td><td>Beschaffung von Sachgütern (Anlage- und Umlaufvermögen)</td><td>Bewegliche Sachen (Maschinen, Vorräte), unbewegliche Sachen (Grundstücke, Gebäude)</td></tr>
+        <tr><td><strong>Finanzinvestitionen</strong></td><td>Beschaffung von Forderungs- oder Beteiligungsrechten</td><td>Aktien, Wertpapiere, Geschäftsanteile, Rentenpapiere</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Nach dem Planungshorizont</h4>
+    <table>
+      <thead>
+        <tr><th>Horizont</th><th>Bedeutung</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Strategisch</strong></td><td>Langfristig, grundlegende Unternehmensausrichtung</td></tr>
+        <tr><td><strong>Taktisch</strong></td><td>Mittelfristig, Umsetzung strategischer Vorgaben</td></tr>
+        <tr><td><strong>Operativ</strong></td><td>Kurzfristig, laufender Geschäftsbetrieb</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Nach dem Zweck</h4>
+    <table>
+      <thead>
+        <tr><th>Art</th><th>Beschreibung</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Gründungs-/Errichtungsinvestitionen</strong></td><td>Erstmalige Grundausstattung bei Unternehmensstart</td></tr>
+        <tr><td><strong>Ersatzinvestitionen</strong></td><td>Alte Vermögensgegenstände werden durch neue ersetzt</td></tr>
+        <tr><td><strong>Erweiterungs-/Ergänzungsinvestitionen</strong></td><td>Kapazitätserweiterung, Schaffung zusätzlicher Kapazitäten</td></tr>
+        <tr><td><strong>Rationalisierungsinvestitionen</strong></td><td>Prozessoptimierung, Produktivitätssteigerung (verbesserte Technologie)</td></tr>
+        <tr><td><strong>Sicherungs-/Unabhängigkeitsinvestitionen</strong></td><td>Steigerung der Sicherheit/Unabhängigkeit, z. B. gegenüber Lieferanten oder Kunden</td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice info">
+      <strong>Zusatzwissen (nicht Bestandteil des Dozentenskripts)</strong><br>
+      Fachbuch unterscheidet zusätzlich: Netto- vs. Bruttoinvestitionen (Brutto = Netto + Reinvestitionen), Umstellungs- und Diversifizierungsinvestitionen sowie Desinvestitionen (Verkauf stillgelegter Anlagen).
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 2 – INVESTITIONSENTSCHEIDUNGEN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap2">2 · Investitionsentscheidungen</h2>
+
+    <h3 id="kap2-1">2.1 Fragestellungen</h3>
+    <ul>
+      <li><strong>Einzelentscheidung:</strong> Lohnt sich diese Investition überhaupt?</li>
+      <li><strong>Auswahlentscheidung:</strong> Welche von mehreren Alternativen ist die vorteilhafteste?</li>
+      <li><strong>Wirtschaftliche Nutzungsdauer / optimaler Ersatzzeitpunkt:</strong> Wie lange soll eine Anlage betrieben werden?</li>
+      <li><strong>Investitions- und Programmplanung:</strong> Welche Kombination von Investitionen ist optimal?</li>
+    </ul>
+
+    <h3 id="kap2-2">2.2 Phasen der Investitionsentscheidung</h3>
+    <table>
+      <thead>
+        <tr><th>Phase</th><th>Inhalt</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1. Anregungsphase</strong></td><td>Interne und externe Impulse mit Beschreibung von Dringlichkeit und erwarteten Vor-/Nachteilen</td></tr>
+        <tr><td><strong>2. Suchphase</strong></td><td>Festlegung der Bewertungskriterien (quantitativ + qualitativ) sowie Suche nach Alternativlösungen</td></tr>
+        <tr><td><strong>3. Entscheidungsphase</strong></td><td>Zusammenführung und Gewichtung der ermittelten Werte → Auswahl der optimalen Alternative</td></tr>
+        <tr><td><strong>4. Durchführungsphase</strong></td><td>Vorbereitung und Umsetzung der Investitionsmaßnahme</td></tr>
+        <tr><td><strong>5. Kontrollphase</strong></td><td>Soll-Ist-Vergleich, Analyse von Abweichungen, Erfahrungswerte für künftige Planungen</td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice info">
+      <strong>Hinweis</strong><br>
+      Bezeichnung und Anzahl der Phasen sind in der Literatur nicht einheitlich. Steinhofs Skript nennt diese Phasen nicht explizit — sie stammen aus dem Fachbuch und sind eine sinnvolle Ergänzung.
+    </div>
+
+    <h3 id="kap2-3">2.3 Kriterien der Investitionsentscheidung</h3>
+
+    <div class="two-col">
+      <div class="content-card">
+        <strong>Quantitative Kriterien</strong>
+        <ul>
+          <li>Kosten, Gewinn, Rentabilität</li>
+          <li>Amortisationsdauer</li>
+          <li>Kapitalwert, interner Zinsfuß, Annuität</li>
+          <li>Möglichkeiten und Grenzen der Finanzierung</li>
+          <li>Steuern</li>
+        </ul>
+      </div>
+      <div class="content-card">
+        <strong>Qualitative Kriterien</strong>
+        <ul>
+          <li>Unternehmenspolitik</li>
+          <li>Technische Nutzungsdauer</li>
+          <li>Investitionsrisiko</li>
+          <li>Technische und rechtliche Rahmenbedingungen</li>
+          <li>Unabhängigkeit (von Lieferanten/Kunden)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="notice ok">
+      <strong>Merksatz</strong><br>
+      Schlussendlich bilden die <strong>Verfahren der Investitionsrechnung</strong> die Grundlage für Investitionsentscheidungen.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 3 – VERFAHRENSÜBERBLICK
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap3">3 · Investitionsrechenverfahren – Überblick</h2>
+
+    <table>
+      <thead>
+        <tr><th>Gruppe</th><th>Verfahren</th><th>Merkmale</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Statische Verfahren</strong></td>
+          <td>Kostenvergleich, Gewinnvergleich, Rentabilitätsvergleich, Amortisationsvergleich</td>
+          <td>Einfache Anwendung · Durchschnittsperiode · Kosten und Leistungen · Keine Berücksichtigung des Zeitwerts</td>
+        </tr>
+        <tr>
+          <td><strong>Dynamische Verfahren</strong></td>
+          <td>Kapitalwertmethode, interner Zinsfuß, Annuitätenmethode, Amortisation (dynamisch), wirtschaftliche Nutzungsdauer</td>
+          <td>Zinseszinseffekt · Alle Perioden · Ein- und Auszahlungen · Aufwendiger, aber genauer</td>
+        </tr>
+        <tr>
+          <td><strong>Simultanverfahren</strong></td>
+          <td>Lineare Programmierung u. a.</td>
+          <td>Gleichzeitige Berücksichtigung von Absatz-, Produktions-, Investitions- und Finanzierungsmöglichkeiten</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Statisch vs. Dynamisch</strong><br>
+      Statische Verfahren arbeiten mit <strong>Kosten und Leistungen</strong> (Kostenrechnung), dynamische Verfahren mit <strong>Ein- und Auszahlungen</strong> (Zahlungsströme). Grundlegender Unterschied — nicht verwechseln!
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 4 – STATISCHE VERFAHREN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap4">4 · Statische Investitionsrechnung</h2>
+
+    <div class="notice info">
+      <strong>Hinweis</strong><br>
+      Statische Verfahren betrachten eine <strong>repräsentative Durchschnittsperiode</strong>. Alle vier Verfahren bauen aufeinander auf: Kostenvergleich → Gewinnvergleich → Rentabilitätsvergleich → Amortisationsvergleich.
+    </div>
+
+    <h3 id="kap4-1">4.1 Kostenvergleichsrechnung</h3>
+    <p>Vergleich der Kosten von zwei oder mehreren Investitionsobjekten. Gewählt wird die Alternative mit den <strong>geringsten Kosten</strong>.</p>
+
+    <table>
+      <thead>
+        <tr><th>Situation</th><th>Entscheidungsregel</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Identische Investitionen (gleiche Kapazitätsnutzung)</td><td>Wähle Alternative mit geringsten <strong>Kosten je Periode</strong></td></tr>
+        <tr><td>Nicht identische Investitionen (verschiedene Kapazität)</td><td>Wähle Alternative mit geringsten <strong>Kosten je Mengeneinheit</strong></td></tr>
+        <tr><td>Kritische Menge (zukünftige Auslastung unbekannt)</td><td>Ermittle Menge, bei der beide gleiche Kosten haben → dann Entscheidung nach voraussichtlicher Nutzung</td></tr>
+      </tbody>
+    </table>
+
+    <div class="def-box">
+      <strong>Rechengrößen</strong><br>
+      <code>Kalk. Abschreibung (AfA) = (WBW bzw. AHK − Restwert) / Nutzungsdauer</code><br>
+      <code>Kalk. Zinsen (Z) = (AHK + Restwert) / 2 × i</code><br>
+      <code>Kritische Menge (x) = (K<sub>F2</sub> − K<sub>F1</sub>) / (k<sub>v1</sub> − k<sub>v2</sub>)</code>
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – WBW oder AHK?</strong><br>
+      Steinhofs Skript nennt beim Abschreibungszähler: „Wiederbeschaffungswert <em>bzw.</em> Anschaffungs- oder Herstellungskosten". Bei der Kostenvergleichsrechnung wird der <strong>WBW bevorzugt</strong>, wenn bekannt (zukunftsorientiert). Fehlt der WBW, werden AHK verwendet. In der Prüfung gilt: <strong>Was in der Aufgabe gegeben ist, das verwenden.</strong>
+    </div>
+
+    <h3 id="kap4-2">4.2 Gewinnvergleichsrechnung</h3>
+    <p>Ergänzt die Kostenvergleichsrechnung um die <strong>Erlöse</strong>. Gewählt wird die Alternative mit dem <strong>höchsten Gewinn</strong>.</p>
+
+    <div class="def-box">
+      <strong>Rechengrößen</strong><br>
+      <code>Gewinn = Leistung − Kosten</code><br>
+      <code>Kritische Menge = (K<sub>F2</sub> − K<sub>F1</sub>) / (db<sub>2</sub> − db<sub>1</sub>)</code><br>
+      <code>db = Deckungsbeitrag pro Stück (Preis − variable Stückkosten)</code>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Situation</th><th>Entscheidungsregel</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Einzelentscheidung</td><td>Investiere wenn Gewinn &gt; 0 bzw. ≥ Mindestgewinn</td></tr>
+        <tr><td>Auswahlentscheidung (Kapazität bekannt)</td><td>Wähle Alternative mit <strong>höchstem Gewinn</strong></td></tr>
+        <tr><td>Auswahlentscheidung (Kapazität unbekannt)</td><td>Ermittle Gewinn in Abhängigkeit von der voraussichtlichen Kapazitätsnutzung</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="kap4-3">4.3 Rentabilitätsrechnung</h3>
+    <p>Setzt den Gewinn ins Verhältnis zum eingesetzten Kapital. Besonders sinnvoll beim Vergleich von Investitionen <strong>unterschiedlicher Kapitaleinsätze</strong>.</p>
+
+    <div class="def-box">
+      <strong>Rechengrößen (nach Steinhof)</strong><br>
+      <code>Rentabilität = (Gewinn + kalk. Zinsen) × 100 / Ø gebundenes Kapital</code><br>
+      <code>Ø gebundenes Kapital = (AHK + Restwert) / 2</code><br>
+      <code>Ø gebundenes Kapital (WBW-Ansatz) = (WBW + Restwert) / 2 &nbsp;[wenn RW = 0: WBW / 2]</code>
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Formelvariant Rentabilität</strong><br>
+      Für dieses Skript und den Unterricht gilt die Formel nach Steinhof: Rentabilität = (Gewinn + kalk. Zinsen) × 100 / Ø gebundenes Kapital. Fachbücher verwenden teilweise eine abweichende Variante <em>ohne</em> die Addition der kalk. Zinsen im Zähler.
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Situation</th><th>Entscheidungsregel</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Einzelentscheidung</td><td>Investiere wenn R ≥ Mindestverzinsung</td></tr>
+        <tr><td>Auswahlentscheidung</td><td>Wähle Alternative mit <strong>höchster Rentabilität</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="kap4-4">4.4 Amortisationsrechnung (statisch)</h3>
+    <p>Auch: Kapitalrückflussmethode / Payback-Methode. Misst die Vorteilhaftigkeit einer Investition anhand der <strong>Kapitalrückflusszeit (Amortisationsdauer)</strong>.</p>
+
+    <div class="notice ok">
+      <strong>Merksatz</strong><br>
+      Je <strong>kürzer</strong> die Amortisationsdauer, desto <strong>vorteilhafter</strong> ist die Investition.
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Situation</th><th>Entscheidungsregel</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Einzelentscheidung</td><td>Investiere wenn t<sub>w</sub> ≤ t* (Zielwert)</td></tr>
+        <tr><td>Auswahlentscheidung</td><td>Wähle Alternative mit <strong>geringster Amortisationsdauer</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h4>Methode 1: Durchschnittsmethode</h4>
+    <p>Unterstellt einen gleichbleibenden jährlichen Kapitalrückfluss.</p>
+    <div class="def-box">
+      <code>Amortisationsdauer = (AHK − Restwert) / durchschnittlicher Jahresrückfluss</code><br>
+      <strong>Variante A:</strong> <code>Jahresrückfluss = Gewinn + kalk. Abschreibungen</code><br>
+      <strong>Variante B:</strong> <code>Jahresrückfluss = Gewinn + kalk. Abschreibungen + kalk. Zinsen − tatsächlicher Zinsaufwand</code>
+    </div>
+    <div class="notice info">
+      <strong>Hinweis</strong><br>
+      Steinhofs Skript nennt beide Varianten. Welche zu verwenden ist, ergibt sich aus der Aufgabenstellung.
+    </div>
+
+    <h4>Methode 2: Kumulationsmethode</h4>
+    <p>Die jährlichen Kapitalrückflüsse werden in <strong>unterschiedlicher Höhe</strong> berücksichtigt und kumuliert, bis der Kapitaleinsatz gedeckt ist.</p>
+
+    <div class="notice info">
+      <strong>Rechenbeispiel – Kumulationsmethode</strong><br>
+      AHK = 80.000 € · RW = 0 · Nutzungsdauer = 5 Jahre
+      <table style="margin-top:0.5rem">
+        <thead><tr><th>Jahr</th><th>Rückfluss p.a.</th><th>Kumuliert</th></tr></thead>
+        <tbody>
+          <tr><td>t1</td><td>10.000 €</td><td>10.000 €</td></tr>
+          <tr><td>t2</td><td>25.000 €</td><td>35.000 €</td></tr>
+          <tr><td>t3</td><td>45.000 €</td><td><strong>80.000 € ← Amortisation erreicht</strong></td></tr>
+          <tr><td>t4</td><td>70.000 €</td><td>150.000 €</td></tr>
+          <tr><td>t5</td><td>100.000 €</td><td>250.000 €</td></tr>
+        </tbody>
+      </table>
+      <strong>Kumulationsmethode:</strong> Amortisation in t3 (3 Jahre)<br>
+      <strong>Durchschnittsmethode:</strong> Ø Rückfluss = 250.000 € / 5 = 50.000 €/Jahr → 80.000 / 50.000 = <strong>1,6 Jahre</strong><br>
+      Fazit: Bei unregelmäßigen Rückflüssen <strong>unterschätzt</strong> die Durchschnittsmethode die tatsächliche Amortisationsdauer erheblich.
+    </div>
+
+    <div class="notice ok">
+      <strong>Merksatz</strong><br>
+      Das Jahr, in dem die kumulierten Rückflüsse den Kapitaleinsatz <strong>erstmals übersteigen</strong>, entspricht der Amortisationsdauer. Bei unregelmäßigen Rückflüssen ist die Kumulationsmethode der Durchschnittsmethode vorzuziehen.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 5 – DYNAMISCHE VERFAHREN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap5">5 · Dynamische Investitionsrechnung</h2>
+
+    <div class="notice info">
+      <strong>Hinweis</strong><br>
+      Dynamische Verfahren berücksichtigen den <strong>Zeitwert des Geldes</strong> (Zinseszinseffekt). Alle Zahlungen werden auf den Gegenwartswert (Barwert) abgezinst. Grundlage: <strong>q = 1 + i</strong> (Aufzinsungsfaktor), wobei i = Zinssatz als Dezimalzahl.
+    </div>
+
+    <h3 id="kap5-1">5.1 Auf- und Abzinsung</h3>
+
+    <div class="def-box">
+      <code>Aufzinsung (Gegenwart → Zukunft): K<sub>n</sub> = K<sub>0</sub> × q<sup>n</sup></code><br>
+      <code>Abzinsung (Zukunft → Gegenwart): K<sub>0</sub> = K<sub>n</sub> / q<sup>n</sup></code><br><br>
+      Abzinsungsfaktor = 1 / q<sup>n</sup> (immer &lt; 1) · Aufzinsungsfaktor = q<sup>n</sup> (immer &gt; 1)
+    </div>
+
+    <h3 id="kap5-2">5.2 Kapitalwertmethode</h3>
+
+    <div class="def-box">
+      <strong>Definition – Kapitalwert (C₀)</strong><br>
+      Summe aller abgezinsten Einzahlungsüberschüsse (Barwerte) abzüglich der Anschaffungsauszahlung, zuzüglich des Barwerts eines Liquidationserlöses.
+    </div>
+
+    <div class="def-box">
+      <strong>Formel</strong><br>
+      <code>C₀ = (E₁−A₁)/q¹ + (E₂−A₂)/q² + … + (Eₙ−Aₙ)/qⁿ + Lₙ/qⁿ − I₀</code><br><br>
+      E<sub>n</sub> = Einzahlung Periode n · A<sub>n</sub> = Auszahlung Periode n<br>
+      L<sub>n</sub> = Liquidationserlös am Ende · I₀ = Investitionsauszahlung zu Beginn<br>
+      q = 1 + i · i = Kalkulationszinssatz (Dezimalform) · n = Nutzungsjahr
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Kapitalwert</th><th>Bedeutung</th><th>Entscheidung</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>C₀ = 0</td><td>Mindestverzinsung exakt erreicht, AHK gedeckt</td><td>Investition noch vorteilhaft</td></tr>
+        <tr><td>C₀ &gt; 0</td><td>Mindestverzinsung überschritten + Einzahlungsüberschuss</td><td>Investition vorteilhaft</td></tr>
+        <tr><td>C₀ &lt; 0</td><td>Mindestverzinsung nicht erreicht, AHK nicht gedeckt</td><td>Investition unvorteilhaft</td></tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr><th>Situation</th><th>Entscheidungsregel</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Einzelentscheidung</td><td>Investiere wenn C₀ ≥ 0 bzw. ≥ Mindestkapitalwert</td></tr>
+        <tr><td>Auswahlentscheidung</td><td>Wähle Alternative mit <strong>höchstem Kapitalwert</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="kap5-3">5.3 Annuitätenmethode</h3>
+
+    <div class="def-box">
+      <strong>Definition – Annuität</strong><br>
+      Eine gleichbleibende periodische Zahlung gleicher Höhe und gleichen zeitlichen Abstands, deren Zahlenreihe denselben Kapitalwert hat wie die ursprüngliche Zahlungsreihe.
+    </div>
+
+    <div class="def-box">
+      <strong>Formel</strong><br>
+      <code>ANN = C₀ × KWF</code><br>
+      <code>Kapitalwiedergewinnungsfaktor (KWF) = (qⁿ × (q−1)) / (qⁿ − 1)</code><br>
+      <code>Barwertfaktor (BWF) = (qⁿ − 1) / (qⁿ × (q−1))</code> → alternativ: ANN = C₀ / BWF
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Situation</th><th>Entscheidungsregel</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Einzelentscheidung</td><td>Investiere wenn Annuität &gt; 0</td></tr>
+        <tr><td>Auswahlentscheidung</td><td>Wähle Alternative mit <strong>höchster Annuität</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice info">
+      <strong>Hinweis</strong><br>
+      Die Annuitätenmethode ist eine <strong>Umrechnung des Kapitalwerts</strong> auf gleichmäßige Jahresbeträge — sie führt bei gleichen Laufzeiten zur selben Entscheidung wie die Kapitalwertmethode.
+    </div>
+
+    <h3 id="kap5-4">5.4 Methode des internen Zinsfußes</h3>
+
+    <div class="def-box">
+      <strong>Definition – Interner Zinsfuß (r)</strong><br>
+      Der Zinssatz, bei dem der Kapitalwert einer Investition gleich Null ist. Er entspricht der tatsächlichen Verzinsung des eingesetzten Kapitals.
+    </div>
+
+    <p>Ermittlung durch <strong>lineare Interpolation (Regula falsi)</strong> mit zwei Versuchszinssätzen:</p>
+
+    <div class="def-box">
+      <strong>Formel</strong><br>
+      <code>r = i₁ − C₀₁ × (i₂ − i₁) / (C₀₂ − C₀₁)</code><br><br>
+      C₀₁ = Kapitalwert bei Versuchszins i₁ (positiv)<br>
+      C₀₂ = Kapitalwert bei Versuchszins i₂ (negativ)
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Verhältnis r zu i</th><th>Bedeutung</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>r &gt; i</td><td>C₀ &gt; 0 → Investition <strong>vorteilhaft</strong></td></tr>
+        <tr><td>r = i</td><td>C₀ = 0 → Investition gerade noch vorteilhaft</td></tr>
+        <tr><td>r &lt; i</td><td>C₀ &lt; 0 → Investition <strong>unvorteilhaft</strong></td></tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr><th>Situation</th><th>Entscheidungsregel</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Einzelentscheidung</td><td>Investiere wenn r ≥ gewünschte Mindestverzinsung i</td></tr>
+        <tr><td>Auswahlentscheidung</td><td>Wähle Alternative mit <strong>höchstem internen Zinsfuß</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Zwei Versuchszinssätze</strong><br>
+      Für die Interpolation werden <strong>zwei Versuchszinssätze</strong> benötigt: einer mit positivem Kapitalwert (i₁) und einer mit negativem Kapitalwert (i₂). Die Wahl der Versuchszinssätze beeinflusst die Genauigkeit des Ergebnisses.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 6 – WIRTSCHAFTLICHE NUTZUNGSDAUER
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap6">6 · Wirtschaftliche Nutzungsdauer</h2>
+
+    <div class="def-box">
+      <strong>Definition – Wirtschaftliche Nutzungsdauer</strong><br>
+      Die Anzahl von Jahren, bei der die Investition das beste Ergebnis liefert — also der Zeitraum, in dem eine Anlage optimal betrieben werden sollte.
+    </div>
+
+    <div class="pruef-box">
+      <strong>Entscheidungsregel</strong><br>
+      Die wirtschaftliche Nutzungsdauer ist in dem Jahr erreicht, in dem der <strong>Kapitalwert am größten</strong> ist.
+    </div>
+
+    <div class="notice info">
+      <strong>Hinweis (nicht Bestandteil des Dozentenskripts)</strong><br>
+      Das Fachbuch unterscheidet zwischen <strong>einmaliger Investition</strong> (optimale ND = Jahr des maximalen Kapitalwerts) und <strong>Investitionsketten</strong> (optimale ND = Jahr des maximalen durchschnittlichen Kapitalwerts nach Annuität). Steinhofs Skript nennt nur die Grundregel.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 7 – ÜBERSICHT ENTSCHEIDUNGSREGELN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap7">7 · Übersicht: Entscheidungsregeln aller Verfahren</h2>
+
+    <table>
+      <thead>
+        <tr><th>Verfahren</th><th>Einzelentscheidung</th><th>Auswahlentscheidung</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Kostenvergleich</strong></td><td>Kosten akzeptabel</td><td>Geringste Kosten</td></tr>
+        <tr><td><strong>Gewinnvergleich</strong></td><td>G &gt; 0 bzw. ≥ Mindestgewinn</td><td>Höchster Gewinn</td></tr>
+        <tr><td><strong>Rentabilitätsvergleich</strong></td><td>R ≥ Mindestverzinsung</td><td>Höchste Rentabilität</td></tr>
+        <tr><td><strong>Amortisationsvergleich</strong></td><td>t<sub>w</sub> ≤ t* (Zielwert)</td><td>Kürzeste Amortisationsdauer</td></tr>
+        <tr><td><strong>Kapitalwertmethode</strong></td><td>C₀ ≥ 0 bzw. ≥ Mindestkapitalwert</td><td>Höchster Kapitalwert</td></tr>
+        <tr><td><strong>Annuitätenmethode</strong></td><td>ANN &gt; 0</td><td>Höchste Annuität</td></tr>
+        <tr><td><strong>Interner Zinsfuß</strong></td><td>r ≥ Mindestverzinsung i</td><td>Höchster interner Zinsfuß</td></tr>
+        <tr><td><strong>Wirtschaftliche Nutzungsdauer</strong></td><td colspan="2" style="text-align:center">Jahr, in dem C₀ am größten ist</td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Anzahl der Antwortpunkte</strong><br>
+      <strong>Nur so viele Antwortpunkte nennen wie gefragt</strong> — überzählige Punkte werden nicht gewertet, ein falscher erster Punkt kann einen richtigen kosten.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         VERWANDTE THEMEN
+    ══════════════════════════════════════════════ -->
+    <div class="related-topics">
+      <h3>Verwandte Themen</h3>
+      <ul>
+        <li><a href="rewe_ls03.html">REWE LS03 · Grundlagen KLR</a> – Kosten- und Leistungsbegriffe (Grundlage statischer Verfahren)</li>
+        <li><a href="rewe_ls05.html">REWE LS05 · BAB</a> – Zuschlagssätze als Grundlage für Kostenvergleichsrechnungen</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<footer class="page-footer">
+  <span>WFW Wiki · Finanzmanagement LS01</span>
+  <span>Stand: 29.06.2026</span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../css/pages.js"></script>
+<script src="../css/engine.js"></script>
+</body>
+</html>
