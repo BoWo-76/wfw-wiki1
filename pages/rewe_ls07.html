@@ -9,13 +9,10 @@
 <body>
 
 <div class="topbar">
-  <div class="topbar-inner">
-    <a class="topbar-brand" href="../index.html">WFW Wiki</a>
-    <div class="topbar-search">
-      <input type="search" id="search-input" placeholder="Suchen …" autocomplete="off">
-      <div id="search-results" class="search-dropdown"></div>
-    </div>
-    <button class="print-btn" onclick="window.print()">🖨 Drucken</button>
+  <a class="brand" href="../index.html">WFW<span>Wiki</span></a>
+  <div class="search-wrap">
+    <input id="search-input" type="search" placeholder="Thema suchen …" autocomplete="off">
+    <div id="search-results"></div>
   </div>
 </div>
 
@@ -24,16 +21,17 @@
 
   <main class="main">
 
-    <div class="breadcrumb">
-      <a href="../index.html">Start</a> › <span>Rechnungswesen</span> › <span>LS07</span>
-    </div>
+    <div class="breadcrumb"><a href="../index.html">Startseite</a> › Rechnungswesen › LS07 Voll- und Teilkostenrechnung</div>
 
     <div class="page-header">
-      <div class="page-header-module">Rechnungswesen · LS07</div>
-      <h1 class="page-header-title">Voll- und Teilkostenrechnung</h1>
-      <p class="page-header-sub">Deckungsbeitragsrechnung · Break-Even-Analyse · Engpassoptimierung · Fixkostenremanenz</p>
+      <div class="kicker">Rechnungswesen · LS07</div>
+      <h1>LS07 · Voll- und Teilkostenrechnung</h1>
+      <div class="meta">
+        <span>Deckungsbeitragsrechnung · Break-Even-Analyse · Engpassoptimierung · Fixkostenremanenz</span>
+        <span>Stand: 29.06.2026</span>
+        <span><span class="badge ok">Fertig</span></span>
+      </div>
     </div>
-
 
     <!-- ══════════════════════════════════════════════
          KAPITEL 1 – PROBLEM DER VOLLKOSTENRECHNUNG
@@ -468,8 +466,8 @@
 </div>
 
 <footer class="page-footer">
-  <span>WFW Wiki · Rechnungswesen LS07</span>
-  <span>Stand: 29.06.2026</span>
+  <div>WFW Wiki · IHK Wirtschaftsfachwirt</div>
+  <div>REWE LS07 · Stand: 29.06.2026</div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>

@@ -9,13 +9,10 @@
 <body>
 
 <div class="topbar">
-  <div class="topbar-inner">
-    <a class="topbar-brand" href="../index.html">WFW Wiki</a>
-    <div class="topbar-search">
-      <input type="search" id="search-input" placeholder="Suchen …" autocomplete="off">
-      <div id="search-results" class="search-dropdown"></div>
-    </div>
-    <button class="print-btn" onclick="window.print()">🖨 Drucken</button>
+  <a class="brand" href="../index.html">WFW<span>Wiki</span></a>
+  <div class="search-wrap">
+    <input id="search-input" type="search" placeholder="Thema suchen …" autocomplete="off">
+    <div id="search-results"></div>
   </div>
 </div>
 
@@ -24,16 +21,17 @@
 
   <main class="main">
 
-    <div class="breadcrumb">
-      <a href="../index.html">Start</a> › <span>Finanzmanagement</span> › <span>LS01</span>
-    </div>
+    <div class="breadcrumb"><a href="../index.html">Startseite</a> › Finanzmanagement › LS01 Investitionsrechnung</div>
 
     <div class="page-header">
-      <div class="page-header-module">Finanzmanagement · LS01</div>
-      <h1 class="page-header-title">Investitionsrechnung</h1>
-      <p class="page-header-sub">Investitionsarten · Investitionsentscheidungen · Statische und dynamische Verfahren · Wirtschaftliche Nutzungsdauer</p>
+      <div class="kicker">Finanzmanagement · LS01</div>
+      <h1>LS01 · Investitionsrechnung</h1>
+      <div class="meta">
+        <span>Investitionsarten · Investitionsentscheidungen · Statische und dynamische Verfahren · Wirtschaftliche Nutzungsdauer</span>
+        <span>Stand: 29.06.2026</span>
+        <span><span class="badge ok">Fertig</span></span>
+      </div>
     </div>
-
 
     <!-- ══════════════════════════════════════════════
          KAPITEL 1 – INVESTITION UND FINANZIERUNG
@@ -524,8 +522,8 @@
 </div>
 
 <footer class="page-footer">
-  <span>WFW Wiki · Finanzmanagement LS01</span>
-  <span>Stand: 29.06.2026</span>
+  <div>WFW Wiki · IHK Wirtschaftsfachwirt</div>
+  <div>Finanzmanagement LS01 · Stand: 29.06.2026</div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
