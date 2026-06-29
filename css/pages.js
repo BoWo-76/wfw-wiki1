@@ -66,5 +66,15 @@ const WIKI_CONFIG = {
       updated: "28.06.2026",
       keywords: ["kostenstellenrechnung", "kostenstelle", "bab", "betriebsabrechnungsbogen", "hauptkostenstelle", "hilfskostenstelle", "primärkostenverteilung", "sekundärkostenverteilung", "ilv", "innerbetriebliche leistungsverrechnung", "anbauverfahren", "stufenleiterverfahren", "gleichungsverfahren", "zuschlagssatz", "mgk", "fgk", "vwgk", "vtgk", "materialgemeinkosten", "fertigungsgemeinkosten", "verwaltungsgemeinkosten", "vertriebsgemeinkosten", "fertigungsmaterial", "fertigungslöhne", "herstellkosten", "selbstkosten", "kalkulation", "zuschlagskalkulation", "verursachungsprinzip", "verteilungsschlüssel", "einproduktbetrieb", "mehrproduktbetrieb"]
     },
+
+    {
+      id: "rewe_ls06",
+      module: "rewe",
+      title: "LS06 · Kostenträgerrechnung & Kalkulation",
+      file: "pages/rewe_ls06.html",
+      status: "fertig",
+      updated: "28.06.2026",
+      keywords: ["kostenträger", "kostenträgerstückrechnung", "kostenträgerzeitrechnung", "kalkulation", "zuschlagskalkulation", "differenzierende zuschlagskalkulation", "divisionskalkulation", "äquivalenzziffernkalkulation", "selbstkosten", "herstellkosten", "materialkosten", "fertigungskosten", "barverkaufspreis", "bvp", "nettoverkaufspreis", "nvp", "zielverkaufspreis", "zvp", "sek", "sondereinzelkosten", "sek fertigung", "sek vertrieb", "vorwärtskalkulation", "rückwärtskalkulation", "differenzkalkulation", "nachkalkulation", "vorkalkulation", "restprozent", "restprozentmethode", "skonto", "provision", "kundenrabatt", "preisuntergrenze", "kpug", "lpug", "kurzfristige preisuntergrenze", "langfristige preisuntergrenze", "variable kosten", "deckungsbeitrag", "maschinenstundensatz", "mss", "maschinenabhängige kosten", "kalkulation abschreibung", "kalkulation zinsen", "maschinenlaufzeit", "handelskalkulation", "einstandspreis", "listenpreis", "liefererrabatt", "liefererskonto", "bezugskosten", "bareinkaufspreis", "zieleinkaufspreis", "handlungskostensatz", "hks", "handelsspanne", "kalkulationszuschlag", "kzs", "kalkulationsfaktor", "hk umsatz", "hk produktion", "bestandsveränderung"]
+    },
   ]
 };
