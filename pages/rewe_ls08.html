@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LS08 · Auswertung betriebswirtschaftlicher Zahlen – WFW Wiki</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html">WFW<span>Wiki</span></a>
+  <div class="search-wrap">
+    <input id="search-input" type="search" placeholder="Thema suchen …" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="sidebar"></nav>
+
+  <main class="main">
+    <div class="breadcrumb">
+      <a href="../index.html">Startseite</a> › Rechnungswesen › LS08 Auswertung betriebswirtschaftlicher Zahlen
+    </div>
+    <div class="page-header">
+      <div class="kicker">Rechnungswesen · LS08</div>
+      <h1>LS08 · Auswertung betriebswirtschaftlicher Zahlen</h1>
+      <div class="meta">
+        <span>Kennzahlen · Rentabilität · Leverage-Effekt · Vergleichsformen · Berichtswesen</span>
+        <span>Stand: 29.06.2026</span>
+        <span><span class="badge ok">Fertig</span></span>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 1 – GRUNDLAGEN & ADRESSATEN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap1">1 · Grundlagen der Auswertung &amp; Adressaten</h2>
+
+    <p>Ziel der Auswertung betriebswirtschaftlicher Zahlen ist die Beurteilung der <strong>Liquidität</strong> (Zahlungsfähigkeit), der <strong>Vermögensstruktur</strong> (Investition, Kapitalverwendung) und der <strong>Rentabilität</strong> (Ertragskraft) eines Unternehmens. Grundlage ist primär der Jahresabschluss (Bilanz, GuV, Anhang); ergänzend fließen Daten des internen Rechnungswesens (KLR) ein.</p>
+
+    <h3 id="kap1-1">1.1 Adressaten der Auswertung</h3>
+
+    <table>
+      <thead><tr><th>Adressatengruppe</th><th>Quellen</th><th>Fokus</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Extern</strong> (Banken, Investoren, Finanzamt, Öffentlichkeit)</td><td>Jahresabschluss (Bilanz, GuV, Anhang)</td><td>Stabilität, Ertragskraft, Kreditwürdigkeit</td></tr>
+        <tr><td><strong>Intern</strong> (Geschäftsführung, Führungskräfte)</td><td>Jahresabschluss + interne KLR-Daten</td><td>Unterjährige Steuerung, Bereichsanalysen, Detaildaten</td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice ok">
+      <strong>Merksatz – Externe vs. interne Analyse</strong><br>
+      Externe Adressaten erhalten ausschließlich den Jahresabschluss – interne Kostendaten (z. B. Deckungsbeiträge einzelner Produkte) bleiben vertraulich. Intern sind tiefergehende Analysen möglich, weil das vollständige Datenmaterial des Rechnungswesens zugänglich ist.
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Jahresabschluss ist Pflicht, KLR ist freiwillig</strong><br>
+      Der Jahresabschluss ist gesetzlich vorgeschrieben (HGB) und öffentlich zugänglich. Die Kosten- und Leistungsrechnung ist freiwillig und dient ausschließlich internen Zwecken – sie erscheint <strong>nie im Jahresabschluss</strong>.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 2 – KENNZAHLEN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap2">2 · Kennzahlen als Analysewerkzeug</h2>
+
+    <p>Kennzahlen verdichten komplexe Informationen und machen Unternehmensdaten unterschiedlicher Größe und Perioden vergleichbar. Man unterscheidet:</p>
+
+    <h3 id="kap2-1">2.1 Grundzahlen (absolut)</h3>
+    <p>Einzelwerte direkt aus Bilanz oder GuV: Umsatz, Jahresergebnis, Eigenkapital. Sie sind für sich genommen <strong>wenig aussagekräftig</strong>, weil sie die Unternehmensgröße nicht berücksichtigen. Interne Größen wie der Deckungsbeitrag stammen aus der KLR, nicht aus dem Jahresabschluss.</p>
+
+    <h3 id="kap2-2">2.2 Verhältniszahlen (relativ)</h3>
+
+    <table>
+      <thead><tr><th>Art</th><th>Beziehung</th><th>Beispiel</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Gliederungszahl</strong></td><td>Teil geteilt durch Ganzes</td><td>Eigenkapitalquote = Eigenkapital ÷ Gesamtkapital</td></tr>
+        <tr><td><strong>Beziehungszahl</strong></td><td>Zwei verschiedene sachlogisch verbundene Größen</td><td>Kapitalumschlag = Umsatz ÷ Gesamtkapital · Umsatz je Mitarbeiter</td></tr>
+        <tr><td><strong>Indexzahl</strong></td><td>Zeitliche Entwicklung, Basisjahr = 100</td><td>Index = Wert<sub>t</sub> ÷ Wert<sub>0</sub> × 100 · Bsp.: Vj. = 100, Bj. = 112 → Wachstum 12 %</td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice ok">
+      <strong>Merksatz</strong><br>
+      Verhältniszahlen machen Unternehmen unterschiedlicher Größe vergleichbar. Erst der Bezug auf eine Gesamtgröße (Quote) oder eine andere Größe (Beziehungszahl) schafft Aussagekraft.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 3 – BILANZAUFBEREITUNG
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap3">3 · Bilanzaufbereitung</h2>
+
+    <p>Vor der Kennzahlenberechnung wird die Bilanz in eine <strong>Bilanzstruktur</strong> überführt: absolute Werte werden durch prozentuale Anteile am Gesamtkapital/Gesamtvermögen ergänzt. Das ermöglicht den Zeitvergleich (Vorjahr vs. Berichtsjahr) und den Betriebsvergleich.</p>
+
+    <h3 id="kap3-1">3.1 Vollbeispiel – Aufbereitete Bilanz (T€)</h3>
+
+    <table>
+      <thead><tr><th>Aktiva</th><th>Bj (T€)</th><th>Bj (%)</th><th>Vj (T€)</th><th>Vj (%)</th><th>+/− T€</th></tr></thead>
+      <tbody>
+        <tr><td>Sachanlagen</td><td>1.660</td><td>41,5</td><td>1.420</td><td>39,4</td><td>+240</td></tr>
+        <tr><td>Finanzanlagen</td><td>260</td><td>6,5</td><td>200</td><td>5,6</td><td>+60</td></tr>
+        <tr><td><em>Anlagevermögen</em></td><td><em>1.920</em></td><td><em>48,0</em></td><td><em>1.620</em></td><td><em>45,0</em></td><td><em>+300</em></td></tr>
+        <tr><td>Vorräte</td><td>1.200</td><td>30,0</td><td>1.550</td><td>43,0</td><td>−350</td></tr>
+        <tr><td>Forderungen a. LL</td><td>600</td><td>15,0</td><td>310</td><td>8,6</td><td>+290</td></tr>
+        <tr><td>Flüssige Mittel</td><td>280</td><td>7,0</td><td>120</td><td>3,4</td><td>+160</td></tr>
+        <tr><td><em>Umlaufvermögen</em></td><td><em>2.080</em></td><td><em>52,0</em></td><td><em>1.980</em></td><td><em>55,0</em></td><td><em>+100</em></td></tr>
+        <tr><td><strong>Gesamtvermögen</strong></td><td><strong>4.000</strong></td><td><strong>100,0</strong></td><td><strong>3.600</strong></td><td><strong>100,0</strong></td><td><strong>+400</strong></td></tr>
+      </tbody>
+    </table>
+
+    <table style="margin-top:1rem">
+      <thead><tr><th>Passiva</th><th>Bj (T€)</th><th>Bj (%)</th><th>Vj (T€)</th><th>Vj (%)</th><th>+/− T€</th></tr></thead>
+      <tbody>
+        <tr><td>Gezeichnetes Kapital</td><td>1.400</td><td>35,0</td><td>1.000</td><td>27,7</td><td>+400</td></tr>
+        <tr><td>Gewinnrücklagen</td><td>400</td><td>10,0</td><td>260</td><td>7,3</td><td>+140</td></tr>
+        <tr><td><em>Eigenkapital</em></td><td><em>1.800</em></td><td><em>45,0</em></td><td><em>1.260</em></td><td><em>35,0</em></td><td><em>+540</em></td></tr>
+        <tr><td>langfr. Rückstellungen</td><td>40</td><td>1,0</td><td>30</td><td>0,8</td><td>+10</td></tr>
+        <tr><td>langfr. Verbindlichkeiten</td><td>1.600</td><td>40,0</td><td>1.230</td><td>34,2</td><td>+370</td></tr>
+        <tr><td><em>Langfristiges FK</em></td><td><em>1.640</em></td><td><em>41,0</em></td><td><em>1.260</em></td><td><em>35,0</em></td><td><em>+380</em></td></tr>
+        <tr><td>kurzfr. Rückstellungen</td><td>40</td><td>1,0</td><td>30</td><td>0,8</td><td>+10</td></tr>
+        <tr><td>kurzfr. Verbindlichkeiten</td><td>520</td><td>13,0</td><td>1.050</td><td>29,2</td><td>−530</td></tr>
+        <tr><td><em>Kurzfristiges FK</em></td><td><em>560</em></td><td><em>14,0</em></td><td><em>1.080</em></td><td><em>30,0</em></td><td><em>−520</em></td></tr>
+        <tr><td><strong>Gesamtkapital</strong></td><td><strong>4.000</strong></td><td><strong>100,0</strong></td><td><strong>3.600</strong></td><td><strong>100,0</strong></td><td><strong>+400</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice info">
+      <strong>Praxisbeispiel – Was liest du aus dieser Bilanz?</strong>
+      <ul>
+        <li>EK-Quote stieg 35 % → 45 % → verbesserte finanzielle Stabilität, geringere FK-Abhängigkeit.</li>
+        <li>Kurzfristiges FK sank 30 % → 14 % → Verbesserung der Fristenkongruenz.</li>
+        <li>Vorräte sanken 43 % → 30 % → mögliche Effizienzverbesserung; alternativ: Abverkauf ohne Nachbestellung – Lieferprobleme prüfen.</li>
+        <li>Forderungen stiegen 8,6 % → 15 % → kann Umsatzwachstum auf Ziel widerspiegeln, erhöht aber Ausfallrisiko und belastet Liquidität.</li>
+      </ul>
+    </div>
+
+    <h3 id="kap3-2">3.2 Ableitbare Kennzahlenbereiche</h3>
+
+    <table>
+      <thead><tr><th>Bereich</th><th>Beschreibung</th><th>Beispiel-Kennzahlen</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Kapitalausstattung</strong></td><td>Woher stammt das Kapital?</td><td>Eigenkapitalquote, Verschuldungsgrad, Selbstfinanzierungsgrad</td></tr>
+        <tr><td><strong>Anlagenfinanzierung</strong></td><td>Deckung langfristiger Vermögen durch langfristiges Kapital</td><td>Deckungsgrad I, II, III</td></tr>
+        <tr><td><strong>Vermögensaufbau</strong></td><td>Wie ist das Kapital angelegt?</td><td>Anlagenintensität, Vorratsquote, Forderungsintensität</td></tr>
+        <tr><td><strong>Zahlungsfähigkeit</strong></td><td>Kurzfristige Verbindlichkeiten bedienen?</td><td>Liquidität I, II, III</td></tr>
+        <tr><td><strong>Ertragslage</strong></td><td>Wie ertragreich ist das Unternehmen?</td><td>EKR, GKR, Umsatzrentabilität</td></tr>
+      </tbody>
+    </table>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 4 – RENTABILITÄTSRECHNUNGEN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap4">4 · Rentabilitätsrechnungen</h2>
+
+    <p>Rentabilitäten messen den Erfolg in Bezug auf das eingesetzte Kapital oder den Umsatz. Das Ergebnis ist immer ein Prozentwert.</p>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Rentabilität ≠ Liquidität</strong><br>
+      Hohe Rentabilität bedeutet <strong>nicht automatisch hohe Liquidität</strong>. Ein Unternehmen kann hohe Gewinne ausweisen und trotzdem zahlungsunfähig werden – z. B. wenn Gewinne in Forderungen oder Vorräten gebunden sind statt in flüssigen Mitteln.
+    </div>
+
+    <h3 id="kap4-1">4.1 Die drei IHK-relevanten Formeln</h3>
+
+    <div class="two-col">
+      <div class="content-card">
+        <strong>Eigenkapitalrentabilität (EKR)</strong><br>
+        <em>Return on Equity – ROE</em><br><br>
+        <code>EKR = Jahresergebnis ÷ Eigenkapital × 100</code><br><br>
+        Bei gegebener Anfangs- und Schlussbilanz → <strong>Ø EK</strong> verwenden: (EK Anfang + EK Ende) ÷ 2<br><br>
+        Wichtigste Kennzahl für Anteilseigner.
+      </div>
+      <div class="content-card">
+        <strong>Gesamtkapitalrentabilität (GKR)</strong><br>
+        <em>Finanzierungsstruktur-neutral</em><br><br>
+        <code>GKR = (Jahresergebnis + FK-Zinsen) ÷ Gesamtkapital × 100</code><br><br>
+        FK-Zinsen wurden bereits als Aufwand abgezogen → müssen addiert werden. Zeigt Leistungsfähigkeit unabhängig von Finanzierungsstruktur.
+      </div>
+    </div>
+
+    <div class="pruef-box" style="margin-top:0.8rem">
+      <strong>Umsatzrentabilität (UR)</strong><br>
+      <code>UR = Jahresergebnis ÷ Umsatzerlöse × 100</code><br>
+      Zeigt, wie viel Cent Gewinn pro Euro Umsatz erzielt wird – Maßzahl für die Marge, gut im Branchenvergleich.
+    </div>
+
+    <h3 id="kap4-2">4.2 Rechenbeispiele</h3>
+
+    <div class="notice info">
+      <strong>EKR-Berechnung</strong><br>
+      EK 01: 860.000 € · EK 02: 950.000 € · Jahresergebnis 02: 55.000 €<br>
+      Ø EK = (860.000 + 950.000) ÷ 2 = <strong>905.000 €</strong><br>
+      EKR = 55.000 ÷ 905.000 × 100 = <strong>6,08 %</strong><br>
+      Interpretation: Das eingesetzte Eigenkapital hat sich mit 6,08 % verzinst.
+    </div>
+
+    <div class="notice info">
+      <strong>Alle drei Rentabilitäten + Formel umstellen (IHK Herbst 2019)</strong><br>
+      JE: 300.000 € · FK-Zinsen: 80.000 € · EKR = 15 % · GKR = 12,5 % · UR = 7,5 %<br><br>
+      a) <code>EK = JE ÷ EKR × 100 = 300.000 ÷ 15 × 100 = <strong>2.000.000 €</strong></code><br>
+      b) <code>GK = (JE + FK-Zinsen) ÷ GKR × 100 = 380.000 ÷ 12,5 × 100 = <strong>3.040.000 €</strong></code><br>
+      c) <code>Umsatz = JE ÷ UR × 100 = 300.000 ÷ 7,5 × 100 = <strong>4.000.000 €</strong></code>
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Formel umstellen</strong><br>
+      Die IHK fragt häufig nicht nach dem Prozentwert, sondern nach einer Eingangsgröße. Immer die vollständige Umstellung zeigen – kein Taschenrechner-Sprung.
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – EKR und Kapitalanlage-Vergleich</strong><br>
+      Liegt die EKR <strong>unter dem langfristigen Zinssatz einer sicheren Kapitalanlage</strong>, ist das Unternehmertum ökonomisch fragwürdig. Die IHK fragt häufig: „Beurteile die Vorteilhaftigkeit der Investition."
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 5 – LEVERAGE-EFFEKT
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap5">5 · Leverage-Effekt (Hebelwirkung des Fremdkapitals)</h2>
+
+    <p>Durch den Einsatz von Fremdkapital kann die Eigenkapitalrentabilität gesteigert werden – vorausgesetzt, die GKR liegt über dem FK-Zinssatz. Der Leverage-Effekt wirkt jedoch nur bei konstantem oder steigendem Gewinn.</p>
+
+    <div class="pruef-box">
+      <strong>Bedingung für einen positiven Leverage-Effekt</strong><br>
+      <code>GKR &gt; Fremdkapitalzinssatz</code><br>
+      Positiver Leverage: GKR &gt; Zinssatz → mehr FK → EKR steigt<br>
+      Negativer Leverage: GKR &lt; Zinssatz → mehr FK → EKR sinkt
+    </div>
+
+    <h3 id="kap5-1">5.1 Rechenbeispiel A – Leverage-Effekt</h3>
+    <p>GKR = 16 % · FK-Zinssatz = 8 % · JE vor Zinsen = 16.000 €</p>
+
+    <table>
+      <thead><tr><th>Kennzahl</th><th>Fall 1: 100 % EK</th><th>Fall 2: 60 % EK / 40 % FK</th><th>Fall 3: 20 % EK / 80 % FK</th></tr></thead>
+      <tbody>
+        <tr><td>Eigenkapital (€)</td><td>100.000</td><td>60.000</td><td>20.000</td></tr>
+        <tr><td>Fremdkapital (€)</td><td>0</td><td>40.000</td><td>80.000</td></tr>
+        <tr><td>Gesamtkapital (€)</td><td>100.000</td><td>100.000</td><td>100.000</td></tr>
+        <tr><td>JE vor Zinsen (€)</td><td>16.000</td><td>16.000</td><td>16.000</td></tr>
+        <tr><td>FK-Zinsen 8 % (€)</td><td>0</td><td>3.200</td><td>6.400</td></tr>
+        <tr><td>Reingewinn (€)</td><td>16.000</td><td>12.800</td><td>9.600</td></tr>
+        <tr><td><strong>EKR (%)</strong></td><td><strong>16,0</strong></td><td><strong>21,3</strong></td><td><strong>48,0</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice info">
+      <strong>Was zeigt das Beispiel?</strong><br>
+      Je höher der FK-Anteil, desto höher die EKR – weil FK nur 8 % kostet, das Unternehmen aber 16 % auf das Gesamtkapital erwirtschaftet. <strong>Dabei sinkt der absolute Reingewinn trotz steigender EKR</strong> (9.600 € statt 16.000 €).
+    </div>
+
+    <h3 id="kap5-2">5.2 Rechenbeispiel B – Projektfinanzierung EK vs. FK</h3>
+    <p>Zusätzliches Projekt: Kapitalbedarf 50.000 €, Rendite 16 % · FK-Zinssatz = 8 %</p>
+
+    <table>
+      <thead><tr><th>Kennzahl</th><th>Ausgangslage (Fall 2)</th><th>Finanzierung EK</th><th>Finanzierung FK</th></tr></thead>
+      <tbody>
+        <tr><td>Eigenkapital (€)</td><td>60.000</td><td>110.000</td><td>60.000</td></tr>
+        <tr><td>Fremdkapital (€)</td><td>40.000</td><td>40.000</td><td>90.000</td></tr>
+        <tr><td>Gesamtkapital (€)</td><td>100.000</td><td>150.000</td><td>150.000</td></tr>
+        <tr><td>JE vor Zinsen (€)</td><td>16.000</td><td>24.000</td><td>24.000</td></tr>
+        <tr><td>FK-Zinsen (€)</td><td>3.200</td><td>3.200</td><td>7.200</td></tr>
+        <tr><td>Reingewinn (€)</td><td>12.800</td><td>20.800</td><td>16.800</td></tr>
+        <tr><td><strong>EKR (%)</strong></td><td><strong>21,3</strong></td><td><strong>18,9</strong></td><td><strong>28,0</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Leverage-Risiko nicht vergessen</strong><br>
+      Ein hoher Verschuldungsgrad steigert die EKR – aber <strong>fixe Zinslasten</strong> und das <strong>Insolvenzrisiko</strong> steigen ebenfalls. In der Prüfung: Leverage-Effekt immer vollständig mit <strong>Chancen und Risiken</strong> beschreiben.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 6 – VERGLEICHSFORMEN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap6">6 · Vergleichsformen</h2>
+
+    <p>Eine Kennzahl allein sagt wenig aus – erst der Vergleich schafft Aussagekraft. Die IHK kennt drei Vergleichsgrundlagen:</p>
+
+    <table>
+      <thead><tr><th>Vergleichsart</th><th>Kernfrage</th><th>Beispiel</th><th>Voraussetzung / Problem</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Zeitvergleich</strong></td><td>Wie entwickelt sich das Unternehmen?</td><td>EKR 2023 vs. EKR 2024</td><td>Konsistente Datenbasis über Perioden</td></tr>
+        <tr><td><strong>Betriebsvergleich</strong></td><td>Wo steht das Unternehmen im Markt?</td><td>EKR vs. Branchendurchschnitt</td><td>Vergleichbarkeit: Branche, Größe, Bilanzierungsregeln</td></tr>
+        <tr><td><strong>Soll-Ist-Vergleich</strong></td><td>Wird das Planziel erreicht?</td><td>Plan-Umsatz 5 Mio. € vs. Ist 4,2 Mio. €</td><td>Planungsdaten müssen vorab festgelegt sein</td></tr>
+      </tbody>
+    </table>
+
+    <div class="notice info">
+      <strong>Prüfungshinweis – Betriebsvergleich</strong><br>
+      Der Betriebsvergleich ist schwierig, weil: (1) fremde Unternehmen ihre Daten selten herausgeben; (2) unterschiedliche Bilanzierungswahlrechte (HGB) die Vergleichbarkeit einschränken; (3) Branchenunterschiede bestehen. Voraussetzung ist die <strong>Vergleichbarkeit hinsichtlich Branche, Größe und Bilanzierungsregeln</strong>.
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 7 – BERICHTSWESEN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap7">7 · Berichtswesen (Reporting)</h2>
+
+    <p>Das Topmanagement erhält <strong>verdichtete Kennzahlen</strong> für das Gesamtunternehmen, operative Ebenen erhalten detaillierte Einzelwerte für ihren Verantwortungsbereich.</p>
+
+    <div class="two-col">
+      <div class="content-card">
+        <strong>Standardbericht</strong><br><br>
+        <strong>Regelmäßig</strong>, fester Inhalt, feste Form, fester Termin.<br><br>
+        Beispiele: Monatlicher BAB, Quartalsbericht, monatlicher Liquiditätsbericht.
+      </div>
+      <div class="content-card">
+        <strong>Abweichungsbericht</strong><br><br>
+        <strong>Ad-hoc</strong> bei gravierenden Soll-Ist-Abweichungen. Setzt vorab definierte Toleranzgrenzen voraus.<br><br>
+        Beispiele: Umsatz fällt 20 % unter Plan; Kostenstelle überschreitet Budget um 15 %.
+      </div>
+    </div>
+
+    <div class="content-card" style="margin-top:0.8rem">
+      <strong>Bedarfsbericht</strong><br><br>
+      <strong>Auf Anfrage</strong>, bei aktuellem Informationsbedarf.<br><br>
+      Beispiel: Vorstand benötigt Analyse für Investitionsentscheidung.
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Prüfungsfalle – Berichtsart richtig zuordnen</strong><br>
+      Regelmäßig + fester Inhalt + fester Termin → <strong>Standardbericht</strong><br>
+      Unregelmäßig + Abweichung überschreitet Toleranzgrenze → <strong>Abweichungsbericht</strong><br>
+      Einmalig + auf Initiative von Management/Controlling → <strong>Bedarfsbericht</strong><br><br>
+      Liest du „monatlich" → Standardbericht · „Umsatz eingebrochen" → Abweichungsbericht · „ad hoc / Vorstandssitzung" → Bedarfsbericht
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         KAPITEL 8 – PRÜFUNGSFRAGEN
+    ══════════════════════════════════════════════ -->
+    <h2 id="kap8">8 · Prüfungsfragen</h2>
+
+    <div class="notice warn">Keine Musterlösungen – Lösungshinweise kursiv im PDF</div>
+
+    <h3>Block 1 – Grundlagen &amp; Kennzahlenarten</h3>
+    <ol>
+      <li>Nenne die drei Analysebereiche der Auswertung betriebswirtschaftlicher Zahlen und erkläre kurz, was jeweils bewertet wird. <em>(Definition)</em></li>
+      <li>Welche Informationsquelle steht externen Adressaten zur Verfügung? Was können externe Adressaten nicht einsehen und warum? <em>(Definition)</em></li>
+      <li>Erkläre den Unterschied zwischen Gliederungszahl, Beziehungszahl und Indexzahl. Nenne für jede Art ein konkretes Beispiel mit Formel. <em>(Definition + Beispiel)</em></li>
+    </ol>
+
+    <h3>Block 2 – Bilanzaufbereitung</h3>
+    <ol start="4">
+      <li>Die EK-Quote stieg von 35 % auf 45 %, das kurzfristige FK sank von 30 % auf 14 %. Beurteile diese Entwicklung in zwei vollständigen Sätzen mit Bewertungsaussage. <em>(Interpretation)</em></li>
+      <li>Aus welchen fünf Bereichen lassen sich Kennzahlen aus der aufbereiteten Bilanz ableiten? Nenne je einen Beispiel-Kennzahlennamen. <em>(Struktur)</em></li>
+    </ol>
+
+    <h3>Block 3 – Rentabilitätsrechnungen</h3>
+    <ol start="6">
+      <li>Warum werden bei der GKR die Fremdkapitalzinsen zum Jahresergebnis addiert, bevor durch das Gesamtkapital dividiert wird? <em>(Begründung)</em></li>
+      <li>JE: 120.000 € · EK Anfang: 700.000 € · EK Ende: 900.000 € · FK-Zinsen: 40.000 € · GK: 1.500.000 € · Umsatz: 2.400.000 €. Berechne EKR, GKR und Umsatzrentabilität vollständig. <em>(Berechnung)</em></li>
+      <li>EKR = 18 %, Jahresergebnis = 90.000 €. Berechne das Eigenkapital. <em>(Formel umstellen)</em></li>
+    </ol>
+
+    <h3>Block 4 – Leverage-Effekt</h3>
+    <ol start="9">
+      <li>GKR = 14 %, FK-Zinssatz = 6 %. Liegt ein positiver Leverage-Effekt vor? Erkläre in zwei Sätzen, was bei steigendem FK-Einsatz mit der EKR und dem absoluten Reingewinn passiert. <em>(Analyse + Leverage-Bedingung)</em></li>
+      <li>Nenne zwei Risiken, die mit einem steigenden Verschuldungsgrad verbunden sind, und erkläre, warum der Leverage-Effekt nur bei konstantem oder steigendem Gewinn wirkt. <em>(Risikobewertung)</em></li>
+    </ol>
+
+    <h3>Block 5 – Vergleichsformen &amp; Berichtswesen</h3>
+    <ol start="11">
+      <li>Das Controlling erhält: (a) „Monatlich den DB-Bericht für alle Filialen erstellen." (b) „Umsatz Region Süd eingebrochen – sofort Bericht!" (c) „Einmalige Umsatzanalyse nach Kunden für die Vorstandssitzung." – Ordne jede Anfrage der richtigen Berichtsart zu und begründe kurz. <em>(Zuordnung Berichtsart)</em></li>
+    </ol>
+
+    <h3>Transferaufgaben</h3>
+    <div class="notice warn">
+      <strong>T1 – Rentabilitätsanalyse Möbel AG</strong><br>
+      JE 180.000 €, FK-Zinsen 60.000 €, EK (Ø) 1.200.000 €, GK (Ø) 3.000.000 €, Umsatz 4.500.000 €. Bankzinssatz 5 % p.a.<br>
+      (a) Berechne EKR, GKR und UR vollständig. (b) Beurteile, ob die Investition aus Sicht der Eigenkapitalgeber sinnvoll ist. (c) Liegt ein positiver Leverage-Effekt vor? Begründe mit Zahlen.
+    </div>
+    <div class="notice warn">
+      <strong>T2 – Bilanzentwicklung und Berichtswesen (Handels GmbH)</strong><br>
+      EK-Quote Vj. 28 %, Bj. 42 %. Kurzfristiges FK Vj. 32 %, Bj. 15 %. UR sank von 3,2 % auf 1,8 %.<br>
+      (a) Beurteile EK-Quote und kurzfristiges FK mit vollständigem Bewertungssatz. (b) Welche Berichtsart wird ausgelöst, wenn die UR die Toleranzgrenze von 2,5 % unterschreitet? (c) Nenne zwei Maßnahmen zur Steigerung der UR.
+    </div>
+
+    <div class="related-topics">
+      <h3>Verwandte Themen</h3>
+      <ul>
+        <li><a href="rewe_ls02.html">LS02 · Grundlagen Fibu</a> – Bilanz und GuV als Datenquelle</li>
+        <li><a href="rewe_ls07.html">LS07 · Voll- und Teilkostenrechnung</a> – Deckungsbeitrag als interne Kennzahl</li>
+        <li><a href="rewe_ls09.html">LS09 · Planungsrechnung</a> – Soll-Ist-Vergleich, Berichtswesen im Controlling</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div>WFW Wiki · IHK Wirtschaftsfachwirt</div>
+  <div>REWE LS08 · Stand: 29.06.2026</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../css/pages.js"></script>
+<script src="../css/engine.js"></script>
+</body>
+</html>
