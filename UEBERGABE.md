@@ -27,7 +27,8 @@ wfw-wiki1/
     engine.js             ← baut Sidebar, Kacheln, Modul-Seiten, Logo, Toggle, Notizzettel, Formelglossar
     pages.js              ← ZENTRALE KONFIGURATION (Module + alle Seiten)
     tiles.css             ← Kachel-Grid CSS (wird in index.html eingebunden)
-    formelzeichen.json    ← NEU: zentrales Formelzeichen-Glossar (siehe unten)
+    formelzeichen.json    ← zentrales Formelzeichen-Glossar (siehe unten)
+    changelog.json        ← NEU: zentraler Changelog (siehe unten)
   pages/
     about.html
     modul_[id].html        ← 11 Modul-Übersichtsseiten (auto-generiert)
@@ -97,7 +98,7 @@ const WIKI_CONFIG = {
 };
 ```
 
-⚠️ **OFFENER KLÄRUNGSPUNKT:** Im `modules`-Array steht beim Modul `bm` (Betriebliches Management) noch `dozent: "Mazajka & Labonté"` — alle bisher gelieferten bm-Skripte (LS01–LS04) zeigen jedoch durchgängig **Michael Dern** als Dozent (Quelle: hochgeladene PPTX-Dateien). Noch nicht final geklärt, ob das Dozenten-Feld im Modul-Array angepasst werden soll oder ob es aus historischen Gründen so bleiben muss (ggf. galt der alte Dozent für andere/frühere bm-Skripte außerhalb dieses Wikis). **Vor dem nächsten bm-Skript klären.**
+⚠️ **Hinweis (geklärt):** Im `modules`-Array steht beim Modul `bm` (Betriebliches Management) `dozent: "Mazajka & Labonté"`, obwohl die gelieferten bm-Skripte (LS01–LS04) durchgängig Michael Dern als Dozent zeigen. Boris hat klargestellt: **Der Dozentenname in den Skripten ist irrelevant** — das Feld bleibt unverändert, keine weitere Klärung nötig.
 
 ---
 
@@ -124,9 +125,14 @@ LS02 Betriebliche Planungsprozesse & Betriebsstatistik ✅
 LS03 Wissensmanagement im Betrieb ✅
 LS04 Informationstechnologie im Betrieb ✅
 
-### Unternehmensführung (uf) — in Arbeit, Dozent Michael Dern
+### Unternehmensführung (uf) — ABGESCHLOSSEN ✅ (LS01–LS07, Dozent Michael Dern)
 LS01 Betriebliche Planungsprozesse ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen, siehe Skript)
 LS02 Aufbauorganisation ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen; Kapitel 7 "Varianten der personalwirtschaftlichen Organisation" im Quell-PDF noch nicht vom Dozenten behandelt — Platzhaltertext übernommen)
+LS03 Ablauforganisation ✅ (Arbeitsteilung/Taylorismus, Job Enlargement/Enrichment, Arbeitsablauf-/Flussdiagramm, Gantt, Netzplantechnik VKN)
+LS04 Organisationsentwicklung ✅ (Organisationsbegriffe, VUKA/BANI, formale/informale Organisation, Mintzberg-Strategiebrücke, Lewin-Phasenmodell, Widerstände, lernende Organisation) — mehrere "📷 Grafik einfügen"-Platzhalter offen
+LS05 Analysemethoden ✅ (Du-Pont-Schema, Balanced Scorecard, Plankostenrechnung, Kano-Modell, Primärmarktforschung, Betriebsstatistik/Diagrammtypen) — mehrere "📷 Grafik einfügen"-Platzhalter offen
+LS06 Personalführung / Personalplanung / Personalbeschaffung ✅ (Maslow, Herzberg, Führungsstile, Grid-Konzept, MbO/MbE/MbD, Tuckman, Belbin, Nettopersonalbedarfsplanung, Entgeltformen) — mehrere "📷 Grafik einfügen"-Platzhalter offen
+LS07 Personalentwicklung ✅ (Fortbildungsarten, Potenzialanalyse, Kompetenzkategorien, Personalportfolio, on-the-job/off-the-job-Qualifizierung) — mehrere "📷 Grafik einfügen"-Platzhalter offen
 
 ### Noch leer (Modul-Übersichtsseiten vorhanden, Skripte fehlen)
 basics · methodik · vwlbwl · marketing · fuehrung · logistik
@@ -260,19 +266,29 @@ basics · methodik · vwlbwl · marketing · fuehrung · logistik
 - Implementiert in `engine.js` (`initFormelzeichen()`) und `style.css` (Klassen `.formel-toggle`, `.formel-panel`, `.formel-group` etc.)
 - Aktuell befüllt für Module: `finanz` (Investitionsrechnung-Symbole), `rewe` (Kalkulationskürzel), `recht` (Steuerkürzel), `bm` (Kennzahlen wie ROI, EKR, GKR, SMART, SWOT)
 
+### NEU: Changelog (📜, auf jeder Seite)
+- Icon in der Topbar, links vom Formelglossar-Icon, global auf allen Seiten
+- Lädt Inhalte zur Laufzeit per `fetch()` aus `css/changelog.json` (kein Script-Tag-Eintrag in den einzelnen HTML-Seiten nötig)
+- Slide-in-Panel von rechts, Einträge gruppiert nach Datum (neueste Gruppe zuerst), je Eintrag Modul-Icon + Titel + Badge ("Neu"/"Update")
+- **Pflege ausschließlich über `css/changelog.json`** — kein Editieren im Browser. Struktur: Array von `{ datum: "TT.MM.JJJJ", eintraege: [{ modul: "<modul-id>" oder null, titel, aktion: "neu"|"update" }] }`, neueste Datumsgruppe zuerst
+- Rückwirkend befüllt mit allen bisherigen Skript-Lieferungen (Stand 30.06.2026), gruppiert nach Lieferdatum
+- Implementiert in `engine.js` (`initChangelog()`) und `style.css` (Klassen `.changelog-toggle`, `.changelog-panel`, `.changelog-date-group` etc.)
+- **Standard-Workflow ab sofort:** Bei jeder neuen oder geänderten Seite wird automatisch und ungefragt ein passender Eintrag in `changelog.json` ergänzt (gleiche Automatik wie bei `pages.js`) — neue Seiten als `"aktion": "neu"`, inhaltliche Überarbeitungen bestehender Seiten als `"aktion": "update"`
+
 ---
 
 ## Lieferformat
 - Geänderte/neue Dateien werden einzeln per `present_files` geliefert (kein ZIP mehr im aktuellen Workflow)
 - `pages/neueseite.html` + `css/pages.js` (immer beide zusammen, automatisch) bei neuen Skripten
-- Nur einzelne HTML-Datei bei Grafik-Einbettungen oder kleinen Korrekturen (kein `pages.js`-Update nötig, wenn keine neue Seite)
-- `css/engine.js`, `css/style.css` oder `css/formelzeichen.json` nur wenn Features/Glossar geändert werden
+- `css/changelog.json` wird bei jeder neuen oder geänderten Seite ebenfalls automatisch und ungefragt mitgeliefert (analog zu `pages.js`)
+- Nur einzelne HTML-Datei bei Grafik-Einbettungen oder kleinen Korrekturen (kein `pages.js`-Update nötig, wenn keine neue Seite — aber `changelog.json`-Eintrag als `"aktion": "update"` ergänzen)
+- `css/engine.js`, `css/style.css`, `css/formelzeichen.json` oder `css/changelog.json` nur wenn Features/Glossar/Changelog geändert werden
 
 ---
 
 ## Bekannte technische Details
-- `engine.js` fügt Logo, Sidebar-Toggle, Notizzettel-Button und Formelglossar-Button automatisch ein — NICHT manuell in HTML
-- Init-Reihenfolge in `engine.js` (DOMContentLoaded): `buildLogo()` → `initNotizzettel()` → `initFormelzeichen()` → `buildSidebar()` … (Reihenfolge ist wichtig für korrekte Button-Platzierung in der Topbar: Formelglossar-Button wird links vom bereits vorhandenen Notizzettel-Button eingefügt)
+- `engine.js` fügt Logo, Sidebar-Toggle, Notizzettel-Button, Formelglossar-Button und Changelog-Button automatisch ein — NICHT manuell in HTML
+- Init-Reihenfolge in `engine.js` (DOMContentLoaded): `buildLogo()` → `initNotizzettel()` → `initFormelzeichen()` → `initChangelog()` → `buildSidebar()` … (Reihenfolge ist wichtig für korrekte Button-Platzierung in der Topbar: von links nach rechts in der Topbar erscheinen Changelog-Button, Formelglossar-Button, Notizzettel-Button, Logo)
 - `build-index.bat` nach jeder neuen Seite ausführen (Node.js erforderlich)
 - `.notice { display: block }` — verhindert Flex-Layout-Fehler bei Merksätzen
 - GitHub Pages URL: `https://bowo-76.github.io/wfw-wiki1/`
@@ -286,8 +302,7 @@ basics · methodik · vwlbwl · marketing · fuehrung · logistik
   - WK I–IV + Gesamtübersicht
   - Einbindung als PDF per `<iframe>` → neues Sidebar-Modul `🧰 Werkzeugkasten`
   - Warten bis alle 4 fertig, dann in einem Rutsch
-- Grafiken für die zahlreichen „📷 Grafik einfügen"-Platzhalter in `uf_ls01` und `uf_ls02` nachliefern (Eisberg-Modell, BCG-Matrix, Organigramm-Darstellungen, PDCA-Kreislauf etc.)
-- Klärung Dozenten-Feld Modul `bm` in `pages.js` (siehe oben)
+- Grafiken für die zahlreichen „📷 Grafik einfügen"-Platzhalter nachliefern (betrifft uf_ls01, uf_ls02 sowie neu uf_ls04, uf_ls05, uf_ls06, uf_ls07: u.a. Eisberg-Modell, BCG-Matrix, Organigramm-Darstellungen, PDCA-Kreislauf, VUKA/BANI-Grafiken, Mintzberg-Strategiebrücke, Du-Pont-Pyramide, Kano-Diagramm, Maslow-Pyramide, Herzberg-Diagramm, Grid-Konzept-Gitter, Tuckman-Kurve, Nettopersonalbedarfsrad, Personalportfolio-Matrix)
 - Kapitel 7 in `uf_ls02` (Personalwirtschaftliche Organisation) ergänzen, sobald Dozent das Thema behandelt hat
 
 ---
