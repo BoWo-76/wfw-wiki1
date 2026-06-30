@@ -263,7 +263,6 @@ mark.search-highlight {
   border-radius: 6px;
   line-height: 1;
   flex-shrink: 0;
-  margin-left: auto;
   transition: background 0.15s, border-color 0.15s;
 }
 .notiz-toggle:hover {
@@ -360,7 +359,6 @@ mark.search-highlight {
   border-radius: 6px;
   line-height: 1;
   flex-shrink: 0;
-  margin-left: auto;
   transition: background 0.15s, border-color 0.15s;
 }
 .formel-toggle:hover {
@@ -462,7 +460,6 @@ mark.search-highlight {
   border-radius: 6px;
   line-height: 1;
   flex-shrink: 0;
-  margin-left: auto;
   transition: background 0.15s, border-color 0.15s;
 }
 .changelog-toggle:hover {
