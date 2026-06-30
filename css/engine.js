@@ -397,9 +397,13 @@ function initNotizzettel() {
   btn.innerHTML = '📝<span class="notiz-badge"></span>';
   btn.title = 'Notizzettel öffnen';
   btn.setAttribute('aria-label', 'Notizzettel öffnen');
-  const logo = topbar.querySelector('.topbar-logo');
-  if (logo) topbar.insertBefore(btn, logo);
-  else topbar.appendChild(btn);
+  const searchWrap = topbar.querySelector('.search-wrap');
+  if (searchWrap) topbar.insertBefore(btn, searchWrap.nextSibling);
+  else {
+    const logo = topbar.querySelector('.topbar-logo');
+    if (logo) topbar.insertBefore(btn, logo);
+    else topbar.appendChild(btn);
+  }
 
   function updateBadge() {
     const hasContent = !!(localStorage.getItem(key) || '').trim();
