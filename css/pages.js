@@ -213,5 +213,20 @@ const WIKI_CONFIG = {
       file: "pages/vwlbwl_ls03.html", status: "fertig", updated: "30.06.2026",
       keywords: ["konjunktur", "stabilitätspolitik", "geldpolitik", "wirtschaftswunder", "währungsreform", "marshallplan", "walter eucken", "ordoliberalismus", "ludwig erhard", "hyperinflation 1923", "stabilitätsgesetz", "stabg", "magisches viereck", "magisches sechseck", "preisniveaustabilität", "vollbeschäftigung", "außenwirtschaftliches gleichgewicht", "wirtschaftswachstum", "zielkonflikte", "konjunkturzyklus", "konjunkturphasen", "aufschwung", "boom", "hochkonjunktur", "abschwung", "rezession", "depression", "frühindikator", "spätindikator", "ifo-geschäftsklimaindex", "arbeitslosenquote", "erwerbspersonen", "erwerbstätige", "saisonale arbeitslosigkeit", "friktionelle arbeitslosigkeit", "konjunkturelle arbeitslosigkeit", "strukturelle arbeitslosigkeit", "inflation", "deflation", "quantitätsgleichung", "fisher", "geldmenge", "nachfrageinflation", "angebotsinflation", "geldmengeninflation", "inflationsrate", "verbraucherpreisindex", "vpi", "warenkorb", "fiskalpolitik", "finanzpolitik", "expansive fiskalpolitik", "restriktive fiskalpolitik", "deficit spending", "john maynard keynes", "antizyklisch", "crowding-out"]
     },
+    {
+      id: "vwlbwl_ls04", module: "vwlbwl", title: "LS04 · Geldpolitik & monetäre Grundlagen",
+      file: "pages/vwlbwl_ls04.html", status: "fertig", updated: "30.06.2026",
+      keywords: ["geld", "geldfunktionen", "tauschmittelfunktion", "rechenfunktion", "wertaufbewahrungsfunktion", "geldmenge", "m1", "m2", "m3", "liquiditätsgrade", "ezb", "umlaufgeschwindigkeit", "quantitätsgleichung", "fisher", "nachfrageorientierte politik", "angebotsorientierte politik", "keynes", "monetarismus", "milton friedman", "deficit spending", "multiplikatoreffekt", "crowding-out-effekt", "wirtschaftswachstum", "bestimmungsfaktoren", "außenbeitrag", "einkommensverteilung", "leistungsgerecht", "bedarfsgerecht", "nivellierung", "zielkonflikt", "leistungsanreiz"]
+    },
+    {
+      id: "vwlbwl_ls05", module: "vwlbwl", title: "LS05 · EZB-Instrumente & Transmissionsmechanismus",
+      file: "pages/vwlbwl_ls05.html", status: "fertig", updated: "30.06.2026",
+      keywords: ["ezb", "transmissionsmechanismus", "leitzins", "geschäftsbanken", "geldschöpfung", "kreditvergabe", "offenmarktgeschäfte", "tenderverfahren", "mengentender", "zinstender", "mindestreserve", "ständige fazilitäten", "spitzenrefinanzierungsfazilität", "einlagefazilität", "zinskorridor", "quantitative easing", "qe", "wirkungsmatrix", "investitionsfalle", "internationale finanzströme", "lohn-preis-spirale", "ezb-unabhängigkeit", "expansiv", "restriktiv"]
+    },
+    {
+      id: "vwlbwl_ls06", module: "vwlbwl", title: "LS06 · Außenwirtschaft",
+      file: "pages/vwlbwl_ls06.html", status: "fertig", updated: "30.06.2026",
+      keywords: ["außenwirtschaft", "außenhandel", "internationale arbeitsteilung", "komparative kostenvorteile", "kommerzielle risiken", "politische risiken", "wechselkursrisiken", "embargo", "freihandel", "protektionismus", "tarifäre maßnahmen", "nicht-tarifäre maßnahmen", "importzölle", "exportsubventionen", "importkontingente", "globalisierung", "lieferketten", "europäische union", "binnenmarkt", "grundfreiheiten", "warenverkehr", "personenverkehr", "dienstleistungsverkehr", "kapitalverkehr", "schengen", "währungsunion", "ezb", "maastricht-kriterien", "konvergenzkriterien", "haushaltsdefizit", "staatsverschuldung", "ews ii", "wechselkursstabilität"]
+    },
   ]
 };
