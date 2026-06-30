@@ -144,5 +144,15 @@ const WIKI_CONFIG = {
       file: "pages/bm_ls02.html", status: "fertig", updated: "30.06.2026",
       keywords: ["betriebsstatistik", "planungsrechnung", "vergleichsrechnung", "zeitvergleich", "betriebsvergleich", "soll-ist-vergleich", "absolute kennzahlen", "verhältniskennzahlen", "abc-analyse", "xyz-analyse", "rentabilität", "eigenkapitalrentabilität", "gesamtkapitalrentabilität", "umsatzrentabilität", "roi", "du-pont", "produktivität", "wirtschaftlichkeit", "ausschussquote", "liquiditätsgrade", "goldene bilanzregel", "anlagendeckungsgrad", "eigenkapitalquote", "verschuldungsgrad"]
     },
+    {
+      id: "bm_ls03", module: "bm", title: "LS03 · Wissensmanagement im Betrieb",
+      file: "pages/bm_ls03.html", status: "fertig", updated: "30.06.2026",
+      keywords: ["wissensmanagement", "wissenswürfel", "implizites wissen", "explizites wissen", "individuelles wissen", "kollektives wissen", "strukturelles wissen", "wissensdomänen", "normativ strategisch operativ", "mentoring", "coaching", "dms", "dokumentenmanagementsystem", "lessons learned", "wissensbilanz", "wissenslandkarte", "storytelling", "wissensaudit"]
+    },
+    {
+      id: "bm_ls04", module: "bm", title: "LS04 · Informationstechnologie im Betrieb",
+      file: "pages/bm_ls04.html", status: "fertig", updated: "30.06.2026",
+      keywords: ["informationstechnologie", "it-elemente", "hardware", "software", "wws", "warenwirtschaftssystem", "erp", "enterprise resource planning", "mis", "management-informationssystem", "data warehouse", "informationsquellen", "interne quellen", "externe quellen", "it-kosten", "it-risiken", "wordingart"]
+    },
   ]
 };
