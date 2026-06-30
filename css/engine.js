@@ -389,16 +389,22 @@ function initNotizzettel() {
   if (!topbar) return;
 
   const key = `wfw_notiz_${page.id}`;
+  const openKey = 'wfw_notiz_panel_open';
 
   // Toggle-Button in Topbar
   const btn = document.createElement('button');
   btn.className = 'notiz-toggle';
-  btn.innerHTML = '📝';
+  btn.innerHTML = '📝<span class="notiz-badge"></span>';
   btn.title = 'Notizzettel öffnen';
   btn.setAttribute('aria-label', 'Notizzettel öffnen');
   const logo = topbar.querySelector('.topbar-logo');
   if (logo) topbar.insertBefore(btn, logo);
   else topbar.appendChild(btn);
+
+  function updateBadge() {
+    const hasContent = !!(localStorage.getItem(key) || '').trim();
+    btn.classList.toggle('has-content', hasContent);
+  }
 
   // Panel
   const panel = document.createElement('div');
@@ -420,17 +426,30 @@ function initNotizzettel() {
 
   const textarea = panel.querySelector('textarea');
   textarea.value = localStorage.getItem(key) || '';
+  updateBadge();
+
+  // Panel-Status (offen/zu) über Seitenwechsel hinweg merken
+  if (localStorage.getItem(openKey) === 'true') {
+    panel.classList.add('open');
+  }
 
   let saveTimeout;
   textarea.addEventListener('input', () => {
     clearTimeout(saveTimeout);
     saveTimeout = setTimeout(() => {
       try { localStorage.setItem(key, textarea.value); } catch (e) {}
+      updateBadge();
     }, 300);
   });
 
-  btn.addEventListener('click', () => panel.classList.toggle('open'));
-  panel.querySelector('.notiz-close-btn').addEventListener('click', () => panel.classList.remove('open'));
+  btn.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('open');
+    try { localStorage.setItem(openKey, isOpen.toString()); } catch (e) {}
+  });
+  panel.querySelector('.notiz-close-btn').addEventListener('click', () => {
+    panel.classList.remove('open');
+    try { localStorage.setItem(openKey, 'false'); } catch (e) {}
+  });
 
   panel.querySelector('.notiz-print-btn').addEventListener('click', () => {
     if (!textarea.value.trim()) {
@@ -448,6 +467,7 @@ function initNotizzettel() {
       document.body.classList.remove('notiz-printing');
       textarea.value = '';
       try { localStorage.removeItem(key); } catch (e) {}
+      updateBadge();
     }
   });
 }
