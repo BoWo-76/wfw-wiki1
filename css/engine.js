@@ -512,6 +512,8 @@ async function initFormelzeichen() {
   panel.querySelector('.formel-close-btn').addEventListener('click', () => panel.classList.remove('open'));
 
   let data = [];
+  const collapsed = new Set(); // Module-IDs, die eingeklappt sind
+
   try {
     const res = await fetch(`${r}/css/formelzeichen.json`);
     data = await res.json();
@@ -530,16 +532,36 @@ async function initFormelzeichen() {
         !term || e.symbol.toLowerCase().includes(term) || e.bedeutung.toLowerCase().includes(term)
       );
       if (!entries.length) return;
+      // Bei aktiver Suche immer aufgeklappt zeigen, sonst gemerkten Zustand nutzen
+      const isOpen = term ? true : !collapsed.has(group.modul);
       html += `<div class="formel-group">
-        <div class="formel-group-title">${label}</div>
-        ${entries.map(e => `
-          <div class="formel-entry">
-            <span class="formel-symbol">${e.symbol}</span>
-            <span class="formel-bedeutung">${e.bedeutung}</span>
-          </div>`).join('')}
+        <div class="formel-group-title" data-modul="${group.modul}">
+          <span>${label}</span>
+          <span class="formel-arrow">${isOpen ? '▾' : '▸'}</span>
+        </div>
+        <div class="formel-group-entries" style="display:${isOpen ? 'block' : 'none'}">
+          ${entries.map(e => `
+            <div class="formel-entry">
+              <span class="formel-symbol">${e.symbol}</span>
+              <span class="formel-bedeutung">${e.bedeutung}</span>
+            </div>`).join('')}
+        </div>
       </div>`;
     });
     listEl.innerHTML = html || '<div class="formel-empty">Keine Treffer.</div>';
+
+    listEl.querySelectorAll('.formel-group-title').forEach(title => {
+      title.addEventListener('click', () => {
+        const modulId = title.dataset.modul;
+        const entries = title.nextElementSibling;
+        const arrow = title.querySelector('.formel-arrow');
+        const willOpen = entries.style.display === 'none';
+        entries.style.display = willOpen ? 'block' : 'none';
+        arrow.textContent = willOpen ? '▾' : '▸';
+        if (willOpen) collapsed.delete(modulId);
+        else collapsed.add(modulId);
+      });
+    });
   }
 
   render('');

@@ -414,6 +414,9 @@ mark.search-highlight {
 .formel-list { flex: 1; overflow-y: auto; }
 .formel-group { margin-bottom: 16px; }
 .formel-group-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -422,7 +425,11 @@ mark.search-highlight {
   padding-bottom: 4px;
   margin-bottom: 6px;
   border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  user-select: none;
 }
+.formel-group-title:hover { color: var(--primary-dark); }
+.formel-arrow { font-size: 11px; opacity: .6; }
 .formel-entry {
   display: flex;
   gap: 10px;
