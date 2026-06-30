@@ -20,41 +20,44 @@ wfw-wiki1/
   index.html              ← Startseite (Kachel-Grid, auto-generiert via engine.js)
   build-index.js          ← Node.js-Skript für Volltextsuche-Index
   build-index.bat         ← Doppelklick-Version für Windows
-  search-index.json       ← generierter Volltextindex (nach build-index.bat)
+  search-index.json        ← generierter Volltextindex (nach build-index.bat)
   UEBERGABE.md            ← diese Datei
   css/
-    style.css             ← gesamtes CSS-Design (inkl. Sidebar-Toggle, Tiles)
-    engine.js             ← baut Sidebar, Kacheln, Modul-Seiten, Logo, Toggle
-    pages.js              ← ZENTRALE KONFIGURATION
+    style.css             ← gesamtes CSS-Design (Sidebar-Toggle, Tiles, Notizzettel, Formelglossar)
+    engine.js             ← baut Sidebar, Kacheln, Modul-Seiten, Logo, Toggle, Notizzettel, Formelglossar
+    pages.js              ← ZENTRALE KONFIGURATION (Module + alle Seiten)
     tiles.css             ← Kachel-Grid CSS (wird in index.html eingebunden)
+    formelzeichen.json    ← NEU: zentrales Formelzeichen-Glossar (siehe unten)
   pages/
-    about.html            ← Über-Seite mit Live-Statistiken
-    modul_[id].html       ← 11 Modul-Übersichtsseiten (auto-generiert)
+    about.html
+    modul_[id].html        ← 11 Modul-Übersichtsseiten (auto-generiert)
     rewe_ls01.html … rewe_ls09.html
     finanz_ls01.html
-    recht_ls01.html … recht_ls03.html
+    recht_ls01.html … recht_ls08.html
+    bm_ls01.html, bm_ls01e.html, bm_ls02.html … bm_ls04.html
+    uf_ls01.html, uf_ls02.html
   images/
-    bowo-logo.svg         ← Logo dunkel (für About-Seite)
-    bowo-logo-light.svg   ← Logo hell (wird per engine.js in Topbar eingefügt)
-    [weitere Grafiken]    ← Screenshots aus PDFs, werden per <img> eingebettet
+    bowo-logo.svg, bowo-logo-light.svg, [weitere Grafiken]
 ```
 
 ---
 
 ## Workflow pro neues Skript
-1. Boris lädt PDF oder HTML hoch
+1. Boris lädt PDF, PPTX oder HTML hoch (auch ohne Begleittext — Modul/Nummerierung wird aus dem Dokument erkannt bzw. kurz nachgefragt)
 2. Claude generiert `pages/[modul]_lsXX.html`
-3. Claude aktualisiert `css/pages.js` (neuer Eintrag)
-4. Claude liefert NUR die geänderten Dateien als ZIP
-5. Boris: ZIP entpacken → Dateien in Wiki-Ordner → `build-index.bat` → GitHub Desktop Commit+Push
+3. Claude aktualisiert `css/pages.js` (neuer Eintrag) **automatisch und ungefragt** — das ist jetzt Standard-Workflow, nicht mehr optional
+4. Claude liefert NUR die geänderten/neuen Dateien (kein ZIP mehr nötig im aktuellen Workflow — einzelne Dateien per `present_files`)
+5. Boris: Dateien in Wiki-Ordner kopieren → `build-index.bat` (nur bei neuen Seiten) → GitHub Desktop Commit+Push
 
-**Kein build-index.bat nötig** wenn nur HTML-Dateien geändert wurden (keine neue Seite) — dann direkt committen.
+**Kein build-index.bat nötig**, wenn nur bestehende HTML-Dateien/`engine.js`/`style.css`/`formelzeichen.json` geändert wurden (keine neue Seite) — dann direkt committen.
 
 ## Workflow für Grafiken in Skripten
 1. Boris exportiert Grafik aus PDF/PowerPoint als PNG/JPG
 2. Datei in `images/` ablegen
 3. Boris nennt: Dateiname + welche HTML-Seite + wo einfügen
-4. Claude liefert nur die eine geänderte HTML-Datei (kein ZIP, kein build-index.bat)
+4. Claude liefert nur die eine geänderte HTML-Datei
+
+**Neu:** Bei PDF-Quellen mit „📷 Grafik einfügen"-Platzhaltern (z.B. Dozentenskript-Verweise) übernimmt Claude diese vorerst als gelb hinterlegte Hinweisbox mit Bildbeschreibung + Quellenseite (`.notice.warn`), bis die echte Grafik nachgeliefert wird.
 
 ---
 
@@ -83,20 +86,22 @@ const WIKI_CONFIG = {
 
   pages: [
     // module: null für Meta-Seiten (about)
-    // module: "rewe" / "finanz" / "recht" etc. für Lernseiten
+    // module: "rewe" / "finanz" / "recht" / "bm" / "uf" etc. für Lernseiten
     {
       id: "about", module: null, title: "Über dieses Wiki",
       file: "pages/about.html", status: "fertig", updated: "29.06.2026",
       keywords: [...]
     },
-    // ...weitere Einträge
+    // ...weitere Einträge, siehe aktuelle pages.js für vollständige Liste
   ]
 };
 ```
 
+⚠️ **OFFENER KLÄRUNGSPUNKT:** Im `modules`-Array steht beim Modul `bm` (Betriebliches Management) noch `dozent: "Mazajka & Labonté"` — alle bisher gelieferten bm-Skripte (LS01–LS04) zeigen jedoch durchgängig **Michael Dern** als Dozent (Quelle: hochgeladene PPTX-Dateien). Noch nicht final geklärt, ob das Dozenten-Feld im Modul-Array angepasst werden soll oder ob es aus historischen Gründen so bleiben muss (ggf. galt der alte Dozent für andere/frühere bm-Skripte außerhalb dieses Wikis). **Vor dem nächsten bm-Skript klären.**
+
 ---
 
-## Fertige Skripte
+## Fertige Skripte (Stand dieser Session)
 
 ### Rechnungswesen (rewe) — ABGESCHLOSSEN ✅
 LS01 Grundlagen Rechnungswesen · LS02 Grundlagen Fibu · LS03 Grundlagen KLR
@@ -105,13 +110,26 @@ LS06 Kostenträgerrechnung & Kalkulation · LS07 Voll- und Teilkostenrechnung
 LS08 Auswertung betriebswirtschaftlicher Zahlen · LS09 Planungsrechnung
 
 ### Finanzmanagement (finanz) — in Arbeit
-LS01 Investitionsrechnung ✅ (inkl. Grafik „Grafik Bilanz - Investition.png" in Kap. 1.1)
+LS01 Investitionsrechnung ✅
 
-### Recht und Steuern (recht) — in Arbeit
+### Recht und Steuern (recht) — ABGESCHLOSSEN ✅ (Baustein Recht: LS01–LS03; Baustein Steuern: LS04–LS08, fortlaufend nummeriert im selben Modul)
 LS01 Grundlagen des Rechts · LS02 Schuldrecht & AGB · LS03 Kaufvertrag & Vertragsarten
+LS04 Körperschaftsteuer · LS05 Gewerbesteuer · LS06 Kapitalertragsteuer und Abgeltungsteuer
+LS07 Umsatzsteuer · LS08 Weitere Steuerarten und AO
+
+### Betriebliches Management (bm) — in Arbeit, Dozent Michael Dern
+LS01 Strategische & operative Planungsgrundlagen ✅
+LS01-E Gegenstromverfahren & Zielsystem im Gleichgewicht (Ergänzung zu LS01) ✅
+LS02 Betriebliche Planungsprozesse & Betriebsstatistik ✅
+LS03 Wissensmanagement im Betrieb ✅
+LS04 Informationstechnologie im Betrieb ✅
+
+### Unternehmensführung (uf) — in Arbeit, Dozent Michael Dern
+LS01 Betriebliche Planungsprozesse ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen, siehe Skript)
+LS02 Aufbauorganisation ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen; Kapitel 7 "Varianten der personalwirtschaftlichen Organisation" im Quell-PDF noch nicht vom Dozenten behandelt — Platzhaltertext übernommen)
 
 ### Noch leer (Modul-Übersichtsseiten vorhanden, Skripte fehlen)
-basics · methodik · vwlbwl · uf · bm · marketing · fuehrung · logistik
+basics · methodik · vwlbwl · marketing · fuehrung · logistik
 
 ---
 
@@ -133,7 +151,7 @@ basics · methodik · vwlbwl · uf · bm · marketing · fuehrung · logistik
     <input id="search-input" type="search" placeholder="Thema suchen …" autocomplete="off">
     <div id="search-results"></div>
   </div>
-  <!-- Sidebar-Toggle und Logo werden von engine.js automatisch eingefügt -->
+  <!-- Sidebar-Toggle, Formelglossar-Button, Notizzettel-Button und Logo werden von engine.js automatisch eingefügt -->
 </div>
 
 <div class="layout">
@@ -146,7 +164,7 @@ basics · methodik · vwlbwl · uf · bm · marketing · fuehrung · logistik
       <div class="kicker">Modulname · LSXX</div>
       <h1>LSXX · Titel</h1>
       <div class="meta">
-        <span>Untertitel</span>
+        <span>Untertitel / Dozent</span>
         <span>Stand: TT.MM.JJJJ</span>
         <span><span class="badge ok">Fertig</span></span>
       </div>
@@ -180,10 +198,10 @@ basics · methodik · vwlbwl · uf · bm · marketing · fuehrung · logistik
 ## CSS-Klassen für Inhaltsboxen
 ```
 .def-box          ← Definition (grüner linker Rand)
-.pruef-box        ← Prüfungsrelevant/Merksatz (gelb, mit ✏️-Label)
-.notice.info      ← Hinweis/Rechenbeispiel (blau)
+.pruef-box        ← Prüfungsrelevant/Merksatz (gelb, mit ✏️-Label) — alternativ zu .notice.danger
+.notice.info      ← Hinweis/Rechenbeispiel/Praxisbeispiel/Musterlösung (blau)
 .notice.ok        ← Merksatz positiv (grün)
-.notice.warn      ← Warnung/Transferaufgabe (orange)
+.notice.warn      ← Zusatzwissen / Grafik-Platzhalter (orange)
 .notice.danger    ← Prüfungsfalle (rot, mit ⛔)
 .two-col          ← Zweispaltiges Grid
 .content-card     ← Karte innerhalb two-col oder standalone
@@ -192,6 +210,14 @@ basics · methodik · vwlbwl · uf · bm · marketing · fuehrung · logistik
 ```
 
 **WICHTIG:** `.notice` hat `display: block` (nicht flex) — Text bleibt immer untereinander.
+
+**Box-Mapping bei PDF/PPTX-Quellen mit eigenem Label-System** (z.B. „⬣ DEFINITION", „⚠ PRÜFUNGSFALLE", „■ PRAXISBEISPIEL", „✓ MERKSATZ", „✓ MUSTERLÖSUNG", „ℹ HINWEIS", „🧮 RECHENBEISPIEL", „+ ZUSATZWISSEN"):
+- DEFINITION → `.def-box`
+- PRÜFUNGSFALLE → `.notice.danger` mit „⛔ Prüfungsfalle"
+- PRAXISBEISPIEL / MUSTERLÖSUNG / HINWEIS / RECHENBEISPIEL → `.notice.info`
+- MERKSATZ → `.notice.ok`
+- ZUSATZWISSEN / Grafik-Platzhalter → `.notice.warn`
+- Anwendungsanker / Formulierungsbaustein (aus bm-Skripten) → `.def-box`
 
 ---
 
@@ -216,22 +242,42 @@ basics · methodik · vwlbwl · uf · bm · marketing · fuehrung · logistik
 - **Volltext-Suche:** Lunr.js, nach build-index.bat
 - **Zuletzt besucht:** localStorage, 5 Einträge, in Sidebar
 
+### NEU: Notizzettel (📝, nur auf Lernseiten)
+- Icon in der Topbar (rechts, neben Logo), Panel slide-in von rechts
+- Pro Skript eigener Eintrag in `localStorage` (Key: `wfw_notiz_<page.id>`), gerätegebunden — kein Sync zwischen Geräten (bewusst so, siehe unten)
+- Auto-Save beim Tippen (debounced)
+- Orangener Badge-Punkt am Icon, wenn Notiz Inhalt hat
+- Panel-Offen/Zu-Status wird seitenübergreifend gemerkt (`localStorage`-Key `wfw_notiz_panel_open`)
+- „🖨 Drucken & löschen"-Button: druckt NUR die Notiz (mit Kopfzeile: Skript-Titel + Datum), Rest der Seite wird beim Druck ausgeblendet (`body.notiz-printing`-Klasse steuert das per CSS). Nach dem Druck (`afterprint`-Event) wird die Notiz automatisch geleert — bewusstes „Wegwerf-Block"-Konzept für mobiles Lernen (Boris druckt unterwegs als PDF, neues leeres Blatt beim nächsten Mal)
+- Implementiert in `engine.js` (`initNotizzettel()`) und `style.css` (Klassen `.notiz-toggle`, `.notiz-panel`, `.notiz-badge` etc.)
+
+### NEU: Formelzeichen-Glossar (Σ, auf jeder Seite)
+- Icon in der Topbar, links vom Notizzettel-Icon, global auf allen Seiten (nicht nur Lernseiten)
+- Lädt Inhalte zur Laufzeit per `fetch()` aus `css/formelzeichen.json` (kein Script-Tag-Eintrag in den einzelnen HTML-Seiten nötig)
+- Gruppiert nach Modul (z.B. „💰 Finanzmanagement", „🧮 Rechnungswesen", „⚖️ Recht und Steuern", „🧠 Betriebliches Management"), pro Gruppe auf-/zuklappbar (Pfeil ▾/▸, Zustand merkt sich während der Panel-Sitzung)
+- Suchfeld filtert Symbol + Bedeutung live; bei aktiver Suche werden Treffergruppen automatisch aufgeklappt angezeigt
+- **Pflege ausschließlich über `css/formelzeichen.json`** — kein Editieren im Browser. Struktur: Array von `{ modul: "<modul-id>", eintraege: [{ symbol, bedeutung }] }`
+- Implementiert in `engine.js` (`initFormelzeichen()`) und `style.css` (Klassen `.formel-toggle`, `.formel-panel`, `.formel-group` etc.)
+- Aktuell befüllt für Module: `finanz` (Investitionsrechnung-Symbole), `rewe` (Kalkulationskürzel), `recht` (Steuerkürzel), `bm` (Kennzahlen wie ROI, EKR, GKR, SMART, SWOT)
+
 ---
 
 ## Lieferformat
-- Nur geänderte/neue Dateien als ZIP
-- `pages/neueseite.html` + `css/pages.js` bei neuen Skripten
-- Nur einzelne HTML-Datei bei Grafik-Einbettungen (kein ZIP, kein build-index.bat)
-- `css/engine.js` oder `css/style.css` NUR wenn Features geändert werden
+- Geänderte/neue Dateien werden einzeln per `present_files` geliefert (kein ZIP mehr im aktuellen Workflow)
+- `pages/neueseite.html` + `css/pages.js` (immer beide zusammen, automatisch) bei neuen Skripten
+- Nur einzelne HTML-Datei bei Grafik-Einbettungen oder kleinen Korrekturen (kein `pages.js`-Update nötig, wenn keine neue Seite)
+- `css/engine.js`, `css/style.css` oder `css/formelzeichen.json` nur wenn Features/Glossar geändert werden
 
 ---
 
 ## Bekannte technische Details
-- `engine.js` fügt Logo und Toggle-Button automatisch ein — NICHT manuell in HTML
+- `engine.js` fügt Logo, Sidebar-Toggle, Notizzettel-Button und Formelglossar-Button automatisch ein — NICHT manuell in HTML
+- Init-Reihenfolge in `engine.js` (DOMContentLoaded): `buildLogo()` → `initNotizzettel()` → `initFormelzeichen()` → `buildSidebar()` … (Reihenfolge ist wichtig für korrekte Button-Platzierung in der Topbar: Formelglossar-Button wird links vom bereits vorhandenen Notizzettel-Button eingefügt)
 - `build-index.bat` nach jeder neuen Seite ausführen (Node.js erforderlich)
 - `.notice { display: block }` — verhindert Flex-Layout-Fehler bei Merksätzen
 - GitHub Pages URL: `https://bowo-76.github.io/wfw-wiki1/`
 - index.html muss `<link rel="stylesheet" href="css/tiles.css">` enthalten
+- **Niemals `localStorage`/`sessionStorage` in Claude-Artifacts verwenden** — hier im echten Wiki (kein Artifact-Kontext) ist das aber problemlos möglich und wird für Notizzettel, Panel-Status und Sidebar-Status aktiv genutzt
 
 ---
 
@@ -240,6 +286,9 @@ basics · methodik · vwlbwl · uf · bm · marketing · fuehrung · logistik
   - WK I–IV + Gesamtübersicht
   - Einbindung als PDF per `<iframe>` → neues Sidebar-Modul `🧰 Werkzeugkasten`
   - Warten bis alle 4 fertig, dann in einem Rutsch
+- Grafiken für die zahlreichen „📷 Grafik einfügen"-Platzhalter in `uf_ls01` und `uf_ls02` nachliefern (Eisberg-Modell, BCG-Matrix, Organigramm-Darstellungen, PDCA-Kreislauf etc.)
+- Klärung Dozenten-Feld Modul `bm` in `pages.js` (siehe oben)
+- Kapitel 7 in `uf_ls02` (Personalwirtschaftliche Organisation) ergänzen, sobald Dozent das Thema behandelt hat
 
 ---
 
@@ -247,3 +296,5 @@ basics · methodik · vwlbwl · uf · bm · marketing · fuehrung · logistik
 Das Wiki dient als Portfolio-Demo für Freelance-Leistungen:
 Prozessdokumentation · SOPs · interne Wiki-Systeme für KMUs
 Verkaufsargument: kein Lock-in, keine Lizenzkosten, läuft lokal im Intranet oder auf eigenem Server.
+
+Separates Demo-Projekt: **LogiBase Wiki** (fiktive LogiBase GmbH, dark blue/amber Branding, gleiche Architektur) — vollständig fertig, dient als zeigbares Fiverr-Portfolio-Stück unabhängig vom persönlichen WFW-Wiki.
