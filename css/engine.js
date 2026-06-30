@@ -568,6 +568,81 @@ async function initFormelzeichen() {
   searchEl.addEventListener('input', () => render(searchEl.value));
 }
 
+// ── CHANGELOG ─────────────────────────────────────────────────
+// Zentrale, von Boris gepflegte Liste (css/changelog.json),
+// auf jeder Seite über ein Topbar-Icon erreichbar. Kein Editieren
+// im Browser — Pflege ausschliesslich über die JSON-Datei.
+// Struktur: Array von { datum, eintraege: [{ modul, titel, aktion }] },
+// neueste Datumsgruppe zuerst.
+async function initChangelog() {
+  const topbar = document.querySelector('.topbar');
+  if (!topbar) return;
+  const r = getRoot();
+
+  const btn = document.createElement('button');
+  btn.className = 'changelog-toggle';
+  btn.innerHTML = '📜';
+  btn.title = 'Changelog öffnen';
+  btn.setAttribute('aria-label', 'Changelog öffnen');
+
+  // Links vom Formelglossar-Icon einfügen, sonst vor Notizzettel/Logo
+  const formelBtn = topbar.querySelector('.formel-toggle');
+  const notizBtn = topbar.querySelector('.notiz-toggle');
+  const logo = topbar.querySelector('.topbar-logo');
+  if (formelBtn) topbar.insertBefore(btn, formelBtn);
+  else if (notizBtn) topbar.insertBefore(btn, notizBtn);
+  else if (logo) topbar.insertBefore(btn, logo);
+  else topbar.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'changelog-panel';
+  panel.innerHTML = `
+    <div class="changelog-panel-head">
+      <h3>📜 Changelog</h3>
+      <button class="changelog-close-btn" aria-label="Schließen">✕</button>
+    </div>
+    <div class="changelog-list">Lädt …</div>`;
+  document.body.appendChild(panel);
+
+  const listEl = panel.querySelector('.changelog-list');
+
+  btn.addEventListener('click', () => panel.classList.toggle('open'));
+  panel.querySelector('.changelog-close-btn').addEventListener('click', () => panel.classList.remove('open'));
+
+  let data = [];
+  try {
+    const res = await fetch(`${r}/css/changelog.json`);
+    data = await res.json();
+  } catch (e) {
+    listEl.innerHTML = '<div class="changelog-empty">Changelog konnte nicht geladen werden.</div>';
+    return;
+  }
+
+  if (!data.length) {
+    listEl.innerHTML = '<div class="changelog-empty">Noch keine Einträge.</div>';
+    return;
+  }
+
+  const html = data.map(group => `
+    <div class="changelog-date-group">
+      <div class="changelog-date">${group.datum}</div>
+      ${group.eintraege.map(e => {
+        const mod = e.modul ? WIKI_CONFIG.modules.find(m => m.id === e.modul) : null;
+        const icon = mod ? mod.icon : 'ℹ️';
+        const badge = e.aktion === 'neu' ? '<span class="changelog-badge-new">Neu</span>'
+                    : e.aktion === 'update' ? '<span class="changelog-badge-new" style="background:var(--muted)">Update</span>'
+                    : '';
+        return `<div class="changelog-entry">
+          <span class="changelog-mod-icon">${icon}</span>
+          <span class="changelog-titel">${e.titel}</span>
+          ${badge}
+        </div>`;
+      }).join('')}
+    </div>`).join('');
+
+  listEl.innerHTML = html;
+}
+
 // ── LOGO ─────────────────────────────────────────────────────
 function buildLogo() {
   const topbar = document.querySelector('.topbar');
@@ -597,6 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildLogo();
   initNotizzettel();
   initFormelzeichen();
+  initChangelog();
   buildSidebar();
   buildIndexPage();
   buildModulePage();
