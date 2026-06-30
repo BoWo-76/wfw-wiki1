@@ -374,6 +374,84 @@ function initSidebarToggle() {
 }
 
 
+// ── NOTIZZETTEL ──────────────────────────────────────────────
+// Pro Lernseite (LSXX) ein eigener Notizzettel, gespeichert in
+// localStorage (gerätegebunden, kein Sync). Nach dem Drucken
+// wird die Notiz geleert — Wegwerf-Block für unterwegs.
+function initNotizzettel() {
+  const current = window.location.pathname.split('/').pop();
+  const page = WIKI_CONFIG.pages.find(p => p.file.split('/').pop() === current);
+
+  // Nur auf Lernseiten (haben ein module) — nicht auf Übersichten/About
+  if (!page || !page.module) return;
+
+  const topbar = document.querySelector('.topbar');
+  if (!topbar) return;
+
+  const key = `wfw_notiz_${page.id}`;
+
+  // Toggle-Button in Topbar
+  const btn = document.createElement('button');
+  btn.className = 'notiz-toggle';
+  btn.innerHTML = '📝';
+  btn.title = 'Notizzettel öffnen';
+  btn.setAttribute('aria-label', 'Notizzettel öffnen');
+  const logo = topbar.querySelector('.topbar-logo');
+  if (logo) topbar.insertBefore(btn, logo);
+  else topbar.appendChild(btn);
+
+  // Panel
+  const panel = document.createElement('div');
+  panel.className = 'notiz-panel';
+  panel.innerHTML = `
+    <div class="notiz-print-header">
+      <strong>${page.title}</strong><br>
+      <span>WFW Wiki · Notiz vom ${new Date().toLocaleDateString('de-DE')}</span>
+    </div>
+    <div class="notiz-panel-head">
+      <h3>📝 Notizzettel</h3>
+      <button class="notiz-close-btn" aria-label="Schließen">✕</button>
+    </div>
+    <textarea placeholder="Notizen zu „${page.title}“ …"></textarea>
+    <div class="notiz-actions">
+      <button class="notiz-print-btn">🖨 Drucken &amp; löschen</button>
+    </div>`;
+  document.body.appendChild(panel);
+
+  const textarea = panel.querySelector('textarea');
+  textarea.value = localStorage.getItem(key) || '';
+
+  let saveTimeout;
+  textarea.addEventListener('input', () => {
+    clearTimeout(saveTimeout);
+    saveTimeout = setTimeout(() => {
+      try { localStorage.setItem(key, textarea.value); } catch (e) {}
+    }, 300);
+  });
+
+  btn.addEventListener('click', () => panel.classList.toggle('open'));
+  panel.querySelector('.notiz-close-btn').addEventListener('click', () => panel.classList.remove('open'));
+
+  panel.querySelector('.notiz-print-btn').addEventListener('click', () => {
+    if (!textarea.value.trim()) {
+      alert('Der Notizzettel ist leer — nichts zu drucken.');
+      return;
+    }
+    const confirmed = confirm('Die Notiz wird nach dem Drucken gelöscht. Fortfahren?');
+    if (!confirmed) return;
+    document.body.classList.add('notiz-printing');
+    window.print();
+  });
+
+  window.addEventListener('afterprint', () => {
+    if (document.body.classList.contains('notiz-printing')) {
+      document.body.classList.remove('notiz-printing');
+      textarea.value = '';
+      try { localStorage.removeItem(key); } catch (e) {}
+    }
+  });
+}
+
 // ── LOGO ─────────────────────────────────────────────────────
 function buildLogo() {
   const topbar = document.querySelector('.topbar');
@@ -401,6 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildTopbar();
   initSidebarToggle();
   buildLogo();
+  initNotizzettel();
   buildSidebar();
   buildIndexPage();
   buildModulePage();
