@@ -1,0 +1,46 @@
+[
+  {
+    "modul": "finanz",
+    "eintraege": [
+      { "symbol": "i", "bedeutung": "Zinssatz / Kalkulationszinsfuß (als Dezimalzahl, z.B. 0,05 für 5 %)" },
+      { "symbol": "n", "bedeutung": "Nutzungsdauer bzw. Laufzeit in Jahren/Perioden" },
+      { "symbol": "q", "bedeutung": "Aufzinsungsfaktor, q = 1 + i" },
+      { "symbol": "C0", "bedeutung": "Kapitalwert (Barwert aller Zahlungsüberschüsse zum Zeitpunkt 0)" },
+      { "symbol": "Ct", "bedeutung": "Einzahlungsüberschuss (Rückfluss) in Periode t" },
+      { "symbol": "A0", "bedeutung": "Anschaffungsauszahlung zum Zeitpunkt 0" },
+      { "symbol": "L", "bedeutung": "Liquidationserlös am Ende der Nutzungsdauer" },
+      { "symbol": "r", "bedeutung": "Interner Zinsfuß (Effektivverzinsung einer Investition)" },
+      { "symbol": "AN", "bedeutung": "Annuität (gleichbleibende Jahreszahlung, äquivalent zum Kapitalwert)" }
+    ]
+  },
+  {
+    "modul": "rewe",
+    "eintraege": [
+      { "symbol": "EK", "bedeutung": "Einzelkosten – direkt einem Kostenträger zurechenbar" },
+      { "symbol": "GK", "bedeutung": "Gemeinkosten – nur indirekt über Schlüssel zurechenbar" },
+      { "symbol": "MEK", "bedeutung": "Materialeinzelkosten" },
+      { "symbol": "MGK", "bedeutung": "Materialgemeinkosten" },
+      { "symbol": "FEK", "bedeutung": "Fertigungseinzelkosten" },
+      { "symbol": "FGK", "bedeutung": "Fertigungsgemeinkosten" },
+      { "symbol": "HK", "bedeutung": "Herstellkosten" },
+      { "symbol": "VwGK", "bedeutung": "Verwaltungsgemeinkosten" },
+      { "symbol": "VtGK", "bedeutung": "Vertriebsgemeinkosten" },
+      { "symbol": "SK", "bedeutung": "Selbstkosten" },
+      { "symbol": "SEK", "bedeutung": "Sondereinzelkosten (z.B. Sondereinzelkosten der Fertigung/des Vertriebs)" },
+      { "symbol": "BVP", "bedeutung": "Barverkaufspreis" },
+      { "symbol": "DB", "bedeutung": "Deckungsbeitrag (Erlös − variable Kosten)" }
+    ]
+  },
+  {
+    "modul": "recht",
+    "eintraege": [
+      { "symbol": "zvE", "bedeutung": "Zu versteuerndes Einkommen" },
+      { "symbol": "KSt", "bedeutung": "Körperschaftsteuer" },
+      { "symbol": "GewSt", "bedeutung": "Gewerbesteuer" },
+      { "symbol": "USt", "bedeutung": "Umsatzsteuer" },
+      { "symbol": "VSt", "bedeutung": "Vorsteuer" },
+      { "symbol": "KapESt", "bedeutung": "Kapitalertragsteuer" },
+      { "symbol": "vGA", "bedeutung": "Verdeckte Gewinnausschüttung" }
+    ]
+  }
+]

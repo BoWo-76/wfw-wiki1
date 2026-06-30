@@ -472,6 +472,80 @@ function initNotizzettel() {
   });
 }
 
+// ── FORMELZEICHEN-GLOSSAR ────────────────────────────────────
+// Zentrale, von Boris gepflegte Liste (css/formelzeichen.json),
+// auf jeder Seite über ein Topbar-Icon erreichbar. Kein Editieren
+// im Browser — Pflege ausschliesslich über die JSON-Datei.
+async function initFormelzeichen() {
+  const topbar = document.querySelector('.topbar');
+  if (!topbar) return;
+  const r = getRoot();
+
+  const btn = document.createElement('button');
+  btn.className = 'formel-toggle';
+  btn.innerHTML = 'Σ';
+  btn.title = 'Formelzeichen-Glossar öffnen';
+  btn.setAttribute('aria-label', 'Formelzeichen-Glossar öffnen');
+
+  // Direkt links vom Notizzettel-Icon einfügen, sonst vor dem Logo
+  const notizBtn = topbar.querySelector('.notiz-toggle');
+  const logo = topbar.querySelector('.topbar-logo');
+  if (notizBtn) topbar.insertBefore(btn, notizBtn);
+  else if (logo) topbar.insertBefore(btn, logo);
+  else topbar.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'formel-panel';
+  panel.innerHTML = `
+    <div class="formel-panel-head">
+      <h3>Σ Formelzeichen-Glossar</h3>
+      <button class="formel-close-btn" aria-label="Schließen">✕</button>
+    </div>
+    <input type="search" class="formel-search" placeholder="Kürzel oder Bedeutung suchen …" autocomplete="off">
+    <div class="formel-list">Lädt …</div>`;
+  document.body.appendChild(panel);
+
+  const listEl = panel.querySelector('.formel-list');
+  const searchEl = panel.querySelector('.formel-search');
+
+  btn.addEventListener('click', () => panel.classList.toggle('open'));
+  panel.querySelector('.formel-close-btn').addEventListener('click', () => panel.classList.remove('open'));
+
+  let data = [];
+  try {
+    const res = await fetch(`${r}/css/formelzeichen.json`);
+    data = await res.json();
+  } catch (e) {
+    listEl.innerHTML = '<div class="formel-empty">Glossar konnte nicht geladen werden.</div>';
+    return;
+  }
+
+  function render(filterText) {
+    const term = (filterText || '').trim().toLowerCase();
+    let html = '';
+    data.forEach(group => {
+      const mod = WIKI_CONFIG.modules.find(m => m.id === group.modul);
+      const label = mod ? `${mod.icon} ${mod.label}` : group.modul;
+      const entries = group.eintraege.filter(e =>
+        !term || e.symbol.toLowerCase().includes(term) || e.bedeutung.toLowerCase().includes(term)
+      );
+      if (!entries.length) return;
+      html += `<div class="formel-group">
+        <div class="formel-group-title">${label}</div>
+        ${entries.map(e => `
+          <div class="formel-entry">
+            <span class="formel-symbol">${e.symbol}</span>
+            <span class="formel-bedeutung">${e.bedeutung}</span>
+          </div>`).join('')}
+      </div>`;
+    });
+    listEl.innerHTML = html || '<div class="formel-empty">Keine Treffer.</div>';
+  }
+
+  render('');
+  searchEl.addEventListener('input', () => render(searchEl.value));
+}
+
 // ── LOGO ─────────────────────────────────────────────────────
 function buildLogo() {
   const topbar = document.querySelector('.topbar');
@@ -500,6 +574,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSidebarToggle();
   buildLogo();
   initNotizzettel();
+  initFormelzeichen();
   buildSidebar();
   buildIndexPage();
   buildModulePage();
