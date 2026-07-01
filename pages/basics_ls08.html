@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LS08 · Absatz: Nachlässe und Anzahlungen – WFW Wiki</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html">WFW<span>Wiki</span></a>
+  <div class="search-wrap">
+    <input id="search-input" type="search" placeholder="Thema suchen …" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+  <!-- Sidebar-Toggle, Werkzeugkasten-Button, Changelog-Button, Formelglossar-Button,
+       Notizzettel-Button und Logo werden von engine.js automatisch eingefügt -->
+</div>
+
+<div class="layout">
+  <nav class="sidebar"></nav>
+  <main class="main">
+    <div class="breadcrumb">
+      <a href="../index.html">Startseite</a> › Basics Wirtschaftsrechnen › LS08 Absatz
+    </div>
+    <div class="page-header">
+      <div class="kicker">Basics Wirtschaftsrechnen · LS08</div>
+      <h1>LS08 · Absatz: Nachlässe und Anzahlungen</h1>
+      <div class="meta">
+        <span>Dozent: Kreß & Steinhof</span>
+        <span>Stand: 01.07.2026</span>
+        <span><span class="badge ok">Fertig</span></span>
+      </div>
+    </div>
+
+    <p>Während der Verkauf von eigenen Erzeugnissen oder Handelswaren den Standardfall darstellt, sind es in der Prüfung oft die Besonderheiten, die abgefragt werden. Im Fokus dieses Skripts stehen die Erlösschmälerungen durch Nachlässe (Rabatte und Skonti) sowie die buchhalterische und steuerliche Behandlung von Kundenanzahlungen. Ein sicheres Verständnis der Umsatzsteuerkorrektur ist hierbei unerlässlich.</p>
+
+    <h2>Kapitel 1: Nachlässe im Absatzbereich (Rabatte)</h2>
+
+    <h3>1.1 Sofortrabatte vs. Nachträgliche Rabatte</h3>
+    <p>Im Absatzbereich gewähren wir unseren Kunden Preisnachlässe. Für die Buchhaltung ist entscheidend, wann dieser Nachlass gewährt wird.</p>
+
+    <table>
+      <thead>
+        <tr><th>Art des Rabatts</th><th>Zeitpunkt</th><th>Buchhalterische Behandlung</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sofortrabatt (z. B. Mengenrabatt, Treuerabatt)</td>
+          <td>Wird direkt bei Rechnungsstellung abgezogen.</td>
+          <td>Keine separate Buchung! Es wird direkt der geminderte Rechnungsbetrag (Nettoumsatz) gebucht.</td>
+        </tr>
+        <tr>
+          <td>Nachträglicher Rabatt (z. B. Mängelrüge, Jahresbonus)</td>
+          <td>Wird nach der ursprünglichen Rechnungsstellung gewährt.</td>
+          <td>Muss als Erlösschmälerung gebucht werden. Die Umsatzsteuer muss anteilig korrigiert werden.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Kapitel 2: Kundenskonti (Erlösschmälerungen)</h2>
+
+    <h3>2.1 Definition und Kontenzuordnung</h3>
+    <p>Ein Skonto ist ein Preisnachlass für die vorzeitige Zahlung einer Rechnung (z. B. „Zahlbar innerhalb von 8 Tagen mit 2 % Skonto"). Da der Kunde erst bei der Zahlung entscheidet, ob er das Skonto zieht, handelt es sich immer um einen nachträglichen Preisnachlass.</p>
+
+    <div class="def-box">
+      <strong>Gewährte Skonti (Erlösschmälerungen)</strong>
+      Unterkonto der Umsatzerlöse (Kontenklasse 5). Es erfasst die Minderung unserer Erträge.
+    </div>
+
+    <div class="notice ok">
+      <strong>✓ Merksatz</strong>
+      Skonto korrigiert immer den ursprünglichen Umsatz <strong>inklusive</strong> Umsatzsteuer.
+    </div>
+
+    <h3>2.2 Buchungssätze und Umsatzsteuerkorrektur</h3>
+    <p>Zieht der Kunde bei der Überweisung das Skonto ab, erhalten wir weniger Geld auf dem Bankkonto. Gleichzeitig müssen wir unseren ursprünglich gebuchten Umsatzerlös und die abgeführte USt nach unten korrigieren.</p>
+
+    <div class="notice info">
+      <strong>📝 Beispiel</strong>
+      Zielverkauf von Waren für 1.000 € netto + 190 € USt = 1.190 € brutto. Der Kunde zahlt per Banküberweisung abzüglich 2 % Skonto.
+      <p><strong>1. Berechnung des Skontos:</strong><br>
+      Bruttoskonto: 1.190 € × 2 % = 23,80 €<br>
+      Nettoskonto (Erlösschmälerung): 23,80 € ÷ 1,19 = 20,00 €<br>
+      USt-Korrektur: 23,80 € − 20,00 € = 3,80 €</p>
+      <p><strong>2. Buchungssatz bei Zahlungseingang:</strong></p>
+      <pre>Bank (Aktivkonto)                1.166,20 €
+Gewährte Skonti (Ertragskorrektur)   20,00 €
+Umsatzsteuer (Passivkorrektur)        3,80 €
+   an Forderungen a. LL (Aktivkonto)        1.190,00 €</pre>
+    </div>
+
+    <h2>Kapitel 3: Erhaltene Anzahlungen</h2>
+
+    <h3>3.1 Grundprinzip und Steuerpflicht</h3>
+    <p>Zahlt ein Kunde einen Betrag, bevor wir die Leistung erbracht oder die Ware geliefert haben, spricht man von einer erhaltenen Anzahlung.</p>
+
+    <div class="notice warn">
+      <strong>⚠ Wichtig</strong>
+      Eine erhaltene Anzahlung ist noch <strong>kein Umsatzerlös</strong>! Sie stellt eine Verbindlichkeit gegenüber dem Kunden dar (wir schulden ihm noch die Ware). Dennoch entsteht bereits mit dem Zahlungseingang der Anzahlung die Umsatzsteuerpflicht (§ 13 Abs. 1 Nr. 1a UStG).
+    </div>
+
+    <h3>3.2 Der vollständige Buchungsablauf</h3>
+    <div class="notice info">
+      <strong>📝 Beispiel</strong>
+      Ein Kunde bestellt eine Maschine für 10.000 € netto. Er leistet eine Anzahlung von 2.380 € brutto (darin 380 € USt). Später erfolgt die Lieferung und Schlussrechnung über den Gesamtbetrag. Abschließend überweist der Kunde den Restbetrag.
+
+      <p style="margin-top:0.6rem;"><strong>Schritt 1 – Anzahlung geht ein:</strong> Der Zahlungseingang wird als Verbindlichkeit gebucht, die USt wird sofort fällig.</p>
+      <pre>Bank                    2.380 €
+   an Erhaltene Anzahlungen   2.000 €
+   an Umsatzsteuer               380 €</pre>
+
+      <p><strong>Schritt 2 – Lieferung & Schlussrechnung:</strong> Die Leistung ist erbracht. Jetzt wird der gesamte Erlös gebucht.</p>
+      <pre>Forderungen a. LL   11.900 €
+   an Umsatzerlöse           10.000 €
+   an Umsatzsteuer            1.900 €</pre>
+
+      <p><strong>Schritt 3 – Verrechnung der Anzahlung:</strong> Die Verbindlichkeit aus der Anzahlung wird aufgelöst und mit der Forderung verrechnet. Die bereits abgeführte USt aus Schritt 1 wird korrigiert, um eine Doppelbesteuerung zu vermeiden.</p>
+      <pre>Erhaltene Anzahlungen   2.000 €
+Umsatzsteuer               380 €
+   an Forderungen a. LL           2.380 €</pre>
+
+      <p><strong>Schritt 4 – Restzahlung des Kunden:</strong> Der Kunde zahlt den noch offenen Differenzbetrag (11.900 € − 2.380 €).</p>
+      <pre>Bank   9.520 €
+   an Forderungen a. LL   9.520 €</pre>
+    </div>
+
+    <h2>Kapitel 4: Zusammenfassung und Prüfungsvorbereitung</h2>
+
+    <h3>4.1 Prüfungs-Checkliste</h3>
+    <div class="notice info">
+      <strong>Checkliste</strong>
+      <ul>
+        <li>Art des Nachlasses prüfen: Sofortrabatt (keine Buchung) oder nachträglicher Nachlass/Skonto (Erlösschmälerung)?</li>
+        <li>Brutto oder Netto? Genau prüfen, ob die genannten Beträge inklusive oder exklusive Umsatzsteuer sind.</li>
+        <li>Steuerkorrektur bedacht? Bei jedem Skontoabzug durch den Kunden muss die Umsatzsteuer anteilig im Soll korrigiert werden.</li>
+        <li>Anzahlungen: Wurde bei der Vereinnahmung der Anzahlung die Umsatzsteuer abgeführt?</li>
+        <li>Verrechnung: Wurde bei der Schlussrechnung die Anzahlung korrekt gegen die Forderung gebucht und die USt storniert?</li>
+      </ul>
+    </div>
+
+    <h3>4.2 Typische Prüfungsfallen</h3>
+    <div class="notice danger">
+      <strong>⛔ Fehler 1: Sofortrabatte werden gebucht</strong>
+      Oft wird in der Prüfung ein Mengenrabatt auf der Rechnung ausgewiesen. Viele Prüflinge buchen diesen auf „Gewährte Rabatte". Falsch! Sofortrabatte mindern direkt den Zielkauf-Betrag.
+    </div>
+
+    <div class="notice danger">
+      <strong>⛔ Fehler 2: Falsche Steuerseite beim Skonto</strong>
+      Beim Kundenskonto mindert sich unsere Umsatzsteuerzahllast. Die Umsatzsteuer muss daher im Soll gebucht werden (Korrektur der abgeführten USt). Wird sie im Haben gebucht, erhöht sich die Steuerlast fälschlicherweise.
+    </div>
+
+    <div class="notice danger">
+      <strong>⛔ Fehler 3: Anzahlung als Erlös gebucht</strong>
+      Eine erhaltene Anzahlung wird fälschlicherweise direkt auf „Umsatzerlöse" gebucht. Das verstößt gegen das Realisationsprinzip. Erlöse dürfen erst gebucht werden, wenn die Leistung erbracht (Gefahrübergang) ist. Vorher ist es das Passivkonto „Erhaltene Anzahlungen".
+    </div>
+
+    <div class="related-topics">
+      <h3>Verwandte Themen</h3>
+      <ul>
+        <li><a href="basics_ls04.html">LS04 · Umsatzsteuer im Buchungskreislauf</a> – Skontokorrektur und Vorsteuer-/USt-Grundlogik</li>
+        <li><a href="basics_ls07.html">LS07 · Privatkonten im Rechnungswesen</a> – weiteres erfolgsneutrales Sonderthema</li>
+      </ul>
+    </div>
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div>WFW Wiki · IHK Wirtschaftsfachwirt</div>
+  <div>BASICS LS08 · Stand: 01.07.2026</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../css/pages.js"></script>
+<script src="../css/engine.js"></script>
+</body>
+</html>

@@ -275,6 +275,21 @@ const WIKI_CONFIG = {
       keywords: ["bezugskosten", "anschaffungsnebenkosten", "§255 hgb", "frachtkosten", "rollgelder", "transportversicherung", "zölle", "bestandsorientiert", "aufwandsorientiert", "kontenklasse 2", "kontenklasse 6", "unterkonto", "hauptkonto", "beschaffung", "spediteur"]
     },
     {
+      id: "basics_ls07", module: "basics", title: "LS07 · Privatkonten im Rechnungswesen",
+      file: "pages/basics_ls07.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["privatkonten", "privatentnahme", "privateinlage", "trennungsprinzip", "eigenkapital", "geldentnahme", "sachentnahme", "nutzungsentnahme", "leistungsentnahme", "entnahme von gegenständen", "unentgeltliche wertabgabe", "teilwert", "einkommensteuer", "gewerbesteuer", "kirchensteuer", "personensteuer", "erfolgsneutral"]
+    },
+    {
+      id: "basics_ls08", module: "basics", title: "LS08 · Absatz: Nachlässe und Anzahlungen",
+      file: "pages/basics_ls08.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["absatz", "nachlass", "rabatt", "sofortrabatt", "nachträglicher rabatt", "mengenrabatt", "treuerabatt", "kundenskonto", "gewährte skonti", "erlösschmälerung", "erhaltene anzahlungen", "anzahlung", "umsatzsteuerkorrektur", "realisationsprinzip", "schlussrechnung", "verrechnung"]
+    },
+    {
+      id: "basics_ls09", module: "basics", title: "LS09 · Leasing im Rechnungswesen",
+      file: "pages/basics_ls09.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["leasing", "leasingnehmer", "leasinggeber", "wirtschaftliches eigentum", "rechtliches eigentum", "operating-leasing", "spezial-leasing", "finanzierungs-leasing", "grundmietzeit", "40-90 prozent regel", "aktivierung", "verbindlichkeiten aus leasing", "zinsanteil", "tilgungsanteil"]
+    },
+    {
       id: "basics_ls17", module: "basics", title: "LS17 · Zinsrechnung – Von den Grundlagen zum Zinseszins",
       file: "pages/basics_ls17.html", status: "fertig", updated: "01.07.2026",
       keywords: ["zinsrechnung", "zinsen", "zinseszins", "kapital", "zinssatz", "aufzinsungsfaktor", "herzstückformel", "jahreszinsen", "monatszinsen", "tageszinsen", "unterjährige verzinsung", "30/360", "act/360", "act/act", "kaufmännische zinsformel", "euro-zinsformel", "bgb-zinsformel", "verzugszinsen", "formeln umstellen", "bruchstrich", "einzeiler", "linearisierung", "taschenrechner"]

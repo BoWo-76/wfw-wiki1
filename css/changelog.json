@@ -4,6 +4,21 @@
     "eintraege": [
       {
         "modul": "basics",
+        "titel": "LS09 · Leasing im Rechnungswesen",
+        "aktion": "neu"
+      },
+      {
+        "modul": "basics",
+        "titel": "LS08 · Absatz: Nachlässe und Anzahlungen",
+        "aktion": "neu"
+      },
+      {
+        "modul": "basics",
+        "titel": "LS07 · Privatkonten im Rechnungswesen",
+        "aktion": "neu"
+      },
+      {
+        "modul": "basics",
         "titel": "LS06 · Bezugskosten im Beschaffungsbereich",
         "aktion": "neu"
       },
