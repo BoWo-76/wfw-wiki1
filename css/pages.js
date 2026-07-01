@@ -228,5 +228,20 @@ const WIKI_CONFIG = {
       file: "pages/vwlbwl_ls06.html", status: "fertig", updated: "30.06.2026",
       keywords: ["außenwirtschaft", "außenhandel", "internationale arbeitsteilung", "komparative kostenvorteile", "kommerzielle risiken", "politische risiken", "wechselkursrisiken", "embargo", "freihandel", "protektionismus", "tarifäre maßnahmen", "nicht-tarifäre maßnahmen", "importzölle", "exportsubventionen", "importkontingente", "globalisierung", "lieferketten", "europäische union", "binnenmarkt", "grundfreiheiten", "warenverkehr", "personenverkehr", "dienstleistungsverkehr", "kapitalverkehr", "schengen", "währungsunion", "ezb", "maastricht-kriterien", "konvergenzkriterien", "haushaltsdefizit", "staatsverschuldung", "ews ii", "wechselkursstabilität"]
     },
+    {
+      id: "vwlbwl_ls07", module: "vwlbwl", title: "LS07 · Betriebliche Funktionen",
+      file: "pages/vwlbwl_ls07.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["betriebliche funktionen", "produktion", "logistik", "marketing", "rechnungswesen", "finanzierung", "investition", "controlling", "personal", "pps", "produktionsplanung", "sachziel", "formalziel", "humanziel", "fertigungsart", "einzelfertigung", "serienfertigung", "massenfertigung", "sortenfertigung", "chargenfertigung", "verbundfertigung", "7r logistik", "supply chain", "lieferkette", "4p", "marketingmix", "produktpolitik", "kontrahierungspolitik", "distributionspolitik", "kommunikationspolitik", "klr", "bab", "betriebsabrechnungsbogen", "einzelkosten", "gemeinkosten", "fixkosten", "variable kosten", "innenfinanzierung", "außenfinanzierung", "eigenkapital", "fremdkapital", "leasing", "factoring", "selbstfinanzierung", "soll-ist-vergleich", "piks", "controlling-kreislauf", "personalaufgaben", "personalplanung"]
+    },
+    {
+      id: "vwlbwl_ls08", module: "vwlbwl", title: "LS08 · Existenzgründung & Rechtsformen",
+      file: "pages/vwlbwl_ls08.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["existenzgründung", "gründung", "gründungsprozess", "5 phasen", "vorgründungsphase", "gründungsphase", "nachgründungsphase", "geschäftsidee", "marktanalyse", "businessplan", "gewerbeanmeldung", "handelsregister", "finanzamt", "berufsgenossenschaft", "rechtsformwahl", "rechtsformen", "einzelunternehmen", "einzelkaufmann", "freiberufler", "kleingewerbe", "personengesellschaft", "gbr", "ohg", "kg", "komplementär", "kommanditist", "sperrminorität", "partg", "kapitalgesellschaft", "ug", "gmbh", "ag", "kgaa", "se", "mindestkapital", "haftung", "körperschaftsteuer", "einkommensteuer", "publizitätspflicht", "bundesanzeiger", "organe", "geschäftsführer", "vorstand", "aufsichtsrat", "gesellschafterversammlung", "hauptversammlung", "swot", "finanzplan", "liquidität", "gründungsrisiken", "fördermittel", "kfw"]
+    },
+    {
+      id: "vwlbwl_ls09", module: "vwlbwl", title: "LS09 · Unternehmenszusammenschlüsse",
+      file: "pages/vwlbwl_ls09.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["unternehmenszusammenschluss", "kooperation", "konzentration", "einheitliche leitung", "selbstständigkeit", "rechtliche selbstständigkeit", "wirtschaftliche selbstständigkeit", "joint venture", "arbeitsgemeinschaft", "arge", "konsortium", "interessengemeinschaft", "gelegenheitsgesellschaft", "horizontal", "vertikal", "diagonal", "lateral", "kartell", "preiskartell", "produktionskartell", "gebietskartell", "submissionskartell", "gwb", "art 101 aeuv", "bundeskartellamt", "wettbewerbsbeschränkung", "fusion", "verschmelzung", "verschmelzung durch aufnahme", "verschmelzung durch neugründung", "konzern", "unterordnungskonzern", "gleichordnungskonzern", "beteiligung", "minderheitsbeteiligung", "mehrheitsbeteiligung", "sperrminorität", "tochtergesellschaft", "economies of scale", "synergie", "marktmacht"]
+    },
   ]
 };

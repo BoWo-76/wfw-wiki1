@@ -1,126 +1,122 @@
 [
   {
+    "datum": "01.07.2026",
+    "eintraege": [
+      {
+        "modul": "vwlbwl",
+        "titel": "LS09 · Unternehmenszusammenschlüsse",
+        "aktion": "neu"
+      },
+      {
+        "modul": "vwlbwl",
+        "titel": "LS08 · Existenzgründung & Rechtsformen",
+        "aktion": "neu"
+      },
+      {
+        "modul": "vwlbwl",
+        "titel": "LS07 · Betriebliche Funktionen",
+        "aktion": "neu"
+      }
+    ]
+  },
+  {
     "datum": "30.06.2026",
     "eintraege": [
       {
         "modul": "vwlbwl",
-        "titel": "LS06 · Außenwirtschaft",
-        "aktion": "neu"
+        "titel": "LS06 · Außenwirtschaft"
       },
       {
         "modul": "vwlbwl",
-        "titel": "LS05 · EZB-Instrumente & Transmissionsmechanismus",
-        "aktion": "neu"
+        "titel": "LS05 · EZB-Instrumente & Transmissionsmechanismus"
       },
       {
         "modul": "vwlbwl",
-        "titel": "LS04 · Geldpolitik & monetäre Grundlagen",
-        "aktion": "neu"
+        "titel": "LS04 · Geldpolitik & monetäre Grundlagen"
       },
       {
         "modul": null,
-        "titel": "Nutzerhandbuch",
-        "aktion": "neu"
+        "titel": "Nutzerhandbuch"
       },
       {
         "modul": "vwlbwl",
-        "titel": "LS03 · Konjunktur, Stabilitätspolitik & Geldpolitik",
-        "aktion": "neu"
+        "titel": "LS03 · Konjunktur, Stabilitätspolitik & Geldpolitik"
       },
       {
         "modul": "vwlbwl",
-        "titel": "LS02 · Wettbewerb, Kartellrecht & Staatliche Eingriffe",
-        "aktion": "neu"
+        "titel": "LS02 · Wettbewerb, Kartellrecht & Staatliche Eingriffe"
       },
       {
         "modul": "vwlbwl",
-        "titel": "LS01 · Grundlagen der VWL",
-        "aktion": "neu"
+        "titel": "LS01 · Grundlagen der VWL"
       },
       {
         "modul": "uf",
-        "titel": "LS07 · Personalentwicklung",
-        "aktion": "neu"
+        "titel": "LS07 · Personalentwicklung"
       },
       {
         "modul": "uf",
-        "titel": "LS06 · Personalführung / Personalplanung / Personalbeschaffung",
-        "aktion": "neu"
+        "titel": "LS06 · Personalführung / Personalplanung / Personalbeschaffung"
       },
       {
         "modul": "uf",
-        "titel": "LS05 · Analysemethoden",
-        "aktion": "neu"
+        "titel": "LS05 · Analysemethoden"
       },
       {
         "modul": "uf",
-        "titel": "LS04 · Organisationsentwicklung",
-        "aktion": "neu"
+        "titel": "LS04 · Organisationsentwicklung"
       },
       {
         "modul": "uf",
-        "titel": "LS03 · Ablauforganisation",
-        "aktion": "neu"
+        "titel": "LS03 · Ablauforganisation"
       },
       {
         "modul": "uf",
-        "titel": "LS02 · Aufbauorganisation",
-        "aktion": "neu"
+        "titel": "LS02 · Aufbauorganisation"
       },
       {
         "modul": "uf",
-        "titel": "LS01 · Betriebliche Planungsprozesse",
-        "aktion": "neu"
+        "titel": "LS01 · Betriebliche Planungsprozesse"
       },
       {
         "modul": "bm",
-        "titel": "LS04 · Informationstechnologie im Betrieb",
-        "aktion": "neu"
+        "titel": "LS04 · Informationstechnologie im Betrieb"
       },
       {
         "modul": "bm",
-        "titel": "LS03 · Wissensmanagement im Betrieb",
-        "aktion": "neu"
+        "titel": "LS03 · Wissensmanagement im Betrieb"
       },
       {
         "modul": "bm",
-        "titel": "LS02 · Betriebliche Planungsprozesse & Betriebsstatistik",
-        "aktion": "neu"
+        "titel": "LS02 · Betriebliche Planungsprozesse & Betriebsstatistik"
       },
       {
         "modul": "bm",
-        "titel": "LS01-E · Gegenstromverfahren & Zielsystem im Gleichgewicht (Ergänzung)",
-        "aktion": "neu"
+        "titel": "LS01-E · Gegenstromverfahren & Zielsystem im Gleichgewicht (Ergänzung)"
       },
       {
         "modul": "bm",
-        "titel": "LS01 · Strategische & operative Planungsgrundlagen",
-        "aktion": "neu"
+        "titel": "LS01 · Strategische & operative Planungsgrundlagen"
       },
       {
         "modul": "recht",
-        "titel": "LS08 · Weitere Steuerarten und AO",
-        "aktion": "neu"
+        "titel": "LS08 · Weitere Steuerarten und AO"
       },
       {
         "modul": "recht",
-        "titel": "LS07 · Umsatzsteuer",
-        "aktion": "neu"
+        "titel": "LS07 · Umsatzsteuer"
       },
       {
         "modul": "recht",
-        "titel": "LS06 · Kapitalertragsteuer und Abgeltungsteuer",
-        "aktion": "neu"
+        "titel": "LS06 · Kapitalertragsteuer und Abgeltungsteuer"
       },
       {
         "modul": "recht",
-        "titel": "LS05 · Gewerbesteuer",
-        "aktion": "neu"
+        "titel": "LS05 · Gewerbesteuer"
       },
       {
         "modul": "recht",
-        "titel": "LS04 · Körperschaftsteuer",
-        "aktion": "neu"
+        "titel": "LS04 · Körperschaftsteuer"
       }
     ]
   },
