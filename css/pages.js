@@ -305,6 +305,26 @@ const WIKI_CONFIG = {
       keywords: ["klr", "kosten-leistungsrechnung", "fibu", "rechnungskreis", "abgrenzungsrechnung", "neutrale aufwendungen", "neutrale erträge", "kalkulatorische kosten", "anderskosten", "zusatzkosten", "kalkulatorische abschreibung", "kalkulatorische zinsen", "kalkulatorischer unternehmerlohn", "kalkulatorische miete", "kalkulatorische wagnisse", "kostenartenrechnung", "kostenstellenrechnung", "kostenträgerrechnung", "bab", "einzelkosten", "gemeinkosten", "fixe kosten", "variable kosten", "fixkostendegression"]
     },
     {
+      id: "basics_ls13", module: "basics", title: "LS13 · Bewertungsgrundsätze nach § 252 HGB",
+      file: "pages/basics_ls13.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["bewertungsgrundsätze", "§252 hgb", "bilanzidentität", "going-concern", "unternehmensfortführung", "einzelbewertung", "saldierungsverbot", "stichtagsbezogenheit", "wertaufhellend", "wertbegründend", "vorsichtsprinzip", "realisationsprinzip", "imparitätsprinzip", "niederstwertprinzip", "höchstwertprinzip", "periodenabgrenzung", "arap", "bewertungsstetigkeit", "gläubigerschutz", "gob"]
+    },
+    {
+      id: "basics_ls14", module: "basics", title: "LS14 · Bilanzanalyse & Bilanzkritik",
+      file: "pages/basics_ls14.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["bilanzanalyse", "bilanzkritik", "strukturbilanz", "analysenbilanz", "anlagenintensität", "eigenkapitalquote", "anlagendeckungsgrad", "goldene bilanzregel", "fristenkongruenz", "liquidität 2. grades", "liquidität 3. grades", "current ratio", "window dressing", "bilanzkosmetik", "stille reserven", "bewertungswahlrechte", "bilanzgewinn", "vermögenslage", "finanzlage", "ertragslage", "interne bilanzanalyse", "externe bilanzanalyse"]
+    },
+    {
+      id: "basics_ls15", module: "basics", title: "LS15 · GuV-Auswertung & Kennzahlenanalyse",
+      file: "pages/basics_ls15.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["guv-auswertung", "kennzahlenanalyse", "lagerumschlag", "forderungsumschlag", "kapitalumschlag", "eigenkapitalrentabilität", "gesamtkapitalrentabilität", "leverage-effekt", "ebit", "ebitda", "cashflow", "jahresüberschuss", "rentabilität", "liquidität", "stabilität", "profit is an opinion cash is a fact"]
+    },
+    {
+      id: "basics_ls16", module: "basics", title: "LS16 · Prozentrechnen – Grundlagen & Prüfungsrelevanz",
+      file: "pages/basics_ls16.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["prozentrechnen", "grundwert", "prozentsatz", "prozentwert", "im hundert", "auf hundert", "rückwärtsrechnen", "faktor-weg", "skontoabzug", "rabattgewährung", "provisionsabrechnung", "brutto-netto-rechnung", "mieterhöhung", "erhöht um", "erhöht auf", "bezugsbasis"]
+    },
+    {
       id: "basics_ls17", module: "basics", title: "LS17 · Zinsrechnung – Von den Grundlagen zum Zinseszins",
       file: "pages/basics_ls17.html", status: "fertig", updated: "01.07.2026",
       keywords: ["zinsrechnung", "zinsen", "zinseszins", "kapital", "zinssatz", "aufzinsungsfaktor", "herzstückformel", "jahreszinsen", "monatszinsen", "tageszinsen", "unterjährige verzinsung", "30/360", "act/360", "act/act", "kaufmännische zinsformel", "euro-zinsformel", "bgb-zinsformel", "verzugszinsen", "formeln umstellen", "bruchstrich", "einzeiler", "linearisierung", "taschenrechner"]

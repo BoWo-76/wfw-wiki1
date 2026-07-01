@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LS16 · Prozentrechnen – WFW Wiki</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html">WFW<span>Wiki</span></a>
+  <div class="search-wrap">
+    <input id="search-input" type="search" placeholder="Thema suchen …" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="sidebar"></nav>
+
+  <main class="main">
+    <div class="breadcrumb">
+      <a href="../index.html">Startseite</a> › <a href="modul_basics.html">Basics Wirtschaftsrechnen</a> › LS16
+    </div>
+
+    <div class="page-header">
+      <div class="kicker">Basics Wirtschaftsrechnen · Mathematik</div>
+      <h1>LS16 · Prozentrechnen – Grundlagen &amp; Prüfungsrelevanz</h1>
+      <div class="meta">
+        <span>👤 Kreß &amp; Steinhof</span>
+        <span>Stand: 01.07.2026</span>
+      </div>
+    </div>
+
+    <p>Prozentrechnung ist das Fundament der IHK-Prüfung. Wer hier Fehler macht, verliert unnötig Punkte in fast jedem Fachbereich — von der Kalkulation bis zur Bilanzanalyse.</p>
+
+    <h2>1. Grundlagen: Die drei zentralen Begriffe</h2>
+    <p>Jede Aufgabe zur Prozentrechnung basiert auf drei Variablen. Der erste Schritt zur Lösung ist immer, die gegebenen und die gesuchte Größe zu identifizieren.</p>
+    <table>
+      <tr><th>Variable</th><th>Bedeutung</th><th>Kaufmännisches Beispiel</th></tr>
+      <tr><td><strong>Grundwert (G)</strong></td><td>Das Ganze, die Basis. Entspricht immer 100 %.</td><td>Der ursprüngliche Listenpreis einer Ware.</td></tr>
+      <tr><td><strong>Prozentsatz (p%)</strong></td><td>Der relative Anteil, ausgedrückt in Prozent.</td><td>Der gewährte Rabattsatz (z. B. 5 %).</td></tr>
+      <tr><td><strong>Prozentwert (W)</strong></td><td>Der absolute Wert des Anteils in einer Einheit (€, kg, etc.).</td><td>Der Rabattbetrag in Euro (z. B. 50,00 €).</td></tr>
+    </table>
+    <div class="pruef-box">
+      Merksatz zur Vermeidung von Verwechslungen: <strong>Prozentsatz = %  |  Prozentwert = €</strong> (oder eine andere Mengeneinheit wie Stück, kg).
+    </div>
+
+    <h2>2. Die Formel-Zentrale: Alle Umstellungen im Blick</h2>
+    <p>Aus einer einzigen Grundformel leiten sich alle benötigten Berechnungen ab. Je nachdem, welche Größe gesucht wird, muss die Formel umgestellt werden.</p>
+    <div class="def-box">
+      <div class="def-term">Die drei Umstellungen der Grundformel</div>
+      W = (G · p) / 100  &nbsp;// Prozentwert (W) gesucht<br>
+      p = (W · 100) / G  &nbsp;// Prozentsatz (p) gesucht<br>
+      G = (W · 100) / p  &nbsp;// Grundwert (G) gesucht
+    </div>
+
+    <h2>3. Rechnen „im Hundert" und „auf Hundert"</h2>
+    <p>Diese Unterscheidung ist entscheidend, wenn man von einem Endwert auf den ursprünglichen Wert zurückrechnen muss.</p>
+
+    <h3>Rechnen „im Hundert"</h3>
+    <p>Der gegebene Grundwert entspricht 100 %. Man berechnet einen Anteil <strong>von</strong> diesem Wert.</p>
+    <div class="notice ok">
+      <strong>📝 Beispiel:</strong> 5 % Rabatt von 200 €.<br>
+      Logik: G = 200 € (100 %), gesucht ist W.<br>
+      Rechnung: W = (200 · 5) / 100 = <strong>10 €</strong>.
+    </div>
+
+    <h3>Rechnen „auf Hundert" (Rückwärtsrechnen)</h3>
+    <p>Der gegebene Wert ist bereits ein vermehrter oder verminderter Grundwert — er entspricht also <strong>nicht</strong> 100 %.</p>
+
+    <div class="notice info">
+      <strong>📝 Prüfungsnahes Beispiel: Mieterhöhung</strong>
+      Nach einer Mieterhöhung um 4 % beträgt die neue Miete 1.573,40 €. Gesucht: die ursprüngliche Miete.<br><br>
+      Analyse: Der neue Preis (1.573,40 €) ist der vermehrte Grundwert — er entspricht 100 % (alte Miete) + 4 % (Erhöhung) = 104 %.<br>
+      Gegeben: W = 1.573,40 € | p = 104 % · Gesucht: G (die ursprüngliche Miete = 100 %)<br>
+      Formel: G = (W · 100) / p<br>
+      Rechnung: G = (1.573,40 · 100) / 104 = <strong>1.512,88 €</strong>
+    </div>
+
+    <div class="notice warn">
+      <strong>Profi-Tipp: Der Faktor-Weg</strong>
+      Schneller geht es mit Faktoren: Eine Erhöhung um 4 % entspricht dem Faktor 1,04, eine Minderung um 4 % dem Faktor 0,96.<br>
+      Rechnung: G = 1.573,40 € / 1,04 = 1.512,88 €
+    </div>
+
+    <h2>4. Kaufmännische Anwendungsbeispiele</h2>
+
+    <h3>Beispiel 1: Skontoabzug (Prozentwert gesucht)</h3>
+    <p>Ein Lieferant stellt Rohstoffe im Wert von 4.500,00 € (netto) in Rechnung. Bei Zahlung innerhalb von 10 Tagen wird ein Skonto von 2 % gewährt. Wie hoch ist der Skontobetrag?</p>
+    <p>Gegeben: G = 4.500,00 € | p = 2 &nbsp;·&nbsp; Rechnung: W = (4.500 · 2) / 100 &nbsp;·&nbsp; <strong>Ergebnis: W = 90,00 €</strong></p>
+
+    <h3>Beispiel 2: Rabattgewährung (Prozentsatz gesucht)</h3>
+    <p>Eine Maschine wird statt für 12.000,00 € für 10.500,00 € verkauft (Preisnachlass: 1.500,00 €). Wie viel Prozent Rabatt wurden gewährt?</p>
+    <p>Gegeben: G = 12.000,00 € | W = 1.500,00 € &nbsp;·&nbsp; Rechnung: p = (1.500 · 100) / 12.000 &nbsp;·&nbsp; <strong>Ergebnis: p = 12,5 %</strong></p>
+
+    <h3>Beispiel 3: Provisionsabrechnung (Grundwert gesucht)</h3>
+    <p>Ein Handelsvertreter erhält eine Provision von 840,00 €, was 6 % des vermittelten Umsatzes entspricht. Wie hoch war der Umsatz?</p>
+    <p>Gegeben: W = 840,00 € | p = 6 &nbsp;·&nbsp; Rechnung: G = (840 · 100) / 6 &nbsp;·&nbsp; <strong>Ergebnis: G = 14.000,00 €</strong></p>
+
+    <h2>5. Typische Prüfungsfallen</h2>
+    <p>In IHK-Prüfungen werden Sachverhalte oft so formuliert, dass unachtsames Lesen zu Fehlern führt. Diese Fallstricke musst du kennen.</p>
+
+    <h3>Falle 1: „Erhöht um" vs. „Erhöht auf"</h3>
+    <div class="notice danger">
+      Diese sprachliche Nuance verändert den Rechenweg fundamental:<br>
+      „Der Preis (100 €) erhöht sich <strong>um</strong> 10 %." → Der neue Preis liegt bei 110 % (100 € + 10 € = 110 €).<br>
+      „Der Preis (100 €) erhöht sich <strong>auf</strong> 110 %." → Der neue Preis ist direkt 110 € (entspricht einer Erhöhung um 10 %).
+    </div>
+
+    <h3>Falle 2: Veränderung der Bezugsbasis</h3>
+    <p>Wird ein Preis zunächst um 10 % gesenkt und später wieder um 10 % erhöht, ist der Endpreis nicht identisch mit dem Ausgangspreis. Die zweite prozentuale Veränderung bezieht sich auf den bereits veränderten (neuen) Grundwert.</p>
+    <div class="notice warn">
+      <strong>📝 Beispiel:</strong> Ein Produkt kostet 200,00 €.<br>
+      Preis wird um 10 % gesenkt: 200,00 € · 0,90 = 180,00 €<br>
+      Neuer Preis wird um 10 % erhöht: 180,00 € · 1,10 = <strong>198,00 €</strong> (nicht 200,00 €!)
+    </div>
+    <p>Prozentuale Veränderungen beziehen sich immer auf den jeweils aktuellen Wert — nicht auf den ursprünglichen Ausgangswert!</p>
+
+    <h3>Falle 3: Brutto-Netto-Rechnung (Vermehrter Grundwert)</h3>
+    <p>Ein Bruttobetrag (inkl. 19 % USt.) entspricht 119 % des Nettowertes (Grundwert), nicht 100 %. Die USt. kann nicht einfach mit <code>Bruttobetrag · 0,19</code> berechnet werden.</p>
+    <div class="notice ok">
+      <strong>Korrekter Ansatz:</strong> Nettobetrag = Bruttobetrag / 1,19
+    </div>
+
+    <h3>Falle 4: Falsches Rückwärtsrechnen</h3>
+    <p>Ist ein Endwert gegeben (z. B. nach einer Erhöhung um 4 %), darf man nicht einfach 4 % vom Endwert abziehen, um zum Anfangswert zu kommen. Der Endwert entspricht 104 %, nicht 100 % — man muss durch 104 teilen und mit 100 multiplizieren (oder direkt durch 1,04 teilen).</p>
+
+    <h2>6. Checkliste für die Prüfung</h2>
+    <ol>
+      <li><strong>Was ist was?</strong> Grundwert (G), Prozentwert (W) und Prozentsatz (p) identifizieren — was ist gegeben, was ist gesucht?</li>
+      <li><strong>Basis 100 %?</strong> Klären, welcher Wert 100 % entspricht — der Anfangs- oder der Endwert?</li>
+      <li><strong>Schlüsselwörter beachten:</strong> „um", „auf", „von", „inklusive".</li>
+      <li><strong>Rückwärtsrechnen?</strong> Bei vermehrtem/vermindertem Grundwert an die „auf Hundert"-Rechnung denken (Teilen durch 1,xx bzw. 0,xx).</li>
+      <li><strong>Plausibilitäts-Check:</strong> Ist das Ergebnis logisch? Eine Mieterhöhung kann nicht zu einer niedrigeren Miete führen.</li>
+    </ol>
+
+    <div class="pruef-box">
+      Nur wer Prozentrechnung sicher beherrscht, vermeidet unnötige Punkteverluste — in praktisch jedem Fachbereich der Prüfung.
+    </div>
+
+    <div class="related-topics">
+      <h2>Verwandte Themen</h2>
+      <div class="related-links">
+        <a href="basics_ls01.html">📄 LS01 · Dreisatz – Bruchstrichmethode</a>
+        <a href="basics_ls02.html">📄 LS02 · Durchschnittsrechnung</a>
+        <a href="basics_ls17.html">📄 LS17 · Zinsrechnung</a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div>WFW Wiki · IHK Wirtschaftsfachwirt</div>
+  <div>Basics Wirtschaftsrechnen · LS16</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../css/pages.js"></script>
+<script src="../css/engine.js"></script>
+</body>
+</html>

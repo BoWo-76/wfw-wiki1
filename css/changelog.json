@@ -4,6 +4,26 @@
     "eintraege": [
       {
         "modul": "basics",
+        "titel": "LS16 · Prozentrechnen – Grundlagen & Prüfungsrelevanz",
+        "aktion": "neu"
+      },
+      {
+        "modul": "basics",
+        "titel": "LS15 · GuV-Auswertung & Kennzahlenanalyse",
+        "aktion": "neu"
+      },
+      {
+        "modul": "basics",
+        "titel": "LS14 · Bilanzanalyse & Bilanzkritik",
+        "aktion": "neu"
+      },
+      {
+        "modul": "basics",
+        "titel": "LS13 · Bewertungsgrundsätze nach § 252 HGB",
+        "aktion": "neu"
+      },
+      {
+        "modul": "basics",
         "titel": "LS12 · Kosten-Leistungsrechnung (KLR) – Grundlagen",
         "aktion": "neu"
       },
