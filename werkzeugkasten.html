@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🧰 Werkzeugkasten – WFW Wiki</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <!-- ☰ Sidebar-Toggle wird von wk-engine.js eingefügt -->
+  <a class="brand" href="index.html">WFW<span>Wiki</span></a>
+  <span class="wk-topbar-title">🧰 Werkzeugkasten</span>
+  <a class="wk-back-link" href="index.html">← Zurück zum Wiki</a>
+  <div class="topbar-logo">
+    <img src="images/bowo-logo-light.svg" alt="BoWo – Boris Wolff" height="34">
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="sidebar">
+    <!-- wird von wk-engine.js befüllt -->
+  </nav>
+
+  <main class="main">
+
+    <!-- Willkommensanzeige (solange kein Tool ausgewählt) -->
+    <div id="wk-welcome" class="wk-welcome">
+      <div class="wk-welcome-icon">🧰</div>
+      <h2>Werkzeugkasten</h2>
+      <p>Wähle links ein Werkzeug aus, um die Detailseiten anzuzeigen.</p>
+    </div>
+
+    <!-- Tool-Viewer (wird bei Auswahl eingeblendet) -->
+    <div id="wk-viewer" class="wk-viewer">
+      <div class="wk-viewer-header">
+        <h2 id="wk-tool-title"></h2>
+        <div id="wk-tool-source" class="wk-viewer-source"></div>
+      </div>
+      <div id="wk-images" class="wk-images">
+        <!-- Bilder werden von wk-engine.js eingefügt -->
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div>WFW Wiki · IHK Wirtschaftsfachwirt</div>
+  <div>🧰 Werkzeugkasten</div>
+</footer>
+
+<script src="css/wk-config.js"></script>
+<script src="css/wk-engine.js"></script>
+</body>
+</html>

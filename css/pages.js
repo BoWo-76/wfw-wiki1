@@ -243,5 +243,21 @@ const WIKI_CONFIG = {
       file: "pages/vwlbwl_ls09.html", status: "fertig", updated: "01.07.2026",
       keywords: ["unternehmenszusammenschluss", "kooperation", "konzentration", "einheitliche leitung", "selbstständigkeit", "rechtliche selbstständigkeit", "wirtschaftliche selbstständigkeit", "joint venture", "arbeitsgemeinschaft", "arge", "konsortium", "interessengemeinschaft", "gelegenheitsgesellschaft", "horizontal", "vertikal", "diagonal", "lateral", "kartell", "preiskartell", "produktionskartell", "gebietskartell", "submissionskartell", "gwb", "art 101 aeuv", "bundeskartellamt", "wettbewerbsbeschränkung", "fusion", "verschmelzung", "verschmelzung durch aufnahme", "verschmelzung durch neugründung", "konzern", "unterordnungskonzern", "gleichordnungskonzern", "beteiligung", "minderheitsbeteiligung", "mehrheitsbeteiligung", "sperrminorität", "tochtergesellschaft", "economies of scale", "synergie", "marktmacht"]
     },
+    // ── Basics Wirtschaftsrechnen ────────────────────────────
+    {
+      id: "basics_ls01", module: "basics", title: "LS01 · Dreisatz – Bruchstrichmethode",
+      file: "pages/basics_ls01.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["dreisatz", "bruchstrichmethode", "proportional", "antiproportional", "zusammengesetzter dreisatz", "logik-frage", "startwert", "zielwert", "je mehr desto mehr", "je mehr desto weniger", "kürzen", "probe", "zinsformel", "rechenweg", "mathematik"]
+    },
+    {
+      id: "basics_ls02", module: "basics", title: "LS02 · Durchschnittsrechnung",
+      file: "pages/basics_ls02.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["durchschnittsrechnung", "einfacher durchschnitt", "gewichteter durchschnitt", "gleitender durchschnitt", "zeitlich gewichteter durchschnitt", "arithmetisches mittel", "gesamtkosten", "gesamtmenge", "lagerbewertung", "durchschnittspreis", "lagerbestand", "kontostand", "trendanalyse", "zeitfenster", "zentrierung", "gewicht", "prüfungsverfahren", "stundenlohn"]
+    },
+    {
+      id: "basics_ls03", module: "basics", title: "LS03 · Buchungskreislauf EBK–SBK",
+      file: "pages/basics_ls03.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["buchungskreislauf", "ebk", "sbk", "eröffnungsbilanzkonto", "schlussbilanzkonto", "buchungssatz", "soll", "haben", "aktivkonto", "passivkonto", "bestandskonto", "erfolgskonto", "aufwandskonto", "ertragskonto", "guv", "gewinn- und verlustkonto", "eigenkapital", "aktivtausch", "passivtausch", "aktiv-passiv-mehrung", "aktiv-passiv-minderung", "bilanzveränderung", "inventur", "inventar", "eröffnungsbilanz", "schlussbilanz", "umsatzsteuer", "buchführung", "laufende buchungen"]
+    },
   ]
 };

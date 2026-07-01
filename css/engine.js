@@ -647,6 +647,31 @@ async function initChangelog() {
   listEl.innerHTML = html;
 }
 
+// ── WERKZEUGKASTEN-BUTTON ────────────────────────────────────
+// Fügt 🧰-Link in die Topbar ein (links vom 📜-Changelog-Icon).
+// Öffnet werkzeugkasten.html im selben Tab.
+function initWerkzeugkasten() {
+  const topbar = document.querySelector('.topbar');
+  if (!topbar) return;
+  const r = getRoot();
+
+  const btn = document.createElement('a');
+  btn.className = 'wk-toggle';
+  btn.href      = `${r}/werkzeugkasten.html`;
+  btn.innerHTML = '🧰';
+  btn.title     = 'Werkzeugkasten öffnen';
+  btn.setAttribute('aria-label', 'Werkzeugkasten öffnen');
+
+  // Links vom Changelog-Icon einfügen — ergibt Reihenfolge: 🧰 📜 Σ 📝 Logo
+  const changelogBtn = topbar.querySelector('.changelog-toggle');
+  const formelBtn    = topbar.querySelector('.formel-toggle');
+  const logo         = topbar.querySelector('.topbar-logo');
+  if (changelogBtn)      topbar.insertBefore(btn, changelogBtn);
+  else if (formelBtn)    topbar.insertBefore(btn, formelBtn);
+  else if (logo)         topbar.insertBefore(btn, logo);
+  else topbar.appendChild(btn);
+}
+
 // ── LOGO ─────────────────────────────────────────────────────
 function buildLogo() {
   const topbar = document.querySelector('.topbar');
@@ -677,6 +702,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNotizzettel();
   initFormelzeichen();
   initChangelog();
+  initWerkzeugkasten();
   buildSidebar();
   buildIndexPage();
   buildModulePage();

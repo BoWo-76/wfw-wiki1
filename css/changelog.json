@@ -3,19 +3,31 @@
     "datum": "01.07.2026",
     "eintraege": [
       {
-        "modul": "vwlbwl",
-        "titel": "LS09 · Unternehmenszusammenschlüsse",
+        "modul": "basics",
+        "titel": "LS03 · Buchungskreislauf EBK–SBK",
+        "aktion": "neu"
+      },
+      {
+        "modul": "basics",
+        "titel": "LS02 · Durchschnittsrechnung",
+        "aktion": "neu"
+      },
+      {
+        "modul": "basics",
+        "titel": "LS01 · Dreisatz – Bruchstrichmethode",
         "aktion": "neu"
       },
       {
         "modul": "vwlbwl",
-        "titel": "LS08 · Existenzgründung & Rechtsformen",
-        "aktion": "neu"
+        "titel": "LS09 · Unternehmenszusammenschlüsse"
       },
       {
         "modul": "vwlbwl",
-        "titel": "LS07 · Betriebliche Funktionen",
-        "aktion": "neu"
+        "titel": "LS08 · Existenzgründung & Rechtsformen"
+      },
+      {
+        "modul": "vwlbwl",
+        "titel": "LS07 · Betriebliche Funktionen"
       }
     ]
   },

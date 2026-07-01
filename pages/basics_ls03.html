@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LS03 · Buchungskreislauf EBK–SBK – WFW Wiki</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html">WFW<span>Wiki</span></a>
+  <div class="search-wrap">
+    <input id="search-input" type="search" placeholder="Thema suchen …" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="sidebar"></nav>
+  <main class="main">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Startseite</a> › Basics Wirtschaftsrechnen › LS03 Buchungskreislauf EBK–SBK
+    </div>
+
+    <div class="page-header">
+      <div class="kicker">Basics Wirtschaftsrechnen · LS03</div>
+      <h1>LS03 · Buchungskreislauf EBK–SBK</h1>
+      <div class="meta">
+        <span>Buchungen vom Eröffnungsbilanzkonto bis zum Schlussbilanzkonto · Kreß &amp; Steinhof</span>
+        <span>Stand: 01.07.2026</span>
+        <span><span class="badge ok">Fertig</span></span>
+      </div>
+    </div>
+
+    <div class="notice info">
+      Dieses Skript begleitet durch den vollständigen Buchungskreislauf eines Geschäftsjahres: Anfangsbestände aus der Eröffnungsbilanz auf Bestandskonten verteilen, laufende Buchungen auf Bestands- und Erfolgskonten, Abschluss über GuV, Eigenkapitalkonto und SBK. Der Buchungssatz lautet immer: <strong>Sollkonto an Habenkonto</strong>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 2 · HERKUNFT DER ANFANGSBESTÄNDE
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>1 · Herkunft der Anfangsbestände</h2>
+
+    <p>Die Grundlage für die Eröffnung der Konten bildet die Kette: <strong>Inventur → Inventar → Bilanz</strong>.</p>
+
+    <div class="def-box">
+      <strong>Inventur:</strong> körperliche/rechnerische Bestandsaufnahme zum Stichtag (z.B. 31.12.)<br>
+      <strong>Inventar:</strong> schriftliches Verzeichnis aller Vermögensgegenstände und Schulden<br>
+      <strong>Eröffnungsbilanz:</strong> verdichtete Gegenüberstellung von Aktiva und Passiva in Kontoform
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 3 · EBK
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>2 · Das Eröffnungsbilanzkonto (EBK)</h2>
+
+    <div class="def-box">
+      <strong>Funktion des EBK</strong><br>
+      Das EBK ist ein <strong>reines Hilfskonto</strong>, das die Anfangsbestände auf die Bestandskonten verteilt. Nach der Eröffnung aller Konten ist es ausgeglichen und wird danach nicht mehr verwendet.
+    </div>
+
+    <h3>2.1 Buchungsregeln</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kontoart</th>
+          <th>Buchungssatz</th>
+          <th>Merkhilfe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aktive Bestandskonten</strong></td>
+          <td><strong>Aktivkonto an EBK</strong></td>
+          <td>Aktivkonten stehen im Soll → vorne im Buchungssatz</td>
+        </tr>
+        <tr>
+          <td><strong>Passive Bestandskonten</strong></td>
+          <td><strong>EBK an Passivkonto</strong></td>
+          <td>Passivkonten stehen im Haben → hinten im Buchungssatz</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="notice info">
+      <strong>📝 Beispiel – Eröffnungsbilanz:</strong>
+
+      <table style="margin-top:0.5rem;">
+        <thead>
+          <tr><th>AKTIVA</th><th></th><th>PASSIVA</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Grundstücke und Gebäude</td><td>80.000 €</td><td>Eigenkapital</td><td>90.000 €</td></tr>
+          <tr><td>Fuhrpark</td><td>20.000 €</td><td>Darlehensverbindlichkeiten</td><td>25.000 €</td></tr>
+          <tr><td>Forderungen LL</td><td>15.000 €</td><td>Verbindlichkeiten LL</td><td>15.000 €</td></tr>
+          <tr><td>Bank</td><td>12.000 €</td><td></td><td></td></tr>
+          <tr><td>Kasse</td><td>3.000 €</td><td></td><td></td></tr>
+          <tr><td><strong>Summe</strong></td><td><strong>130.000 €</strong></td><td><strong>Summe</strong></td><td><strong>130.000 €</strong></td></tr>
+        </tbody>
+      </table>
+
+      <strong>Aktivkonten:</strong><br>
+      1 · Grundstücke und Gebäude <strong>an EBK</strong> — 80.000 €<br>
+      2 · Fuhrpark <strong>an EBK</strong> — 20.000 €<br>
+      3 · Forderungen LL <strong>an EBK</strong> — 15.000 €<br>
+      4 · Bank <strong>an EBK</strong> — 12.000 €<br>
+      5 · Kasse <strong>an EBK</strong> — 3.000 €<br><br>
+      <strong>Passivkonten:</strong><br>
+      6 · <strong>EBK</strong> an Eigenkapital — 90.000 €<br>
+      7 · <strong>EBK</strong> an Darlehensverbindlichkeiten — 25.000 €<br>
+      8 · <strong>EBK</strong> an Verbindlichkeiten LL — 15.000 €<br><br>
+      <em>EBK-Kontrolle: Soll 130.000 € = Haben 130.000 € ✓</em>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 4 · BESTANDSKONTEN
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>3 · Laufende Buchungen auf Bestandskonten</h2>
+
+    <h3>3.1 Die vier Bilanzveränderungsarten</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Art</th>
+          <th>Wirkung</th>
+          <th>Beispiel (Buchungssatz)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Aktivtausch</strong></td>
+          <td>Ein Aktivkonto ↑, ein anderes ↓ · Bilanzsumme bleibt gleich</td>
+          <td>Kasse an Bank 2.000 € (Barabhebung)</td>
+        </tr>
+        <tr>
+          <td><strong>2. Passivtausch</strong></td>
+          <td>Ein Passivkonto ↑, ein anderes ↓ · Bilanzsumme bleibt gleich</td>
+          <td>Verbindlichkeiten geg. KI an Darlehensverbindlichkeiten 10.000 € (Umschuldung)</td>
+        </tr>
+        <tr>
+          <td><strong>3. Aktiv-Passiv-Mehrung</strong></td>
+          <td>Aktiva ↑ und Passiva ↑ · Bilanzsumme steigt</td>
+          <td>Maschinen an Verbindlichkeiten LL 15.000 € (Maschinenkauf auf Ziel)</td>
+        </tr>
+        <tr>
+          <td><strong>4. Aktiv-Passiv-Minderung</strong></td>
+          <td>Aktiva ↓ und Passiva ↓ · Bilanzsumme sinkt</td>
+          <td>Verbindlichkeiten LL an Bank 8.000 € (Lieferantenrechnung per Bank)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3.2 Buchungsregel für Bestandskonten</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kontoart</th>
+          <th>Zugang</th>
+          <th>Abgang</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aktivkonten</strong></td>
+          <td>Soll (Debit)</td>
+          <td>Haben (Credit)</td>
+        </tr>
+        <tr>
+          <td><strong>Passivkonten</strong></td>
+          <td>Haben (Credit)</td>
+          <td>Soll (Debit)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 5 · ERFOLGSKONTEN
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>4 · Erfolgskonten – Aufwand und Ertrag</h2>
+
+    <div class="def-box">
+      <strong>Was sind Erfolgskonten?</strong><br>
+      Erfolgskonten erfassen Aufwand und Ertrag. Sie haben <strong>keinen Anfangsbestand</strong>. Der Abschluss erfolgt am Jahresende über das Gewinn- und Verlustkonto (GuV).<br><br>
+      <strong>Aufwandskonten:</strong> Aufwand entsteht im <strong>Soll</strong>, Minderungen im Haben.<br>
+      <strong>Ertragskonten:</strong> Ertrag entsteht im <strong>Haben</strong>, Minderungen im Soll.
+    </div>
+
+    <div class="notice ok">
+      <strong>Merkhilfe:</strong> „Aufwand macht arm → Soll-Seite; Ertrag macht reich → Haben-Seite"<br>
+      Aufwand = Erhöht Aufwand (Soll) = Mindert Gewinn/EK · Ertrag = Erhöht Ertrag (Haben) = Mehrt Gewinn/EK.
+    </div>
+
+    <div class="notice warn">
+      <strong>Wichtiger Hinweis – Umsatzsteuer:</strong> Die Buchungsbeispiele sind der Einfachheit halber ohne Umsatzsteuer dargestellt. In der Prüfung werden USt-Buchungen (19 % vom Nettobetrag) häufig verlangt.<br><br>
+      Beispiel: Verkauf 10.000 € netto →<br>
+      Forderungen LL an Umsatzerlöse 10.000 € und Umsatzsteuer 1.900 € (brutto = 11.900 €)<br>
+      Die Umsatzsteuer ist eine Verbindlichkeit gegenüber dem Finanzamt (Passivkonto).
+    </div>
+
+    <div class="notice info">
+      <strong>Buchungsbeispiele:</strong><br>
+      1 · Mietaufwand <strong>an Bank</strong> — 1.500 €<br>
+      2 · Forderungen LL <strong>an Umsatzerlöse</strong> — 5.000 €<br>
+      3 · Löhne und Gehälter <strong>an Kasse</strong> — 3.200 €<br>
+      4 · Bank <strong>an Zinserträge</strong> — 120 €
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 6 · ABSCHLUSS ÜBER GuV
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>5 · Abschluss der Erfolgskonten über die GuV</h2>
+
+    <div class="def-box">
+      <strong>GuV als Sammelkonto</strong><br>
+      Das GuV-Konto sammelt alle Aufwendungen und Erträge: <strong>Soll-Seite = Aufwendungen</strong>, <strong>Haben-Seite = Erträge</strong>, Saldo = Gewinn oder Verlust.
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kontoart</th>
+          <th>Buchungssatz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aufwandskonten</strong></td>
+          <td><strong>GuV</strong> an Aufwandskonto</td>
+        </tr>
+        <tr>
+          <td><strong>Ertragskonten</strong></td>
+          <td>Ertragskonto <strong>an GuV</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="notice info">
+      <strong>Beispiel:</strong> Aufwand gesamt 60.400 € (Miete 18.000 + Löhne 38.400 + AfA 4.000) · Ertrag gesamt 81.440 € (Umsatz 80.000 + Zinsen 1.440) · Gewinn 21.040 €<br><br>
+      1 · GuV an Mietaufwand — 18.000 €<br>
+      2 · GuV an Löhne und Gehälter — 38.400 €<br>
+      3 · GuV an Abschreibungen — 4.000 €<br>
+      4 · Umsatzerlöse an GuV — 80.000 €<br>
+      5 · Zinserträge an GuV — 1.440 €
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 7 · GuV → EK
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>6 · Abschluss der GuV über das Eigenkapitalkonto</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Ergebnis</th>
+          <th>Buchungssatz</th>
+          <th>EK-Wirkung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Gewinn</strong></td>
+          <td>GuV <strong>an Eigenkapital</strong></td>
+          <td>EK steigt ↑</td>
+        </tr>
+        <tr>
+          <td><strong>Verlust</strong></td>
+          <td>Eigenkapital <strong>an GuV</strong></td>
+          <td>EK sinkt ↓</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="notice ok">
+      <strong>Merkhilfe – Verlust:</strong> „Verlust vermindert EK → EK im Soll"<br><br>
+      Buchungssatz (Gewinn 21.040 €): GuV an Eigenkapital — 21.040 €
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 8 · SBK
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>7 · Abschluss der Bestandskonten über das SBK</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kontoart</th>
+          <th>Buchungssatz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aktivkonten</strong></td>
+          <td><strong>SBK</strong> an Aktivkonto</td>
+        </tr>
+        <tr>
+          <td><strong>Passivkonten</strong></td>
+          <td>Passivkonto <strong>an SBK</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 9 · BUCHUNGSKREISLAUF ÜBERSICHT
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>8 · Buchungskreislauf – Übersicht (7 Schritte)</h2>
+
+    <div class="pruef-box">
+      ✏️ <strong>Der vollständige Buchungskreislauf:</strong><br><br>
+      <strong>1</strong> · Inventur → Eröffnungsbilanz → EBK<br>
+      ↓<br>
+      <strong>2</strong> · EBK eröffnet die Bestandskonten<br>
+      Aktivkonto an EBK | EBK an Passivkonto<br>
+      ↓<br>
+      <strong>3</strong> · Laufende Buchungen auf Bestandskonten<br>
+      Aktivtausch · Passivtausch · Aktiv-Passiv-Mehrung · Aktiv-Passiv-Minderung<br>
+      ↓<br>
+      <strong>4</strong> · Laufende Buchungen auf Erfolgskonten<br>
+      Aufwand im Soll | Ertrag im Haben<br>
+      ↓<br>
+      <strong>5</strong> · Erfolgskonten → GuV<br>
+      GuV an Aufwandskonto | Ertragskonto an GuV<br>
+      ↓<br>
+      <strong>6</strong> · GuV → Eigenkapital (Gewinn oder Verlust)<br>
+      Gewinn: GuV an Eigenkapital | Verlust: Eigenkapital an GuV<br>
+      ↓<br>
+      <strong>7</strong> · Bestandskonten → SBK (= Schlussbilanz)<br>
+      SBK an Aktivkonto | Passivkonto an SBK<br>
+      → SBK wird zur neuen Eröffnungsbilanz (neuer Kreislauf)
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 10 · DURCHGEHENDES ZAHLENBEISPIEL
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>9 · Durchgehendes Zahlenbeispiel</h2>
+
+    <div class="notice info">
+      <strong>Eröffnungsbilanz zum 01.01.:</strong>
+
+      <table style="margin-top:0.5rem;">
+        <thead>
+          <tr><th>AKTIVA</th><th></th><th>PASSIVA</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Fuhrpark</td><td>30.000 €</td><td>Eigenkapital</td><td>57.000 €</td></tr>
+          <tr><td>Forderungen LL</td><td>10.000 €</td><td>Darlehensverbindlichkeiten</td><td>20.000 €</td></tr>
+          <tr><td>Bank</td><td>40.000 €</td><td>Verbindlichkeiten LL</td><td>5.000 €</td></tr>
+          <tr><td>Kasse</td><td>2.000 €</td><td></td><td></td></tr>
+          <tr><td><strong>Summe</strong></td><td><strong>82.000 €</strong></td><td><strong>Summe</strong></td><td><strong>82.000 €</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="notice info">
+      <strong>Eröffnungsbuchungen (EBK):</strong><br>
+      1 · Fuhrpark an EBK — 30.000 €<br>
+      2 · Forderungen LL an EBK — 10.000 €<br>
+      3 · Bank an EBK — 40.000 €<br>
+      4 · Kasse an EBK — 2.000 €<br>
+      5 · EBK an Eigenkapital — 57.000 €<br>
+      6 · EBK an Darlehensverbindlichkeiten — 20.000 €<br>
+      7 · EBK an Verbindlichkeiten LL — 5.000 €<br>
+      <em>EBK-Kontrolle: Soll 82.000 € = Haben 82.000 € ✓</em>
+    </div>
+
+    <div class="notice info">
+      <strong>Vier Geschäftsvorfälle:</strong><br>
+      GV1 · Forderungen LL an Umsatzerlöse — 20.000 € (Warenverkauf auf Ziel)<br>
+      GV2 · Verbindlichkeiten LL an Bank — 3.000 € (Lieferantenrechnung per Bank)<br>
+      GV3 · Mietaufwand an Bank — 12.000 € (Jahresmiete per Bank)<br>
+      GV4 · Bank an Forderungen LL — 20.000 € (Kundenzahlung per Bank)
+    </div>
+
+    <div class="notice info">
+      <strong>Abschluss Erfolgskonten über GuV:</strong><br>
+      BS12 · GuV an Mietaufwand — 12.000 €<br>
+      BS13 · Umsatzerlöse an GuV — 20.000 €<br>
+      Aufwand: 12.000 € · Ertrag: 20.000 € · <strong>Gewinn: 8.000 €</strong>
+    </div>
+
+    <div class="notice info">
+      <strong>Abschluss GuV über Eigenkapital:</strong><br>
+      BS14 · GuV an Eigenkapital — 8.000 €<br>
+      Eigenkapital neu: 57.000 € + 8.000 € = <strong>65.000 €</strong>
+    </div>
+
+    <div class="notice warn">
+      <strong>Exkurs: Was passiert bei einem Verlust?</strong><br>
+      Übersteigen Aufwendungen die Erträge → Verlust.<br>
+      Buchungssatz: <strong>Eigenkapital an GuV</strong> · EK sinkt<br>
+      Merkhilfe: „Verlust vermindert EK → EK im Soll"<br><br>
+      Zahlenbeispiel Verlust 3.000 €: Aufwand 15.000 €, Ertrag 12.000 €<br>
+      GuV an Mietaufwand — 15.000 €<br>
+      Umsatzerlöse an GuV — 12.000 €<br>
+      Eigenkapital an GuV — 3.000 €<br>
+      EK sinkt: 57.000 − 3.000 = 54.000 €
+    </div>
+
+    <div class="notice info">
+      <strong>Abschluss Bestandskonten über SBK:</strong><br>
+      BS15 · SBK an Fuhrpark — 30.000 €<br>
+      BS16 · SBK an Forderungen LL — 10.000 €<br>
+      BS17 · SBK an Bank — 45.000 €<br>
+      BS18 · SBK an Kasse — 2.000 €<br>
+      BS19 · Eigenkapital an SBK — 65.000 €<br>
+      BS20 · Darlehensverbindlichkeiten an SBK — 20.000 €<br>
+      BS21 · Verbindlichkeiten LL an SBK — 2.000 €
+    </div>
+
+    <div class="notice info">
+      <strong>Schlussbilanzkonto (SBK) zum 31.12.:</strong>
+
+      <table style="margin-top:0.5rem;">
+        <thead>
+          <tr><th>AKTIVA</th><th></th><th>PASSIVA</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Fuhrpark</td><td>30.000 €</td><td>Eigenkapital</td><td>65.000 €</td></tr>
+          <tr><td>Forderungen LL</td><td>10.000 €</td><td>Darlehensverbindlichkeiten</td><td>20.000 €</td></tr>
+          <tr><td>Bank</td><td>45.000 €</td><td>Verbindlichkeiten LL</td><td>2.000 €</td></tr>
+          <tr><td>Kasse</td><td>2.000 €</td><td></td><td></td></tr>
+          <tr><td><strong>Summe</strong></td><td><strong>87.000 €</strong></td><td><strong>Summe</strong></td><td><strong>87.000 €</strong></td></tr>
+        </tbody>
+      </table>
+      <em>SBK ausgeglichen ✓ | EK: 57.000 + 8.000 = 65.000 € ✓</em>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         ZUSAMMENFASSUNG
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>10 · Prüfungsrelevante Zusammenfassung</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Thema</th>
+          <th>Regel / Merksatz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>EBK</strong></td>
+          <td>Aktivkonto an EBK / EBK an Passivkonto</td>
+        </tr>
+        <tr>
+          <td><strong>Bestandskonten</strong></td>
+          <td>Aktiva Zugang Soll / Abgang Haben · Passiva Zugang Haben / Abgang Soll</td>
+        </tr>
+        <tr>
+          <td><strong>Erfolgskonten</strong></td>
+          <td>Aufwand = Soll / Ertrag = Haben / kein Anfangsbestand</td>
+        </tr>
+        <tr>
+          <td><strong>GuV-Abschluss</strong></td>
+          <td>GuV an Aufwandskonto / Ertragskonto an GuV</td>
+        </tr>
+        <tr>
+          <td><strong>GuV → EK</strong></td>
+          <td>Gewinn: GuV an EK / Verlust: EK an GuV</td>
+        </tr>
+        <tr>
+          <td><strong>SBK</strong></td>
+          <td>SBK an Aktivkonto / Passivkonto an SBK</td>
+        </tr>
+        <tr>
+          <td><strong>Umsatzsteuer</strong></td>
+          <td>In der Prüfung: 19 % auf Nettobetrag; Forderungen LL (brutto) an Umsatzerlöse + Umsatzsteuer</td>
+        </tr>
+        <tr>
+          <td><strong>Verlust</strong></td>
+          <td>Eigenkapital an GuV → EK sinkt; Merkhilfe: „Verlust vermindert EK → EK im Soll"</td>
+        </tr>
+        <tr>
+          <td><strong>Materialaufwand</strong></td>
+          <td>Korrekter Begriff: „Aufwendungen für Roh-, Hilfs- und Betriebsstoffe" (kurz: Materialaufwand)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="related-topics">
+      <h3>Verwandte Themen</h3>
+      <ul>
+        <li><a href="basics_ls02.html">LS02 · Durchschnittsrechnung</a> – Einfacher, gewichteter und zeitlich gewichteter Durchschnitt</li>
+        <li><a href="rewe_ls02.html">ReWe LS02 · Grundlagen Finanzbuchhaltung</a> – Vertiefung Buchführung, Bilanz, GuV</li>
+        <li><a href="rewe_ls01.html">ReWe LS01 · Grundlagen Rechnungswesen</a> – Überblick Kosten, Aufwand, Ertrag</li>
+        <li><a href="basics_ls04.html">LS04 · Umsatzsteuer</a> – USt-Buchungen im Detail</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div>WFW Wiki · IHK Wirtschaftsfachwirt</div>
+  <div>Basics LS03 · Stand: 01.07.2026</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../css/pages.js"></script>
+<script src="../css/engine.js"></script>
+</body>
+</html>

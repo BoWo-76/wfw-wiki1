@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LS02 · Durchschnittsrechnung – WFW Wiki</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html">WFW<span>Wiki</span></a>
+  <div class="search-wrap">
+    <input id="search-input" type="search" placeholder="Thema suchen …" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="sidebar"></nav>
+  <main class="main">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Startseite</a> › Basics Wirtschaftsrechnen › LS02 Durchschnittsrechnung
+    </div>
+
+    <div class="page-header">
+      <div class="kicker">Basics Wirtschaftsrechnen · LS02</div>
+      <h1>LS02 · Durchschnittsrechnung</h1>
+      <div class="meta">
+        <span>Alle vier Verfahren vollständig mit Beispielen · Kreß &amp; Steinhof</span>
+        <span>Stand: 01.07.2026</span>
+        <span><span class="badge ok">Fertig</span></span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 1 · GEMEINSAME LOGIK
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>1 · Die gemeinsame Logik aller Verfahren</h2>
+
+    <p>Die Durchschnittsrechnung begegnet dir im Rechnungswesen ständig: bei der Lagerbewertung, der Lohnabrechnung, der Preiskalkulation und der Kostenrechnung. Es gibt vier verschiedene Verfahren – aber sie alle folgen derselben Grundidee.</p>
+
+    <div class="pruef-box">
+      ✏️ <strong>Der Aha-Moment – Eine Formel für alle Verfahren</strong><br><br>
+      <strong>Durchschnitt = Gesamtsumme / Gesamtgewicht</strong><br><br>
+      Der einzige Unterschied zwischen den Verfahren ist: <strong>Was ist das Gewicht?</strong>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Verfahren</th>
+          <th>Das Gewicht ist …</th>
+          <th>Typisches Prüfungsthema</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Einfacher Durchschnitt</strong></td>
+          <td>immer 1 – alle Werte sind gleichwertig</td>
+          <td>Tagesumsatz, Notenschnitt</td>
+        </tr>
+        <tr>
+          <td><strong>Gewichteter Durchschnitt</strong></td>
+          <td>die Menge (kg, Stück, Personen …)</td>
+          <td>Lagerbewertung, Durchschnittspreis</td>
+        </tr>
+        <tr>
+          <td><strong>Zeitlich gewichteter Ø</strong></td>
+          <td>die Zeit (Tage, Wochen, Monate)</td>
+          <td>Ø Lagerbestand, Ø Kontostand</td>
+        </tr>
+        <tr>
+          <td><strong>Gleitender Durchschnitt</strong></td>
+          <td>die feste Anzahl im Zeitfenster (immer gleich)</td>
+          <td>Umsatztrend, Saisonbereinigung</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="notice ok">
+      <strong>Mini-Merksatz für die Prüfung:</strong> „Durchschnitt = Gesamtsumme / Gesamtgewicht – Die einzige Frage ist: <strong>Was ist hier das Gewicht?</strong>"<br><br>
+      <strong>Wichtig:</strong> Nicht die Zahlen entscheiden, welches Verfahren du verwendest – die <strong>Aufgabenstellung</strong> entscheidet es! Stehen hinter den Werten unterschiedliche Mengen? Zeiträume? Oder eine Zeitreihe? → Erst Verfahren bestimmen, dann rechnen.
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 2 · EINFACHER DURCHSCHNITT
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>2 · Der einfache Durchschnitt</h2>
+
+    <div class="def-box">
+      <strong>Grundprinzip</strong><br>
+      Der einfache Durchschnitt ist das <strong>arithmetische Mittel</strong>: Alle Einzelwerte werden addiert und durch die Anzahl der Werte geteilt. Das Gewicht jedes Wertes ist dabei immer 1 – alle Werte sind gleichwertig.<br><br>
+      <code>Durchschnitt = Summe aller Werte / Anzahl der Werte</code>
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Klar formuliert – und das ist wichtig:</strong> Der einfache Durchschnitt ist <strong>nur dann korrekt</strong>, wenn alle Werte auf gleicher Basis entstanden sind – also gleiche Mengen und gleiche Zeiträume dahinterstehen. Sobald Mengen oder Zeiträume unterschiedlich sind, ist der einfache Durchschnitt <strong>strukturell falsch</strong> – nicht ungefähr falsch, sondern grundlegend falsch. Dann ist zwingend der gewichtete oder zeitlich gewichtete Durchschnitt zu verwenden.
+    </div>
+
+    <div class="notice info">
+      <strong>📝 Aufgabe A – Tagesumsatz:</strong><br>
+      Ein Mitarbeiter erzielt in fünf Arbeitstagen folgende Umsätze:<br>
+      Montag: 800 € · Dienstag: 950 € · Mittwoch: 700 € · Donnerstag: 1.100 € · Freitag: 850 €<br>
+      Wie hoch ist der durchschnittliche Tagesumsatz?<br><br>
+      Summe: 800 + 950 + 700 + 1.100 + 850 = 4.400 €<br>
+      Anzahl: 5 Tage (alle gleich gewichtet → einfacher Durchschnitt korrekt)<br>
+      Durchschnitt: 4.400 € / 5 = <strong>880 € pro Tag</strong><br>
+      <em>Probe: 5 × 880 = 4.400 € ✓</em>
+    </div>
+
+    <div class="notice info">
+      <strong>📝 Aufgabe B – Fehlenden Wert rückrechnen:</strong><br>
+      Der Durchschnittsumsatz soll 900 € betragen. Von Montag bis Donnerstag wurden 800 €, 950 €, 700 € und 1.100 € erzielt. Welchen Umsatz muss der Freitag bringen?<br><br>
+      Zielumsatz gesamt: 900 € × 5 Tage = 4.500 €<br>
+      Bereits erreicht Mo–Do: 800 + 950 + 700 + 1.100 = 3.550 €<br>
+      Fehlender Freitagsumsatz: 4.500 − 3.550 = <strong>950 €</strong><br>
+      <em>Probe: (800 + 950 + 700 + 1.100 + 950) / 5 = 4.500 / 5 = 900 € ✓</em>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 3 · GEWICHTETER DURCHSCHNITT
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>3 · Der gewichtete Durchschnitt</h2>
+
+    <div class="def-box">
+      <strong>Grundprinzip</strong><br>
+      Der gewichtete Durchschnitt berücksichtigt, dass Werte in <strong>unterschiedlichen Mengen oder Häufigkeiten</strong> vorkommen. Das Gewicht ist hier die Menge (kg, Stück, Personen etc.).<br><br>
+      <code>Gewogener Ø = Summe (Einzelwert × Menge) / Summe aller Mengen</code><br><br>
+      Im Rechnungswesen-Kontext: <code>Gewichteter Ø = Gesamtkosten / Gesamtmenge</code>
+    </div>
+
+    <div class="notice info">
+      <strong>📝 Aufgabe – Lagerbewertung:</strong>
+
+      <table style="margin-top:0.5rem;">
+        <thead>
+          <tr><th>Lieferung</th><th>Menge (kg)</th><th>Preis je kg</th><th>Gesamtkosten</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1. Lieferung</td><td>200 kg</td><td>4,00 €</td><td>800 €</td></tr>
+          <tr><td>2. Lieferung</td><td>500 kg</td><td>5,00 €</td><td>2.500 €</td></tr>
+          <tr><td>3. Lieferung</td><td>300 kg</td><td>6,00 €</td><td>1.800 €</td></tr>
+          <tr><td><strong>Gesamt</strong></td><td><strong>1.000 kg</strong></td><td>–</td><td><strong>5.100 €</strong></td></tr>
+        </tbody>
+      </table>
+
+      Gewichteter Ø = 5.100 € / 1.000 kg = <strong>5,10 € je kg</strong><br>
+      <em>Probe: 1.000 kg × 5,10 € = 5.100 € ✓</em>
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Klassischer Fehler – einfacher Preisdurchschnitt:</strong><br>
+      (4,00 + 5,00 + 6,00) / 3 = 5,00 € → <strong>FALSCH!</strong><br>
+      Das ignoriert vollständig die unterschiedlichen Mengen. 500 kg zu 5,00 € wiegen fünfmal so schwer wie 100 kg zu 4,00 €. → Der einfache Preisdurchschnitt ist strukturell falsch, sobald Mengen unterschiedlich sind.
+    </div>
+
+    <div class="notice info">
+      <strong>📝 Aufgabe – Durchschnittlicher Stundenlohn:</strong>
+
+      <table style="margin-top:0.5rem;">
+        <thead>
+          <tr><th>Mitarbeitergruppe</th><th>Anzahl (Gewicht)</th><th>Stundenlohn</th><th>Wert × Gewicht</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Ungelernte Hilfskräfte</td><td>4 Personen</td><td>14,00 €</td><td>56,00 €</td></tr>
+          <tr><td>Facharbeiter</td><td>10 Personen</td><td>20,00 €</td><td>200,00 €</td></tr>
+          <tr><td>Meister</td><td>2 Personen</td><td>30,00 €</td><td>60,00 €</td></tr>
+          <tr><td><strong>Gesamt</strong></td><td><strong>16 Personen</strong></td><td>–</td><td><strong>316,00 €</strong></td></tr>
+        </tbody>
+      </table>
+
+      Gewichteter Ø = 316,00 € / 16 Personen = <strong>19,75 € / Stunde</strong><br>
+      <em>Plausibilität: Liegt zwischen 14 € und 30 €, näher an 20 € wegen der großen Facharbeitergruppe ✓</em>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 4 · GLEITENDER DURCHSCHNITT
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>4 · Der gleitende Durchschnitt</h2>
+
+    <div class="def-box">
+      <strong>Grundprinzip</strong><br>
+      Ein <strong>Zeitfenster fixer Breite</strong> (z.B. 3 oder 4 Perioden) wird über eine Zeitreihe geschoben. Für jede Position wird der Durchschnitt der enthaltenen Werte berechnet. Dann rückt das Fenster um eine Periode vor – ältester Wert heraus, neuer Wert hinein.<br><br>
+      <code>Gleitender Ø (Position n) = Summe der n Werte im Fenster / n</code>
+    </div>
+
+    <div class="notice warn">
+      <strong>Zweck klar verstehen:</strong> Der gleitende Durchschnitt ist <strong>kein exakter Wert für Entscheidungen</strong> – er ist ein Werkzeug zur <strong>Trendanalyse</strong>. Er glättet kurzfristige Schwankungen und macht den grundlegenden Verlauf sichtbar. Wer ihn als „richtigen Durchschnitt" für Kalkulationen verwendet, liegt falsch.
+    </div>
+
+    <div class="notice info">
+      <strong>📝 Aufgabe – 3-monatiger gleitender Durchschnitt:</strong><br>
+      Monatliche Umsätze (T€): Jan: 40 · Feb: 50 · Mär: 45 · Apr: 60 · Mai: 55 · Jun: 70<br>
+      Berechne den gleitenden 3-Monats-Durchschnitt.
+
+      <table style="margin-top:0.5rem;">
+        <thead>
+          <tr><th>Periode</th><th>Fenster</th><th>Gleitender Ø</th><th>Trendaussage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Jan</td><td>–</td><td>–</td><td>kein Wert (Fenster nicht gefüllt)</td></tr>
+          <tr><td>Feb</td><td>–</td><td>–</td><td>kein Wert (Fenster nicht gefüllt)</td></tr>
+          <tr><td>Mär</td><td>Jan–Feb–Mär</td><td>(40+50+45)/3 = <strong>45,0 T€</strong></td><td>Ausgangsniveau</td></tr>
+          <tr><td>Apr</td><td>Feb–Mär–Apr</td><td>(50+45+60)/3 ≈ <strong>51,7 T€</strong></td><td>leichter Aufwärtstrend</td></tr>
+          <tr><td>Mai</td><td>Mär–Apr–Mai</td><td>(45+60+55)/3 ≈ <strong>53,3 T€</strong></td><td>Trend setzt sich fort</td></tr>
+          <tr><td>Jun</td><td>Apr–Mai–Jun</td><td>(60+55+70)/3 ≈ <strong>61,7 T€</strong></td><td>deutlicher Anstieg</td></tr>
+        </tbody>
+      </table>
+
+      Obwohl der Mai-Umsatz (55 T€) unter April (60 T€) liegt, zeigt der gleitende Durchschnitt einen stabilen Aufwärtstrend. Das ist der Glättungseffekt – Einzelschwankungen werden herausgefiltert, der Trend wird sichtbar.
+    </div>
+
+    <h3>4.1 Sonderfall: Gerades Fenster mit Zentrierung</h3>
+
+    <div class="notice warn">
+      <strong>Warum ist Zentrierung bei geradem Fenster zwingend?</strong><br>
+      Bei 4 Perioden (z.B. Q1–Q4) hat das Fenster keinen echten Mittelpunkt – der Durchschnittswert liegt zwischen zwei Perioden, nicht auf einer. Um ihn einer konkreten Periode zuordnen zu können, werden je zwei benachbarte Fensterwerte nochmals gemittelt. Ohne Zentrierung ist der Wert keiner Periode zugeordnet – das ist ein Fehler.
+    </div>
+
+    <div class="notice info">
+      <strong>📝 Aufgabe – 4-Perioden gleitender Durchschnitt (zentriert):</strong><br>
+      Quartalsumsätze (T€): Q1: 100 · Q2: 120 · Q3: 80 · Q4: 140 · Q1 Folgejahr: 110 · Q2: 130<br><br>
+      <strong>Schritt 1 – Gleitende Summen (je 4 Quartale):</strong><br>
+      Fenster 1 (Q1–Q4): (100+120+80+140) / 4 = 440/4 = 110,0 → zwischen Q2 und Q3<br>
+      Fenster 2 (Q2–Q1F): (120+80+140+110) / 4 = 450/4 = 112,5 → zwischen Q3 und Q4<br>
+      Fenster 3 (Q3–Q2F): (80+140+110+130) / 4 = 460/4 = 115,0 → zwischen Q4 und Q1F<br><br>
+      <strong>Schritt 2 – Zentrierung:</strong><br>
+      Zentrierter Wert für Q3: (110,0 + 112,5) / 2 = <strong>111,25 T€</strong><br>
+      Zentrierter Wert für Q4: (112,5 + 115,0) / 2 = <strong>113,75 T€</strong>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 5 · ZEITLICH GEWICHTETER DURCHSCHNITT
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>5 · Der zeitlich gewichtete Durchschnitt</h2>
+
+    <div class="def-box">
+      <strong>Grundprinzip</strong><br>
+      Wird verwendet, wenn ein Wert über verschiedene <strong>Zeiträume unterschiedlich lang gilt</strong>. Die Zeit übernimmt hier die Rolle des Gewichts – ein Wert, der länger gilt, fließt stärker ins Ergebnis ein.<br><br>
+      <code>Zeitlich gewogener Ø = Summe (Wert × Tage) / Gesamtzeitraum in Tagen</code>
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Kontrolle nicht vergessen:</strong> Die Summe aller Einzelzeiträume muss exakt dem Gesamtzeitraum entsprechen. Stimmt die Summe nicht, fehlt eine Periode oder ein Zeitraum wurde doppelt gezählt. Diese Kontrolle kostet 5 Sekunden und verhindert Fehler!
+    </div>
+
+    <div class="notice info">
+      <strong>📝 Aufgabe – Durchschnittlicher Lagerbestand:</strong>
+
+      <table style="margin-top:0.5rem;">
+        <thead>
+          <tr><th>Periode</th><th>Von</th><th>Bis</th><th>Tage</th><th>Bestand (Stück)</th><th>Bestand × Tage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>01.01.</td><td>09.01.</td><td>9</td><td>500</td><td>4.500</td></tr>
+          <tr><td>2</td><td>10.01.</td><td>19.01.</td><td>10</td><td>300</td><td>3.000</td></tr>
+          <tr><td>3</td><td>20.01.</td><td>31.01.</td><td>12</td><td>400</td><td>4.800</td></tr>
+          <tr><td><strong>Gesamt</strong></td><td>–</td><td>–</td><td><strong>31 Tage ✓</strong></td><td>–</td><td><strong>12.300</strong></td></tr>
+        </tbody>
+      </table>
+
+      Kontrolle: 9 + 10 + 12 = 31 Tage = Januar ✓<br>
+      Zeitlich gewogener Ø = 12.300 / 31 ≈ <strong>396,8 Stück ≈ 397 Stück</strong><br>
+      <em>Plausibilität: Liegt zwischen 300 und 500 Stück, näher an 400 wegen der längsten Periode 3 ✓</em>
+    </div>
+
+    <div class="notice info">
+      <strong>📝 Aufgabe – Durchschnittlicher Kontostand:</strong>
+
+      <table style="margin-top:0.5rem;">
+        <thead>
+          <tr><th>Zeitraum</th><th>Tage</th><th>Kontostand</th><th>Stand × Tage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>01.01.–31.01.</td><td>31</td><td>10.000 €</td><td>310.000</td></tr>
+          <tr><td>01.02.–28.02.</td><td>28</td><td>15.000 €</td><td>420.000</td></tr>
+          <tr><td>01.03.–31.03.</td><td>31</td><td>8.000 €</td><td>248.000</td></tr>
+          <tr><td><strong>Gesamt</strong></td><td><strong>90 Tage ✓</strong></td><td>–</td><td><strong>978.000</strong></td></tr>
+        </tbody>
+      </table>
+
+      Kontrolle: 31 + 28 + 31 = 90 Tage = Q1 ✓<br>
+      Zeitlich gewogener Ø = 978.000 / 90 = <strong>10.866,67 €</strong><br>
+      <em>Plausibilität: Liegt zwischen 8.000 € und 15.000 €, leicht über 10.000 € wegen des hohen Februar-Stands ✓</em>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 6 · VERGLEICH ALLER VERFAHREN
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>6 · Vergleich aller Verfahren – Entscheidungshilfe</h2>
+
+    <div class="pruef-box">
+      ✏️ <strong>Entscheidungsregel – Die Frage entscheidet das Verfahren, nicht die Zahlen!</strong>
+
+      <table style="margin-top:0.5rem;">
+        <thead>
+          <tr><th>Frage zur Aufgabe</th><th>→ Verfahren</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gleiche Mengen und gleiche Zeiträume hinter allen Werten?</td><td><strong>Einfacher Durchschnitt</strong></td></tr>
+          <tr><td>Unterschiedliche Mengen (kg, Stück, Personen) hinter den Werten?</td><td><strong>Gewichteter Durchschnitt</strong></td></tr>
+          <tr><td>Werte gelten über unterschiedlich lange Zeiträume?</td><td><strong>Zeitlich gewichteter Ø</strong></td></tr>
+          <tr><td>Zeitreihe glätten / Trend sichtbar machen?</td><td><strong>Gleitender Durchschnitt</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         KAPITEL 7 · TYPISCHE FEHLER
+    ═══════════════════════════════════════════════════════════ -->
+    <h2>7 · Typische Fehler &amp; Prüfungs-Merkregeln</h2>
+
+    <div class="notice danger">
+      ⛔ <strong>Fehler 1: Falsches Verfahren gewählt</strong><br>
+      Preise mit einfachem Durchschnitt berechnet, obwohl Mengen unterschiedlich sind. → Das ist der häufigste Fehler überhaupt. Immer zuerst fragen: „Was ist das Gewicht in dieser Aufgabe?"
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Fehler 2: Gruppenanzahl statt Gesamtmenge als Teiler</strong><br>
+      Beim gewichteten oder zeitlich gewichteten Durchschnitt wird durch die Anzahl der Gruppen dividiert statt durch die Summe der Gewichte. → Immer: Summe (Wert × Gewicht) / Summe aller Gewichte!
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Fehler 3: Fensterbreite beim gleitenden Durchschnitt nicht konstant</strong><br>
+      Das Fenster umfasst mal 3, mal 4 Perioden. → Fensterbreite n zu Beginn festlegen und konsequent einhalten.
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Fehler 4: Zentrierung beim geraden Fenster vergessen</strong><br>
+      Bei gerader Fensterbreite (z.B. 4 Quartale) wird der Zentrierungsschritt übersprungen. → Ohne Zentrierung hat der Wert keinen eindeutigen Periodenbezug.
+    </div>
+
+    <div class="notice danger">
+      ⛔ <strong>Fehler 5: Tagessumme stimmt nicht mit Gesamtzeitraum überein</strong><br>
+      Beim zeitlich gewichteten Durchschnitt ergibt die Summe der Einzelzeiträume nicht den Gesamtzeitraum. → Immer kontrollieren: Σ aller Tage = Gesamtzeitraum.
+    </div>
+
+    <div class="notice ok">
+      <strong>Plausibilitätsprüfung:</strong> In den meisten Standardaufgaben gilt: Der Durchschnitt liegt zwischen dem kleinsten und dem größten Einzelwert. Liegt das Ergebnis außerhalb dieses Bereichs, ist ein Rechenfehler wahrscheinlich.
+    </div>
+
+    <h3>Prüfungs-Checkliste</h3>
+
+    <div class="notice ok">
+      ☐ Verfahren bestimmen – Was ist das Gewicht? Menge / Zeit / festes Fenster / keines?<br>
+      ☐ Formel aufschreiben – Bewusst entscheiden, welche Formel gilt<br>
+      ☐ Gewichte / Zeiten erfassen – Alle Mengen oder Tage aus der Aufgabe herausschreiben<br>
+      ☐ Kontrolle (zeitlich gewichtet): Σ Tage = Gesamtzeitraum?<br>
+      ☐ Wert × Gewicht berechnen – Jede Teilposition einzeln<br>
+      ☐ Summe der Gewichte ermitteln – Nicht Gruppenanzahl, sondern Gesamtmenge!<br>
+      ☐ Dividieren – Gesamtsumme / Gesamtgewicht<br>
+      ☐ Plausibilitätsprüfung – Liegt das Ergebnis im erwarteten Bereich?
+    </div>
+
+    <div class="related-topics">
+      <h3>Verwandte Themen</h3>
+      <ul>
+        <li><a href="basics_ls01.html">LS01 · Dreisatz – Bruchstrichmethode</a> – Proportional, antiproportional, zusammengesetzt</li>
+        <li><a href="basics_ls03.html">LS03 · Buchungskreislauf EBK–SBK</a> – Rechnungswesen Grundlagen</li>
+        <li><a href="rewe_ls01.html">ReWe LS01 · Grundlagen Rechnungswesen</a> – Vertiefung: Lagerbewertung und Kostenrechnung</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div>WFW Wiki · IHK Wirtschaftsfachwirt</div>
+  <div>Basics LS02 · Stand: 01.07.2026</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../css/pages.js"></script>
+<script src="../css/engine.js"></script>
+</body>
+</html>
