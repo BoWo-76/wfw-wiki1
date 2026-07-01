@@ -42,8 +42,8 @@ wfw-wiki1/
     recht_ls01.html … recht_ls08.html
     bm_ls01.html, bm_ls01e.html, bm_ls02.html … bm_ls04.html
     uf_ls01.html … uf_ls07.html
-    vwlbwl_ls01.html … vwlbwl_ls09.html   ← LS07–LS09 neu in diesem Chat
-    basics_ls01.html … basics_ls03.html   ← neu in diesem Chat (LS04–LS20 folgen)
+    vwlbwl_ls01.html … vwlbwl_ls09.html
+    basics_ls01.html … basics_ls12.html, basics_ls17.html   ← LS13–LS16, LS18–LS20 folgen
   images/
     bowo-logo.svg, bowo-logo-light.svg, [weitere Grafiken]
     wk/                   ← NEU: PNG-Exporte der Werkzeugkasten-Folien
@@ -120,7 +120,23 @@ const WIKI_CONFIG = {
 LS01 Dreisatz – Bruchstrichmethode ✅ (proportional, antiproportional, zusammengesetzt, Fehlerquellen, Verbindung zur Zinsformel)
 LS02 Durchschnittsrechnung ✅ (alle 4 Verfahren: einfach, gewichtet, gleitend, zeitlich gewichtet; inkl. Zentrierung gerader Fenster)
 LS03 Buchungskreislauf EBK–SBK ✅ (vollständiger Kreislauf in 7 Schritten, 4 Bilanzveränderungsarten, durchgehendes Zahlenbeispiel, Verlust-Exkurs)
-LS04–LS20 → folgen in späteren Chats (Dateinamen-Vorgabe bekannt, siehe ursprüngliche Planung)
+LS04 Umsatzsteuer im Buchungskreislauf ✅ (Erfolgsneutralität, Vorsteuer/Umsatzsteuer, Skontokorrektur, Zahllast/Vorsteuerüberhang)
+LS05 Geringwertige Wirtschaftsgüter (GWG) – Abschreibung ✅ (Wertgrenzen, Sofortabschreibung, Sammelposten, planmäßige AfA, Entscheidungsbaum)
+LS06 Bezugskosten im Beschaffungsbereich ✅ (bestands- vs. aufwandsorientierte Buchung, Prüfungsfallen Steuersatz/Methode/Abschluss)
+LS07 Privatkonten im Rechnungswesen ✅ (Trennungsprinzip, Entnahme-/Einlagearten, Steuerarten-Tabelle, Abschlussbuchungen)
+LS08 Absatz: Nachlässe und Anzahlungen ✅ (Sofort- vs. nachträglicher Rabatt, Kundenskonti mit USt-Korrektur, 4-Schritt-Buchungsablauf Anzahlungen)
+LS09 Leasing im Rechnungswesen ✅ (Operating-/Spezial-/Finanzierungs-Leasing, 40–90 %-Regel, Buchungssätze Fall A/B)
+LS10 Darlehen und Disagio – Buchung und Abgrenzung ✅ (Tilgung vs. Zinsen, ARAP-Bildung und -Auflösung, zusammengesetzter Buchungssatz)
+LS11 Grundlagen des Jahresabschlusses (HGB) ✅ (Buchführungspflicht, Bilanz/GuV, Fristen, Bewertungsprinzipien, transitorische/antizipative Abgrenzung, Rückstellungen)
+LS12 Kosten-Leistungsrechnung (KLR) – Grundlagen ✅ (Zweikreissystem FiBu/KLR, Abgrenzungsrechnung, 5 kalkulatorische Kostenarten, 3 Stufen der KLR, fix/variabel)
+LS13 Bilanzbewertung Grundlagen → folgt
+LS14 Bilanzanalyse Kritik Final → folgt
+LS15 GuV Auswertung → folgt
+LS16 Prozentrechnen → folgt
+LS17 Zinsrechnung – Von den Grundlagen zum Zinseszins ✅ (außer der Reihe erstellt; Herzstückformel, Zinseszins, unterjährige Verzinsung, Zinsmethoden 30/360 · act/360 · act/act, Formeln umstellen)
+LS18 Darlehenstilgung → folgt
+LS19 Rentenrechnung → folgt
+LS20 Mathe Grundlagen → folgt
 
 ### Rechnungswesen (rewe) — ABGESCHLOSSEN ✅
 LS01 Grundlagen Rechnungswesen · LS02 Grundlagen Fibu · LS03 Grundlagen KLR
@@ -423,12 +439,11 @@ WK IV (aus WK IV PPTX):
 ---
 
 ## Geplante Erweiterungen / Offene Punkte
-- **basics LS04–LS20** folgen in späteren Chats (Dateinamen-Liste bekannt):
-  LS04 Umsatzsteuer · LS05 Abschreibungen GWG · LS06 Bezugskosten · LS07 Privatkonten
-  LS08 Absatz · LS09 Leasing · LS10 Darlehen · LS11 Jahresabschluss Grundlagen
-  LS12 KLR Grundlagen · LS13 Bilanzbewertung Grundlagen · LS14 Bilanzanalyse Kritik Final
-  LS15 GuV Auswertung · LS16 Prozentrechnen · LS17 Zinsrechnen · LS18 Darlehenstilgung
-  LS19 Rentenrechnung · LS20 Mathe Grundlagen
+- **basics LS13–LS16, LS18–LS20** folgen in späteren Chats (Dateinamen-Liste bekannt):
+  LS13 Bilanzbewertung Grundlagen · LS14 Bilanzanalyse Kritik Final
+  LS15 GuV Auswertung · LS16 Prozentrechnen
+  LS18 Darlehenstilgung · LS19 Rentenrechnung · LS20 Mathe Grundlagen
+  (LS17 Zinsrechnung wurde bereits außer der Reihe erstellt und ist fertig ✅)
 - **Werkzeugkasten PNG-Exporte** noch ausstehend — Boris exportiert aus WK I–IV PPTX als PNG und legt sie in `images/wk/` ab (Dateinamenliste vollständig in dieser Übergabe dokumentiert)
 - **Grafiken** für „📷 Grafik einfügen"-Platzhalter nachliefern (betrifft uf_ls01, uf_ls02, uf_ls04–uf_ls07: Eisberg-Modell, BCG-Matrix, Organigramm-Darstellungen, PDCA-Kreislauf, VUKA/BANI-Grafiken, Mintzberg-Strategiebrücke, Du-Pont-Pyramide, Kano-Diagramm, Maslow-Pyramide, Herzberg-Diagramm, Grid-Konzept-Gitter, Tuckman-Kurve, Nettopersonalbedarfsrad, Personalportfolio-Matrix)
 - **Kapitel 7** in `uf_ls02` (Personalwirtschaftliche Organisation) ergänzen, sobald Dozent das Thema behandelt hat
