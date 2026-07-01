@@ -37,6 +37,13 @@ const WIKI_CONFIG = {
       keywords: ["handbuch", "anleitung", "navigation", "suche", "box-system", "definition-box", "prüfungsfalle", "merksatz", "merkhilfe", "formelglossar", "changelog", "werkzeugkasten", "lernablauf", "bedienungsanleitung", "hilfe"]
     },
 
+    // ── Lern- und Arbeitsmethodik ────────────────────────────
+    {
+      id: "methodik_ls01", module: "methodik", title: "LS01 · Lernmethoden im Überblick",
+      file: "pages/methodik_ls01.html", status: "fertig", updated: "01.07.2026",
+      keywords: ["lernmethoden", "sq3r", "feynman-technik", "pomodoro-technik", "cornell-methode", "karteikarten", "spaced repetition", "leitner-system", "mindmapping", "loci-methode", "gedächtnispalast", "mnemotechnik", "active recall", "aktives erinnern", "testing-effekt", "lerntechnik", "arbeitsmethodik"]
+    },
+
     // ── Rechnungswesen ───────────────────────────────────────
     {
       id: "rewe_ls01", module: "rewe", title: "LS01 · Grundlagen Rechnungswesen",

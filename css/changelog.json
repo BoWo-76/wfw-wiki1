@@ -3,6 +3,11 @@
     "datum": "01.07.2026",
     "eintraege": [
       {
+        "modul": "methodik",
+        "titel": "LS01 · Lernmethoden im Überblick (Eigenrecherche)",
+        "aktion": "neu"
+      },
+      {
         "modul": null,
         "titel": "Nutzerhandbuch · Werkzeugkasten-Abschnitt ergänzt",
         "aktion": "update"
