@@ -18,29 +18,37 @@ Kein CMS, keine Datenbank — läuft lokal und auf GitHub Pages.
 ```
 wfw-wiki1/
   index.html              ← Startseite (Kachel-Grid, auto-generiert via engine.js)
+  werkzeugkasten.html     ← NEU: Standalone-Seite Werkzeugkasten (eigene Engine)
   build-index.js          ← Node.js-Skript für Volltextsuche-Index
   build-index.bat         ← Doppelklick-Version für Windows
-  search-index.json        ← generierter Volltextindex (nach build-index.bat)
+  search-index.json       ← generierter Volltextindex (nach build-index.bat)
   UEBERGABE.md            ← diese Datei
   css/
-    style.css             ← gesamtes CSS-Design (Sidebar-Toggle, Tiles, Notizzettel, Formelglossar)
-    engine.js             ← baut Sidebar, Kacheln, Modul-Seiten, Logo, Toggle, Notizzettel, Formelglossar
+    style.css             ← gesamtes CSS-Design (inkl. .wk-toggle für Werkzeugkasten-Button)
+    engine.js             ← baut Sidebar, Kacheln, Modul-Seiten, Logo, Toggle, Notizzettel,
+                             Formelglossar, Changelog, Werkzeugkasten-Button
     pages.js              ← ZENTRALE KONFIGURATION (Module + alle Seiten)
     tiles.css             ← Kachel-Grid CSS (wird in index.html eingebunden)
-    formelzeichen.json    ← zentrales Formelzeichen-Glossar (siehe unten)
-    changelog.json        ← NEU: zentraler Changelog (siehe unten)
+    formelzeichen.json    ← zentrales Formelzeichen-Glossar
+    changelog.json        ← zentraler Changelog
+    wk-config.js          ← NEU: Werkzeugkasten-Konfiguration (Gruppen, Tools, PNG-Pfade)
+    wk-engine.js          ← NEU: Werkzeugkasten-Engine (Sidebar, Viewer, CSS-Injection)
   pages/
     about.html
-    handbuch.html          ← NEU: Nutzerhandbuch (Meta-Seite, module: null)
-    modul_[id].html        ← 11 Modul-Übersichtsseiten (auto-generiert)
+    handbuch.html         ← Nutzerhandbuch (Meta-Seite, module: null)
+    modul_[id].html       ← 11 Modul-Übersichtsseiten (auto-generiert)
     rewe_ls01.html … rewe_ls09.html
     finanz_ls01.html
     recht_ls01.html … recht_ls08.html
     bm_ls01.html, bm_ls01e.html, bm_ls02.html … bm_ls04.html
     uf_ls01.html … uf_ls07.html
-    vwlbwl_ls01.html … vwlbwl_ls06.html   ← NEU: Modul VWL/BWL komplett
+    vwlbwl_ls01.html … vwlbwl_ls09.html   ← LS07–LS09 neu in diesem Chat
+    basics_ls01.html … basics_ls03.html   ← neu in diesem Chat (LS04–LS20 folgen)
   images/
     bowo-logo.svg, bowo-logo-light.svg, [weitere Grafiken]
+    wk/                   ← NEU: PNG-Exporte der Werkzeugkasten-Folien
+      wk_uebersicht_1.png … wk_uebersicht_4.png
+      wk1_ishikawa_s1.png, wk1_ishikawa_s2.png, … (vollständige Liste siehe unten)
 ```
 
 ---
@@ -79,7 +87,7 @@ const WIKI_CONFIG = {
     { id: "basics",    label: "Basics Wirtschaftsrechnen",     icon: "🔢", color: "#6d4c9e", dates: "06.03.–02.04.2026", dozent: "Kreß & Steinhof" },
     { id: "methodik",  label: "Lern- und Arbeitsmethodik",     icon: "📋", color: "#2980b9", dates: "07.04.2026",         dozent: "Dorn" },
     { id: "vwlbwl",   label: "Volks- und Betriebswirtschaft", icon: "📊", color: "#16a085", dates: "08.04.–21.04.2026", dozent: "Steinhof" },
-    { id: "rewe",      label: "Rechnungswesen",                 icon: "🧮", color: "#B42318", dates: "22.04.–08.05.2026", dozent: "Rank" },
+    { id: "rewe",      label: "Rechnungswesen",                icon: "🧮", color: "#B42318", dates: "22.04.–08.05.2026", dozent: "Rank" },
     { id: "recht",     label: "Recht und Steuern",             icon: "⚖️", color: "#1d6a3a", dates: "11.05.–28.05.2026", dozent: "Rank" },
     { id: "uf",        label: "Unternehmensführung",           icon: "🎯", color: "#c0392b", dates: "29.05.–12.06.2026", dozent: "Dern" },
     { id: "bm",        label: "Betriebliches Management",      icon: "🧠", color: "#d35400", dates: "15.06.–26.06.2026", dozent: "Mazajka & Labonté" },
@@ -90,7 +98,7 @@ const WIKI_CONFIG = {
   ],
 
   pages: [
-    // module: null für Meta-Seiten (about)
+    // module: null für Meta-Seiten (about, handbuch)
     // module: "rewe" / "finanz" / "recht" / "bm" / "uf" etc. für Lernseiten
     {
       id: "about", module: null, title: "Über dieses Wiki",
@@ -106,7 +114,13 @@ const WIKI_CONFIG = {
 
 ---
 
-## Fertige Skripte (Stand dieser Session)
+## Fertige Skripte (Stand: 01.07.2026)
+
+### Basics Wirtschaftsrechnen (basics) — in Arbeit, Dozent Kreß & Steinhof
+LS01 Dreisatz – Bruchstrichmethode ✅ (proportional, antiproportional, zusammengesetzt, Fehlerquellen, Verbindung zur Zinsformel)
+LS02 Durchschnittsrechnung ✅ (alle 4 Verfahren: einfach, gewichtet, gleitend, zeitlich gewichtet; inkl. Zentrierung gerader Fenster)
+LS03 Buchungskreislauf EBK–SBK ✅ (vollständiger Kreislauf in 7 Schritten, 4 Bilanzveränderungsarten, durchgehendes Zahlenbeispiel, Verlust-Exkurs)
+LS04–LS20 → folgen in späteren Chats (Dateinamen-Vorgabe bekannt, siehe ursprüngliche Planung)
 
 ### Rechnungswesen (rewe) — ABGESCHLOSSEN ✅
 LS01 Grundlagen Rechnungswesen · LS02 Grundlagen Fibu · LS03 Grundlagen KLR
@@ -117,7 +131,7 @@ LS08 Auswertung betriebswirtschaftlicher Zahlen · LS09 Planungsrechnung
 ### Finanzmanagement (finanz) — in Arbeit
 LS01 Investitionsrechnung ✅
 
-### Recht und Steuern (recht) — ABGESCHLOSSEN ✅ (Baustein Recht: LS01–LS03; Baustein Steuern: LS04–LS08, fortlaufend nummeriert im selben Modul)
+### Recht und Steuern (recht) — ABGESCHLOSSEN ✅ (Baustein Recht: LS01–LS03; Baustein Steuern: LS04–LS08, fortlaufend nummeriert)
 LS01 Grundlagen des Rechts · LS02 Schuldrecht & AGB · LS03 Kaufvertrag & Vertragsarten
 LS04 Körperschaftsteuer · LS05 Gewerbesteuer · LS06 Kapitalertragsteuer und Abgeltungsteuer
 LS07 Umsatzsteuer · LS08 Weitere Steuerarten und AO
@@ -130,24 +144,27 @@ LS03 Wissensmanagement im Betrieb ✅
 LS04 Informationstechnologie im Betrieb ✅
 
 ### Unternehmensführung (uf) — ABGESCHLOSSEN ✅ (LS01–LS07, Dozent Michael Dern)
-LS01 Betriebliche Planungsprozesse ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen, siehe Skript)
-LS02 Aufbauorganisation ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen; Kapitel 7 "Varianten der personalwirtschaftlichen Organisation" im Quell-PDF noch nicht vom Dozenten behandelt — Platzhaltertext übernommen)
-LS03 Ablauforganisation ✅ (Arbeitsteilung/Taylorismus, Job Enlargement/Enrichment, Arbeitsablauf-/Flussdiagramm, Gantt, Netzplantechnik VKN)
-LS04 Organisationsentwicklung ✅ (Organisationsbegriffe, VUKA/BANI, formale/informale Organisation, Mintzberg-Strategiebrücke, Lewin-Phasenmodell, Widerstände, lernende Organisation) — mehrere "📷 Grafik einfügen"-Platzhalter offen
-LS05 Analysemethoden ✅ (Du-Pont-Schema, Balanced Scorecard, Plankostenrechnung, Kano-Modell, Primärmarktforschung, Betriebsstatistik/Diagrammtypen) — mehrere "📷 Grafik einfügen"-Platzhalter offen
-LS06 Personalführung / Personalplanung / Personalbeschaffung ✅ (Maslow, Herzberg, Führungsstile, Grid-Konzept, MbO/MbE/MbD, Tuckman, Belbin, Nettopersonalbedarfsplanung, Entgeltformen) — mehrere "📷 Grafik einfügen"-Platzhalter offen
-LS07 Personalentwicklung ✅ (Fortbildungsarten, Potenzialanalyse, Kompetenzkategorien, Personalportfolio, on-the-job/off-the-job-Qualifizierung) — mehrere "📷 Grafik einfügen"-Platzhalter offen
+LS01 Betriebliche Planungsprozesse ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen)
+LS02 Aufbauorganisation ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen; Kapitel 7 noch nicht vom Dozenten behandelt)
+LS03 Ablauforganisation ✅
+LS04 Organisationsentwicklung ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen)
+LS05 Analysemethoden ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen)
+LS06 Personalführung / Personalplanung / Personalbeschaffung ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen)
+LS07 Personalentwicklung ✅ (mehrere "📷 Grafik einfügen"-Platzhalter offen)
 
-### Volks- und Betriebswirtschaft (vwlbwl) — ABGESCHLOSSEN ✅ (LS01–LS06, Dozent Steinhof)
-LS01 Grundlagen der VWL (VWL/BWL-Abgrenzung, Bedürfniskette, Produktionsfaktoren, Preis-Mengen-Diagramm, Marktformen) ✅
-LS02 Wettbewerb, Kartellrecht & Staatliche Eingriffe (Kartellarten, Wirtschaftsordnungen, Mindest-/Höchstpreise, Marktversagen) ✅
-LS03 Konjunktur, Stabilitätspolitik & Geldpolitik (Magisches Viereck, Konjunkturphasen, Arbeitslosigkeit, Inflation, Fiskalpolitik) ✅
-LS04 Geldpolitik & monetäre Grundlagen (Geldfunktionen, M1/M2/M3, Quantitätsgleichung, Keynes vs. Monetarismus) ✅
-LS05 EZB-Instrumente & Transmissionsmechanismus (Offenmarktgeschäfte, Tenderverfahren, Mindestreserve, Grenzen der Geldpolitik) ✅
-LS06 Außenwirtschaft (Außenhandelsrisiken, Freihandel/Protektionismus, EU-Binnenmarkt, Maastricht-Kriterien, inkl. 18 Übungsfragen) ✅
+### Volks- und Betriebswirtschaft (vwlbwl) — ABGESCHLOSSEN ✅ (LS01–LS09, Dozent Steinhof)
+LS01 Grundlagen der VWL ✅
+LS02 Wettbewerb, Kartellrecht & Staatliche Eingriffe ✅
+LS03 Konjunktur, Stabilitätspolitik & Geldpolitik ✅
+LS04 Geldpolitik & monetäre Grundlagen ✅
+LS05 EZB-Instrumente & Transmissionsmechanismus ✅
+LS06 Außenwirtschaft ✅
+LS07 Betriebliche Funktionen ✅ (7 Funktionen: Produktion inkl. Fertigungsarten, Logistik+7R, Marketing+4P, ReWe/KLR, Finanzierung/Investition, Controlling, Personal)
+LS08 Existenzgründung & Rechtsformen ✅ (5 Phasen, Businessplan, Formalitäten, alle Rechtsformen, Organe GmbH/AG/KGaA)
+LS09 Unternehmenszusammenschlüsse ✅ (Kooperation vs. Konzentration, Kartell §2 GWB, Fusion/Konzern/Beteiligung, große Übersichtstabelle)
 
 ### Noch leer (Modul-Übersichtsseiten vorhanden, Skripte fehlen)
-basics · methodik · marketing · fuehrung · logistik
+methodik · marketing · fuehrung · logistik
 
 ---
 
@@ -169,7 +186,8 @@ basics · methodik · marketing · fuehrung · logistik
     <input id="search-input" type="search" placeholder="Thema suchen …" autocomplete="off">
     <div id="search-results"></div>
   </div>
-  <!-- Sidebar-Toggle, Formelglossar-Button, Notizzettel-Button und Logo werden von engine.js automatisch eingefügt -->
+  <!-- Sidebar-Toggle, Werkzeugkasten-Button, Changelog-Button, Formelglossar-Button,
+       Notizzettel-Button und Logo werden von engine.js automatisch eingefügt -->
 </div>
 
 <div class="layout">
@@ -229,6 +247,8 @@ basics · methodik · marketing · fuehrung · logistik
 
 **WICHTIG:** `.notice` hat `display: block` (nicht flex) — Text bleibt immer untereinander.
 
+---
+
 **Box-Mapping bei PDF/PPTX-Quellen mit eigenem Label-System** (z.B. „⬣ DEFINITION", „⚠ PRÜFUNGSFALLE", „■ PRAXISBEISPIEL", „✓ MERKSATZ", „✓ MUSTERLÖSUNG", „ℹ HINWEIS", „🧮 RECHENBEISPIEL", „+ ZUSATZWISSEN"):
 - DEFINITION → `.def-box`
 - PRÜFUNGSFALLE → `.notice.danger` mit „⛔ Prüfungsfalle"
@@ -250,6 +270,7 @@ basics · methodik · marketing · fuehrung · logistik
 ---
 
 ## Navigation & Features
+
 - **Startseite:** 12 Kacheln (11 Module + About), 4-spaltig, Fortschrittsbalken
 - **Modul-Übersichtsseite:** `pages/modul_[id].html` — Skript-Liste mit Datum/Dozent
 - **Sidebar:** einklappbar per `☰` Button (engine.js), Zustand in localStorage
@@ -260,72 +281,157 @@ basics · methodik · marketing · fuehrung · logistik
 - **Volltext-Suche:** Lunr.js, nach build-index.bat
 - **Zuletzt besucht:** localStorage, 5 Einträge, in Sidebar
 
-### NEU: Notizzettel (📝, nur auf Lernseiten)
-- Icon in der Topbar (direkt neben dem Suchfeld, siehe „Topbar-Icon-Positionierung" unten), Panel slide-in von rechts
-- Pro Skript eigener Eintrag in `localStorage` (Key: `wfw_notiz_<page.id>`), gerätegebunden — kein Sync zwischen Geräten (bewusst so, siehe unten)
-- Auto-Save beim Tippen (debounced)
-- Orangener Badge-Punkt am Icon, wenn Notiz Inhalt hat
-- Panel-Offen/Zu-Status wird seitenübergreifend gemerkt (`localStorage`-Key `wfw_notiz_panel_open`)
-- „🖨 Drucken & löschen"-Button: druckt NUR die Notiz (mit Kopfzeile: Skript-Titel + Datum), Rest der Seite wird beim Druck ausgeblendet (`body.notiz-printing`-Klasse steuert das per CSS). Nach dem Druck (`afterprint`-Event) wird die Notiz automatisch geleert — bewusstes „Wegwerf-Block"-Konzept für mobiles Lernen (Boris druckt unterwegs als PDF, neues leeres Blatt beim nächsten Mal)
-- Implementiert in `engine.js` (`initNotizzettel()`) und `style.css` (Klassen `.notiz-toggle`, `.notiz-panel`, `.notiz-badge` etc.)
+### Notizzettel (📝, nur auf Lernseiten)
+- Icon in der Topbar, Panel slide-in von rechts
+- Pro Skript eigener Eintrag in `localStorage` (Key: `wfw_notiz_<page.id>`), gerätegebunden
+- Auto-Save beim Tippen (debounced), orangener Badge-Punkt bei Inhalt
+- Panel-Status seitenübergreifend gemerkt (`localStorage`-Key `wfw_notiz_panel_open`)
+- „🖨 Drucken & löschen"-Button: druckt NUR die Notiz, löscht sie danach automatisch
+- Implementiert in `engine.js` (`initNotizzettel()`) und `style.css`
 
-### NEU: Formelzeichen-Glossar (Σ, auf jeder Seite)
-- Icon in der Topbar, links vom Notizzettel-Icon, global auf allen Seiten (nicht nur Lernseiten)
-- Lädt Inhalte zur Laufzeit per `fetch()` aus `css/formelzeichen.json` (kein Script-Tag-Eintrag in den einzelnen HTML-Seiten nötig)
-- Gruppiert nach Modul (z.B. „💰 Finanzmanagement", „🧮 Rechnungswesen", „⚖️ Recht und Steuern", „🧠 Betriebliches Management"), pro Gruppe auf-/zuklappbar (Pfeil ▾/▸, Zustand merkt sich während der Panel-Sitzung)
-- Suchfeld filtert Symbol + Bedeutung live; bei aktiver Suche werden Treffergruppen automatisch aufgeklappt angezeigt
-- **Pflege ausschließlich über `css/formelzeichen.json`** — kein Editieren im Browser. Struktur: Array von `{ modul: "<modul-id>", eintraege: [{ symbol, bedeutung }] }`
-- Implementiert in `engine.js` (`initFormelzeichen()`) und `style.css` (Klassen `.formel-toggle`, `.formel-panel`, `.formel-group` etc.)
-- Aktuell befüllt für Module: `finanz` (Investitionsrechnung-Symbole), `rewe` (Kalkulationskürzel), `recht` (Steuerkürzel), `bm` (Kennzahlen wie ROI, EKR, GKR, SMART, SWOT)
+### Formelzeichen-Glossar (Σ, auf jeder Seite)
+- Icon in der Topbar, links vom Notizzettel-Icon, global auf allen Seiten
+- Lädt per `fetch()` aus `css/formelzeichen.json`; gruppiert nach Modul, auf-/zuklappbar; Suchfeld filtert live
+- **Pflege ausschließlich über `css/formelzeichen.json`** — Struktur: `[{ modul, eintraege: [{ symbol, bedeutung }] }]`
+- Implementiert in `engine.js` (`initFormelzeichen()`) und `style.css`
+- Aktuell befüllt für: `finanz`, `rewe`, `recht`, `bm`
 
-### NEU: Changelog (📜, auf jeder Seite)
+### Changelog (📜, auf jeder Seite)
 - Icon in der Topbar, links vom Formelglossar-Icon, global auf allen Seiten
-- Lädt Inhalte zur Laufzeit per `fetch()` aus `css/changelog.json` (kein Script-Tag-Eintrag in den einzelnen HTML-Seiten nötig)
-- Slide-in-Panel von rechts, Einträge gruppiert nach Datum (neueste Gruppe zuerst), je Eintrag Modul-Icon + Titel + Badge ("Neu"/"Update")
-- **Pflege ausschließlich über `css/changelog.json`** — kein Editieren im Browser. Struktur: Array von `{ datum: "TT.MM.JJJJ", eintraege: [{ modul: "<modul-id>" oder null, titel, aktion: "neu"|"update" }] }`, neueste Datumsgruppe zuerst
-- Rückwirkend befüllt mit allen bisherigen Skript-Lieferungen (Stand 30.06.2026), gruppiert nach Lieferdatum
-- Implementiert in `engine.js` (`initChangelog()`) und `style.css` (Klassen `.changelog-toggle`, `.changelog-panel`, `.changelog-date-group` etc.)
-- **Standard-Workflow ab sofort:** Bei jeder neuen oder geänderten Seite wird automatisch und ungefragt ein passender Eintrag in `changelog.json` ergänzt (gleiche Automatik wie bei `pages.js`) — neue Seiten als `"aktion": "neu"`, inhaltliche Überarbeitungen bestehender Seiten als `"aktion": "update"`
+- Lädt per `fetch()` aus `css/changelog.json`; Einträge nach Datum gruppiert, neueste zuerst
+- **Pflege ausschließlich über `css/changelog.json`** — Struktur: `[{ datum, eintraege: [{ modul, titel, aktion }] }]`
+- **Standard-Workflow:** Bei jeder neuen oder geänderten Seite wird automatisch und ungefragt ein Changelog-Eintrag ergänzt
+- Implementiert in `engine.js` (`initChangelog()`) und `style.css`
 
-### NEU: Nutzerhandbuch (`pages/handbuch.html`)
-- Meta-Seite (`module: null`, wie `about.html`), erklärt Navigation, Suche, Box-System, Formelglossar, Changelog und empfohlenen Lernablauf
-- Verlinkt von der Startseite im Intro-Bereich (`<p class="wiki-meta-links">`) — Link zu `about.html` ("Über dieses Wiki") wurde dort bewusst entfernt, da dafür bereits Kachel + Sidebar-Eintrag existieren; nur der Handbuch-Link blieb stehen
-- **WICHTIGE STANDING-REGEL (seit 30.06.2026):** Sobald ein neues Feature im Wiki eingebaut wird (z.B. neues Topbar-Icon, neue Funktion, neue Bedienlogik), muss `handbuch.html` entsprechend mitaktualisiert werden, damit es immer den aktuellen Funktionsumfang widerspiegelt. Diese Regel ist dauerhaft im Memory von Claude hinterlegt und gilt automatisch, ohne dass Boris explizit danach fragen muss.
+### Nutzerhandbuch (`pages/handbuch.html`)
+- Meta-Seite (`module: null`), erklärt Navigation, Suche, Box-System, Formelglossar, Changelog, Werkzeugkasten und empfohlenen Lernablauf
+- Verlinkt von der Startseite im Intro-Bereich (`<p class="wiki-meta-links">`)
+- **WICHTIGE STANDING-REGEL (seit 30.06.2026):** Sobald ein neues Feature im Wiki eingebaut wird, muss `handbuch.html` entsprechend mitaktualisiert werden. Diese Regel gilt automatisch, ohne explizite Aufforderung.
 
-### NEU: Changelog-Pflege — "Neu"-Markierung rotieren
-- **WICHTIGE STANDING-REGEL (seit 30.06.2026):** Sobald eine neue Datumsgruppe in `changelog.json` erstellt wird, muss bei ALLEN älteren, bereits bestehenden Einträgen das Attribut `"aktion": "neu"` entfernt werden (Property komplett löschen, nicht auf einen anderen Wert setzen). Nur die aktuell neueste Datumsgruppe behält die "Neu"-Markierung. `engine.js` rendert kein Badge, wenn `aktion` fehlt (`e.aktion === 'neu'` ist einfach `false`/`undefined`) — kein Rendering-Fehler. Diese Regel ist dauerhaft im Memory von Claude hinterlegt.
+### Changelog-Pflege — "Neu"-Markierung rotieren
+- **WICHTIGE STANDING-REGEL (seit 30.06.2026):** Sobald eine neue Datumsgruppe in `changelog.json` erstellt wird, muss bei ALLEN älteren Einträgen das Attribut `"aktion": "neu"` entfernt werden (Property komplett löschen). Nur die aktuell neueste Datumsgruppe behält die "Neu"-Markierung.
+
+### NEU: Werkzeugkasten (🧰, auf jeder Seite)
+- Icon in der Topbar, links vom 📜 Changelog-Icon, global auf allen Seiten
+- Öffnet `werkzeugkasten.html` im selben Tab (kein Panel, sondern eigene Seite)
+- **Standalone-Seite** — lädt NICHT `engine.js`/`pages.js`, sondern eigene Scripts:
+  - `css/wk-config.js` — Konfiguration (Gruppen, Kategorien, Tools, PNG-Pfade)
+  - `css/wk-engine.js` — Sidebar + Viewer-Logik + CSS-Injection
+- Eigene Sidebar mit 4 kollabierenden WK-Gruppen; Kategorien als visuelle Trennlabels (`.wk-cat-label`)
+- Tool-Klick → stacked PNGs im Hauptbereich (Doppelseite = 2 PNG untereinander)
+- Fehlt ein PNG → Platzhalter mit Dateiname (kein Absturz)
+- Hash-Navigation: URL-Hash = Tool-ID, ermöglicht Direktverlinkung (`werkzeugkasten.html#wk1_fmea`)
+- **Sidebar standardmäßig offen** (localStorage-Key: `wfw_wk_sidebar_open`)
+- **Cross-Referenzen:** Tools, die in mehreren WKs gelistet sind, zeigen einen `(→ WK X)`-Badge und verlinken auf die Quelle. Nur eine PNG-Kopie nötig.
+- **Pflege:** Neue Tools → Eintrag in `css/wk-config.js` + PNG-Dateien in `images/wk/` ablegen
+- Implementiert in `engine.js` (`initWerkzeugkasten()`) und `style.css` (`.wk-toggle`)
+
+#### wk-config.js — Struktur
+```javascript
+const WK_CONFIG = {
+  gruppen: [
+    {
+      id: "wk1",
+      label: "WK I · Management- & Analysemethoden",
+      icon: "🔧",
+      kategorien: [
+        {
+          label: null,          // null = kein Trennlabel (für Übersicht-Einträge)
+          tools: [
+            { id: "wk1_uebersicht", label: "Gesamtübersicht WK I", icon: "≡",
+              seiten: ["images/wk/wk_uebersicht_1.png"] }
+          ]
+        },
+        {
+          label: "Ursachenanalyse",   // sichtbares Trennlabel in Sidebar
+          tools: [
+            { id: "wk1_ishikawa", label: "Ishikawa-Diagramm",
+              seiten: ["images/wk/wk1_ishikawa_s1.png", "images/wk/wk1_ishikawa_s2.png"] },
+            // Cross-Referenz auf ein anderes WK:
+            { id: "wk1_nutzwert_ref", label: "Nutzwertanalyse",
+              seiten: ["images/wk/wk3_nutzwert_s1.png", "images/wk/wk3_nutzwert_s2.png"],
+              quelle: "WK III" }
+          ]
+        }
+      ]
+    }
+    // ... weitere Gruppen WK II, WK III, WK IV
+  ]
+};
+```
+
+#### PNG-Dateinamen-Konvention (`images/wk/`)
+```
+Gesamtübersichten (aus Gesamtübersicht-PPTX):
+  wk_uebersicht_1.png … wk_uebersicht_4.png
+
+WK I (aus WK I PPTX, je Tool 2 Seiten):
+  wk1_ishikawa_s1/s2        wk1_5why_s1/s2
+  wk1_pdca_s1/s2            wk1_pareto_analyse_s1/s2
+  wk1_fmea_s1/s2            wk1_abc_s1/s2
+  wk1_pareto_prinzip_s1/s2  wk1_swot_s1/s2
+  wk1_benchmarking_s1/s2    wk1_szenariotechnik_s1/s2
+  wk1_kosten_nutzen_s1/s2   wk1_morphkasten_s1/s2
+  wk1_smart_s1/s2           wk1_zielpyramide_s1/s2
+  wk1_netzplan_s1/s2        wk1_gantt_s1/s2
+  wk1_meilenstein_s1/s2     wk1_stakeholder_s1/s2
+  wk1_mindmap_s1/s2         wk1_brainstorming_s1/s2
+  wk1_6hut_s1/s2
+
+WK II (aus WK II PPTX):
+  wk2_pestel_s1/s2          wk2_stakeholder_s1/s2
+  wk2_portfolio_bcg_s1/s2   wk2_szenariotechnik_s1/s2
+  wk2_mta_s1/s2             wk2_six_sigma_s1/s2
+
+WK III (aus WK III PPTX):
+  wk3_nutzwert_s1/s2              wk3_entscheidungsmatrix_s1/s2
+  wk3_kosten_nutzen_s1/s2         wk3_scoring_s1/s2
+  wk3_sensitivitaet_s1/s2         wk3_szenariotechnik_s1/s2
+
+WK IV (aus WK IV PPTX):
+  wk4_projektorganisation_s1/s2   wk4_org_formen_s1/s2
+  wk4_mag_dreieck_s1/s2           wk4_projektplanung_s1/s2
+  wk4_risikoanalyse_s1/s2         wk4_projektsteuerung_s1/s2
+  wk4_projektdoku_s1/s2
+```
 
 ---
 
-
 ## Lieferformat
-- Geänderte/neue Dateien werden einzeln per `present_files` geliefert (kein ZIP mehr im aktuellen Workflow)
+- Geänderte/neue Dateien werden einzeln per `present_files` geliefert (kein ZIP)
 - `pages/neueseite.html` + `css/pages.js` (immer beide zusammen, automatisch) bei neuen Skripten
-- `css/changelog.json` wird bei jeder neuen oder geänderten Seite ebenfalls automatisch und ungefragt mitgeliefert (analog zu `pages.js`)
-- Nur einzelne HTML-Datei bei Grafik-Einbettungen oder kleinen Korrekturen (kein `pages.js`-Update nötig, wenn keine neue Seite — aber `changelog.json`-Eintrag als `"aktion": "update"` ergänzen)
+- `css/changelog.json` wird bei jeder neuen oder geänderten Seite ebenfalls automatisch mitgeliefert
+- Nur einzelne HTML-Datei bei Grafik-Einbettungen oder kleinen Korrekturen
 - `css/engine.js`, `css/style.css`, `css/formelzeichen.json` oder `css/changelog.json` nur wenn Features/Glossar/Changelog geändert werden
+- `css/wk-config.js` nur bei Änderungen am Werkzeugkasten (neue Tools, neue Gruppen)
 
 ---
 
 ## Bekannte technische Details
-- `engine.js` fügt Logo, Sidebar-Toggle, Notizzettel-Button, Formelglossar-Button und Changelog-Button automatisch ein — NICHT manuell in HTML
-- Init-Reihenfolge in `engine.js` (DOMContentLoaded): `buildLogo()` → `initNotizzettel()` → `initFormelzeichen()` → `initChangelog()` → `buildSidebar()` …
-- **Topbar-Icon-Positionierung (Stand 30.06.2026, korrigiert):** Alle drei Buttons (📜 Changelog, Σ Formelglossar, 📝 Notizzettel) werden direkt **rechts neben dem Suchfeld** eingefügt (`topbar.insertBefore(btn, searchWrap.nextSibling)` bzw. relativ dazu verkettet), NICHT mehr vor dem Logo. Ursprünglich hatten alle drei Buttons `margin-left: auto` in `style.css`, was sie unabhängig voneinander an den rechten Rand zog (große Lücken zwischen Suchfeld, Icons und Logo). Das `margin-left: auto` wurde aus `.notiz-toggle`, `.formel-toggle` und `.changelog-toggle` entfernt — nur `.topbar-logo` behält es (zieht das BoWo-Logo bewusst ganz nach rechts). Visuelle Reihenfolge in der Topbar von links nach rechts: ☰ Sidebar-Toggle → Brand "WFWWiki" → Suchfeld → 📜 Changelog → Σ Formelglossar → 📝 Notizzettel → (Lücke) → BoWo-Logo
-- `build-index.bat` nach jeder neuen Seite ausführen (Node.js erforderlich)
+- `engine.js` fügt Logo, Sidebar-Toggle, Werkzeugkasten-Button, Changelog-Button, Formelglossar-Button und Notizzettel-Button automatisch ein — NICHT manuell in HTML
+- Init-Reihenfolge in `engine.js` (DOMContentLoaded):
+  `trackVisit()` → `buildTopbar()` → `initSidebarToggle()` → `buildLogo()` → `initNotizzettel()` → `initFormelzeichen()` → `initChangelog()` → **`initWerkzeugkasten()`** → `buildSidebar()` → `buildIndexPage()` → `buildModulePage()` → `buildPrintButton()` → `initSearch()` → `highlightSearchTerm()`
+- **Topbar-Icon-Positionierung (Stand 01.07.2026):** Alle Buttons rechts neben dem Suchfeld, Reihenfolge von links nach rechts: ☰ Sidebar-Toggle → Brand "WFWWiki" → Suchfeld → 🧰 Werkzeugkasten → 📜 Changelog → Σ Formelglossar → 📝 Notizzettel → (Lücke via `margin-left:auto` auf `.topbar-logo`) → BoWo-Logo
+- `werkzeugkasten.html` liegt im Wiki-Root (nicht in `pages/`), lädt `css/style.css` + `css/wk-config.js` + `css/wk-engine.js` (KEIN `lunr.js`, `pages.js` oder `engine.js`)
+- `build-index.bat` nach jeder neuen Wiki-Seite ausführen (Node.js erforderlich) — NICHT beim Werkzeugkasten (kein pages.js-Eintrag)
 - `.notice { display: block }` — verhindert Flex-Layout-Fehler bei Merksätzen
 - GitHub Pages URL: `https://bowo-76.github.io/wfw-wiki1/`
-- index.html muss `<link rel="stylesheet" href="css/tiles.css">` enthalten
-- **Niemals `localStorage`/`sessionStorage` in Claude-Artifacts verwenden** — hier im echten Wiki (kein Artifact-Kontext) ist das aber problemlos möglich und wird für Notizzettel, Panel-Status und Sidebar-Status aktiv genutzt
+- `index.html` muss `<link rel="stylesheet" href="css/tiles.css">` enthalten
+- **Niemals `localStorage`/`sessionStorage` in Claude-Artifacts verwenden** — im echten Wiki ist das problemlos möglich und wird für Notizzettel, Panel-Status, Sidebar-Status und Werkzeugkasten-Sidebar aktiv genutzt
 
 ---
 
-## Geplante Erweiterungen
-- **Werkzeugkästen** (4 PPTX, noch nicht fertig):
-  - WK I–IV + Gesamtübersicht
-  - Einbindung als PDF per `<iframe>` → neues Sidebar-Modul `🧰 Werkzeugkasten`
-  - Warten bis alle 4 fertig, dann in einem Rutsch
-- Grafiken für die zahlreichen „📷 Grafik einfügen"-Platzhalter nachliefern (betrifft uf_ls01, uf_ls02 sowie neu uf_ls04, uf_ls05, uf_ls06, uf_ls07: u.a. Eisberg-Modell, BCG-Matrix, Organigramm-Darstellungen, PDCA-Kreislauf, VUKA/BANI-Grafiken, Mintzberg-Strategiebrücke, Du-Pont-Pyramide, Kano-Diagramm, Maslow-Pyramide, Herzberg-Diagramm, Grid-Konzept-Gitter, Tuckman-Kurve, Nettopersonalbedarfsrad, Personalportfolio-Matrix)
-- Kapitel 7 in `uf_ls02` (Personalwirtschaftliche Organisation) ergänzen, sobald Dozent das Thema behandelt hat
+## Geplante Erweiterungen / Offene Punkte
+- **basics LS04–LS20** folgen in späteren Chats (Dateinamen-Liste bekannt):
+  LS04 Umsatzsteuer · LS05 Abschreibungen GWG · LS06 Bezugskosten · LS07 Privatkonten
+  LS08 Absatz · LS09 Leasing · LS10 Darlehen · LS11 Jahresabschluss Grundlagen
+  LS12 KLR Grundlagen · LS13 Bilanzbewertung Grundlagen · LS14 Bilanzanalyse Kritik Final
+  LS15 GuV Auswertung · LS16 Prozentrechnen · LS17 Zinsrechnen · LS18 Darlehenstilgung
+  LS19 Rentenrechnung · LS20 Mathe Grundlagen
+- **Werkzeugkasten PNG-Exporte** noch ausstehend — Boris exportiert aus WK I–IV PPTX als PNG und legt sie in `images/wk/` ab (Dateinamenliste vollständig in dieser Übergabe dokumentiert)
+- **Grafiken** für „📷 Grafik einfügen"-Platzhalter nachliefern (betrifft uf_ls01, uf_ls02, uf_ls04–uf_ls07: Eisberg-Modell, BCG-Matrix, Organigramm-Darstellungen, PDCA-Kreislauf, VUKA/BANI-Grafiken, Mintzberg-Strategiebrücke, Du-Pont-Pyramide, Kano-Diagramm, Maslow-Pyramide, Herzberg-Diagramm, Grid-Konzept-Gitter, Tuckman-Kurve, Nettopersonalbedarfsrad, Personalportfolio-Matrix)
+- **Kapitel 7** in `uf_ls02` (Personalwirtschaftliche Organisation) ergänzen, sobald Dozent das Thema behandelt hat
+- **handbuch.html** muss noch um den Werkzeugkasten-Abschnitt (🧰-Button, Bedienung) ergänzt werden — Standing Rule gilt
 
 ---
 
